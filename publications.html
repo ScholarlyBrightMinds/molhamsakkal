@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Publications - Abdallah Abou Hajal</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <link href="publications.css" rel="stylesheet" type="text/css"/>
+  <link rel="icon" href="/images/profile.png" type="image/png">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: { families: ["Public Sans:300,400,500,700","Roboto:300,400,500,700"] }
+    });
+  </script>
+  <style>
+    /* small helpers kept inline to avoid touching your CSS theme */
+    .metrics { display:flex; gap:.6rem; flex-wrap:wrap; margin: 1rem 0 1.25rem; }
+    .metric  { padding:.35rem .6rem; border:1px solid #e5e7eb; border-radius:.5rem; font-size:.95rem; color:#334155; background:#fff; }
+    .pub-actions{margin-top:.5rem;display:flex;gap:.5rem;flex-wrap:wrap}
+    .pub-btn{display:inline-block;padding:.35rem .6rem;border-radius:.4rem;border:1px solid #e5e7eb;font-size:.9rem;text-decoration:none}
+  </style>
+</head>
+<body class="projects-page">
+  <header class="header">
+    <nav class="nav">
+      <div class="hamburger"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+      <div class="nav-content">
+        <div class="nav-menu">
+          <a href="index.html" class="nav-item">Home</a>
+          <a href="about.html" class="nav-item">About</a>
+          <a href="projects.html" class="nav-item">Ongoing Research</a>
+          <a href="publications.html" class="nav-item active">Publications</a>
+          <a href="blog.html" class="nav-item">Blog</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="project-hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Publications</h1>
+        </div>
+        <img src="images/boundary.svg" alt="" class="hero-section-cutter-image">
+      </div>
+    </div>
+  </header>
+
+  <!-- IMPORTANT: keep your Scopus Author ID correct -->
+  <main class="publication-content" id="pub-app" data-author-id="58094444100">
+    <!-- METRICS BAR (populated by scopus.v2.js) -->
+    <div class="metrics" id="metrics" aria-live="polite">
+      <span class="metric">Total: <strong id="m-total">—</strong></span>
+      <span class="metric">Citations: <strong id="m-cites">—</strong></span>
+      <span class="metric">h-index: <strong id="m-h">—</strong></span>
+    </div>
+
+    <!-- Research Articles -->
+    <h2 class="section-title">Research Articles</h2>
+    <section id="list-articles" class="publication-list" aria-live="polite"></section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Abdallah Abou Hajal, a fork of
+      <a href="https://github.com/muhammedrashidx/ScholarSite_2.0" target="_blank" style="text-decoration: underline; color: #b8aaaa;">
+        ScholarSite_2.0
+      </a>
+    </p>
+  </footer>
+
+  <script src="scripts.js"></script>
+  <!-- Scopus renderer (expects /data/scopus/scopus.json) -->
+  <script type="module" src="scopus.v2.js"></script>
+</body>
+</html>

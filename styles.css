@@ -1,0 +1,574 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    background: black;
+    background-size: 400% 400%;
+    animation: gradient 20s ease infinite;
+}
+
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Header Styles */
+.header {
+    height: 100vh; /* Occupies full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures nav at top and copyright at bottom */
+}
+
+/* Navigation Styles */
+.nav {
+    /* Desktop Styles */
+    position: static; /* Changed from fixed to static for seamless integration */
+    width: 100%;
+    background: transparent; /* Removed background for no boundary */
+    z-index: 1000;
+    padding: 20px 0; /* Adjusted padding */
+    transition: background 0.3s ease;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 50px; /* Moves the nav items to the right */
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
+.nav-item {
+    font-family: 'Switzer', sans-serif;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 0 10px;
+    position: relative;
+    transition: color 0.3s ease; /* Smooth transition */
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.nav-item:hover {
+    background-color: #1B7476;
+}
+
+
+.nav-item.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+.nav-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #1B7478;
+    min-width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: calc(100% + 8px); 
+    left: 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Pseudo-element to cover the gap */
+.nav-dropdown:hover::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 10px; /* Match the space added above */
+}
+
+.nav-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    font-family: 'Switzer', sans-serif;
+    color: #f1f1f1;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+.dropdown-content a:hover {
+    background-color: #125fdc;
+}
+
+.arrow-container {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 5px;
+}
+
+.arrow {
+    width: 7px;
+    height: 7px;
+    border: solid white;
+    border-width: 2px 2px 0 0;
+    display: inline-block;
+    transform: rotate(135deg);
+    transition: transform 0.3s ease;
+    position: relative;
+    top: -2px;
+    transform-origin: 69% 50%;
+}
+
+.nav-dropdown:hover .arrow {
+    transform: rotate(-45deg) translateY(1.8px);
+}
+
+/* Hero Section Styles */
+.hero-section {
+    flex: 1; /* Takes up remaining space in header */
+    display: flex;
+    align-items: center;
+    background: transparent; /* Transparent to show body background */
+    padding: 20px 0; /* Adjusted padding to remove boundary */
+    overflow: hidden; /* Prevents internal scrolling */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+    height: 100%; /* Ensures container fills hero-section */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: flex-start; /* Align elements closely */
+    align-items: center; /* Vertically align text and image */
+    height: 100%; /* Ensures content fills container */
+}
+
+.hero-text {
+    flex: 0 1 70%;
+    padding-right: 20px;
+    color: white;
+    overflow: auto; /* Prevents overflowing content */
+}
+
+.hero-text h1 {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 48px; /* Keeps the prominence */
+    font-weight: 200; /* Adjust thickness (400 = normal, 700 = bold, 900 = extra bold) */
+    letter-spacing: 2px; /* Adjust space between letters */
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.hero-text p:first-of-type {
+    font-size: 24px;
+    margin: 10px 0 20px;
+}
+
+.hero-text p:last-of-type {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.hero-image {
+    flex: 0 0 auto;
+    width: 230px;
+    height: auto;
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Copyright Styles */
+header .copyright {
+    text-align: center;
+    padding: 10px 0;
+}
+
+header .copyright p {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+/* Footer Styles */
+footer {
+    background: linear-gradient(-45deg, #00b09b, #c73dc9, #00b09b, #2ec4b6);
+    background-size: 400% 400%;
+    animation: gradient 20s ease infinite;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Hamburger menu styles */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    padding: 13px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+    background-color: #1B7476;
+    border-radius: 8px;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+/* Responsive Styles */
+
+/* Tablet and below */
+@media (max-width: 1024px) {
+    .hero-content {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-text {
+        flex: 0 1 100%;
+        padding-right: 0;
+        margin-top: 20px;
+        max-width: 100%;
+    }
+
+    .hero-image {
+        width: 150px;
+        margin-bottom: 20px;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    /* Adjusted Hamburger Position and Size */
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        padding: 13px;
+        position: fixed;
+        top: 10px;
+        right: 5.5px;
+        z-index: 1001;
+        background-color: #1B7476;
+        border-radius: 8px;
+        transform: scale(0.8);
+    }
+
+    .bar {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 5px 0;
+        transition: 0.4s;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+
+    .nav {
+        background: none; /* Remove the gradient background */
+        padding: 0; /* Remove any padding */
+        height: auto; /* Allow the height to adjust automatically */
+    }
+
+    .nav-menu {
+        display: none;
+        position: fixed;
+        top: 50px;
+        right: 11px;
+        width: 200px;
+        background-color: #1B7476;
+        padding: 10px 0;
+        border-radius: 8px 0 8px 8px;
+        overflow: hidden;
+        z-index: 1000;
+    }
+
+    .nav-menu.show {
+        display: block;
+        max-height: 100vh;
+        overflow-y: auto;
+    }
+
+    .nav-item {
+        display: block;
+        padding: 10px 20px;
+        color: white;
+        text-decoration: none;
+        transition: background-color 0.3s;
+        font-size: 16px;
+    }
+
+    .nav-dropdown {
+        position: relative;
+    }
+
+    .nav-dropdown > .nav-item .arrow-container {
+        display: inline-flex; /* Show the arrow for Research menu */
+    }
+
+    .dropdown-content {
+        display: none;
+        background-color: transparent; /* Remove background */
+        box-shadow: none;
+        padding-left: 5px; /* Indent submenu items */
+        position: static; /* Ensure it's not absolutely positioned */
+    }
+
+    .nav-dropdown.active .dropdown-content {
+        display: block; /* Show submenu when active */
+    }
+
+    /* Remove background color and box shadow for active items */
+    .nav-item.active,
+    .nav-item:hover {
+        background-color: transparent !important;
+        box-shadow: none !important;
+    }
+
+    /* Remove any padding changes for active items */
+    .nav-item.active {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    /* Ensure dropdown content is displayed normally */
+    .nav-dropdown.active .dropdown-content {
+        display: block;
+        background-color: transparent;
+    }
+
+    /* Remove hover effects for dropdown items */
+    .dropdown-content a:hover {
+        background-color: transparent;
+    }
+
+    /* Adjust Hero Section for Mobile */
+    .hero-section {
+        padding-top: 60px;
+        min-height: calc(100vh - 60px);
+    }
+
+    .container {
+        min-height: calc(100vh - 60px);
+    }
+
+    .hero-content {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-text {
+        flex: 0 1 100%;
+        padding-right: 0;
+        margin-top: 20px;
+        max-width: 100%;
+    }
+
+    .hero-text h1 {
+        font-size: 28px; /* Reduced font size for better fit on mobile */
+        white-space: normal;
+        text-align: center;
+    }
+
+    .hero-text p:first-of-type {
+        font-size: 20px; /* Adjusted for better readability */
+        margin: 10px 0 15px;
+    }
+
+    .hero-text p:last-of-type {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .hero-image {
+        width: 120px;
+        margin-bottom: 15px;
+    }
+
+    .copyright {
+        padding: 10px 0;
+    }
+}
+
+/* Specific Page Styles */
+.projects-page .nav-menu .nav-item.active {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1400px;
+        padding: 0 40px;
+    }
+
+    /* Fluid Layout Adjustments */
+    .container {
+        padding: 0 2.5%;
+    }
+
+    .nav-content {
+        margin-right: 80px;
+    }
+
+    /* Fluid Layout Adjustments */
+    .nav-content {
+        margin-right: 5%;
+    }
+
+    .hero-text h1 {
+        font-size: 60px;
+    }
+
+    /* Fluid Layout Adjustments */
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+
+    .hero-text p {
+        font-size: 1.125rem;
+    }
+}
+
+/* Social Links Styling */
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: linear-gradient(-45deg, #00b09b, #c73dc9, #00b09b, #2ec4b6); /* Same gradient as the page */
+    background-size: 400% 400%; /* Animate the gradient */
+    animation: gradient 20s ease infinite; /* Animate the gradient */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+@media (max-width: 768px) {
+    /* Center-align social links on mobile */
+    .social-links {
+        justify-content: center; /* Centers the icons horizontally */
+    }
+}
+
+/* Make the Scifiniti Publishing link red on all states */
+.hero-text a[href*="scifiniti.com"],
+.hero-text a[href*="scifiniti.com"]:visited {
+  color: #e11d48;              /* red */
+  text-decoration: none;
+  font-weight: 600;
+}
+.hero-text a[href*="scifiniti.com"]:hover,
+.hero-text a[href*="scifiniti.com"]:focus {
+  color: #be123c;              /* darker red on hover */
+  text-decoration: underline;
+}
+
+
+.social-links a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.social-links img {
+    width: 24px;
+    height: 24px;
+    filter: invert(100%);
+}
+@media (max-width: 768px) {
+    /* Your existing hamburger and nav-menu styles remain */
+    
+    /* Force full viewport height and proper distribution */
+    .header {
+        min-height: 100vh; /* Fill viewport */
+        height: auto; /* Allow growth if content exceeds */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; /* Start from top, no space-between */
+    }
+
+
+    /* Ensure container fills space */
+    .container {
+        flex-grow: 1; /* Take up all available space */
+        padding-bottom: 0; /* No extra padding */
+        margin-bottom: 0; /* Remove any bottom margin */
+    }
+
+    /* Footer sticks to bottom with minimal spacing */
+    footer {
+        padding: 10px 0; /* Tighten padding */
+        margin-top: 0; /* No extra space above */
+    }
+
+    
+}

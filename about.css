@@ -1,0 +1,173 @@
+/* about.css – three big hover cards */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { font-family: Roboto, sans-serif; background:#fff; color:#111; }
+
+/* Header/Nav keep Template-2 feel */
+.header { height: 50vh; display:flex; flex-direction:column; justify-content:center; background:#000; position:relative; }
+.nav { position:static; width:100%; background:transparent; padding:20px 0; z-index:1000; }
+.nav-content{max-width:1200px;margin:0 auto;display:flex;justify-content:flex-end;margin-right:50px}
+.nav-menu{display:flex;align-items:center}
+.nav-item{font-family:'Public Sans',sans-serif;color:#fff;text-decoration:none;padding:10px 15px;margin:0 10px;border-radius:10px;transition:.25s;font-weight:500}
+.nav-item:hover{background:#1B7476}
+.nav-item.active{background:rgba(255,255,255,.2);padding:10px 30px}
+.nav-dropdown{position:relative;display:inline-block}
+.dropdown-content{display:none;position:absolute;top:calc(100% + 8px);left:0;background:#1B7478;border-radius:10px;overflow:hidden;min-width:100%}
+.nav-dropdown:hover .dropdown-content{display:block}
+.dropdown-content a{display:block;color:#f1f1f1;text-decoration:none;padding:12px 16px}
+.dropdown-content a:hover{background:#125fdc}
+.arrow-container{display:inline-flex;align-items:center;margin-left:5px}
+.arrow{width:7px;height:7px;border:solid #fff;border-width:2px 2px 0 0;display:inline-block;transform:rotate(135deg);transition:.2s;position:relative;top:-2px;transform-origin:69% 50%}
+.nav-dropdown:hover .arrow{transform:rotate(-45deg) translateY(1.8px)}
+
+.about-hero{height:50vh;display:flex;align-items:center;justify-content:center;background:#000;position:relative}
+.about-hero h1{color:#fff;font-family:'Public Sans',sans-serif;letter-spacing:2px;font-weight:400;opacity:0;animation:rise 1.2s ease-out forwards}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.hero-section-cutter-image{position:absolute;bottom:0;left:0;width:100%;pointer-events:none}
+
+/* Content */
+.about-content{max-width:1200px;margin:2.5rem auto 4rem;padding:0 1rem}
+
+/* Grid of three massive cards */
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:1.25rem;
+}
+@media (min-width: 900px){
+  .about-grid{ grid-template-columns:repeat(3, 1fr); gap:1.5rem; }
+}
+
+/* Card */
+.about-card{
+  position:relative;
+  height:60vh; /* BIG, as requested */
+  min-height:460px;
+  border-radius:18px;
+  overflow:hidden;
+  background: #0d1b2a;
+  box-shadow: 0 10px 24px rgba(0,0,0,.18);
+  isolation:isolate;
+}
+
+/* Background image (or gradient fallback) */
+.about-card::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image: var(--bg), linear-gradient(135deg,#1f2937, #0f172a);
+  background-size: cover; background-position: center;
+  filter: saturate(0.9) contrast(1.05) brightness(0.8);
+  transition: transform .6s ease, filter .6s ease;
+  z-index:-1;
+}
+
+/* Top label (always visible) */
+.card-top{
+  position:absolute; inset:auto 0 0 0;
+  padding:1rem 1.25rem;
+  background: linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0));
+}
+.card-title{
+  color:#fff; font-family:'Public Sans',sans-serif; letter-spacing:.6px; font-weight:600;
+}
+
+/* Overlay text (shows on hover) */
+.card-overlay{
+  position:absolute; inset:0;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; padding:2rem;
+  color:#fff;
+  background:radial-gradient(1200px 400px at 50% 80%, rgba(0,0,0,.55), rgba(0,0,0,.15) 60%, transparent 70%);
+  opacity:0; transform:translateY(10px);
+  transition:opacity .4s ease, transform .4s ease;
+}
+.card-overlay h3{font-family:'Public Sans',sans-serif;margin-bottom:.4rem}
+.card-overlay p{max-width:560px;line-height:1.6}
+
+/* Hover interaction */
+.about-card:hover::before{ transform: scale(1.06); filter:saturate(1) contrast(1.1) brightness(0.9); }
+.about-card:hover .card-overlay{ opacity:1; transform:translateY(0); }
+
+/* Scifiniti brand link */
+.brand-scifiniti{ color:#dc2626; font-weight:700; text-decoration:none; border-bottom:1px solid transparent; }
+.brand-scifiniti:hover{ border-color:#dc2626; }
+
+/* Mobile tweaks */
+.hamburger{display:none}
+@media (max-width:768px){
+  .hamburger{display:block;cursor:pointer;padding:13px;position:fixed;top:10px;right:6px;z-index:1001;background:#1B7476;border-radius:8px;transform:scale(.9)}
+  .bar{width:25px;height:3px;background:#fff;margin:5px 0}
+  .nav-menu{display:none;position:fixed;top:50px;right:10px;width:210px;background:#1B7476;padding:10px 0;border-radius:8px 0 8px 8px}
+  .nav-menu.show{display:block;max-height:100vh;overflow:auto}
+  .dropdown-content{position:static;background:transparent;box-shadow:none}
+  .about-card{height:45vh;min-height:360px}
+}
+
+/* Card base — solid background, no bg image */
+.edu-card{
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  min-height: 320px;             /* make them nice and big */
+  background: #0b0b0b;           /* or #ffffff */
+  box-shadow: 0 8px 24px rgba(0,0,0,.12);
+}
+
+/* The logo scales to fit without cropping */
+.edu-logo{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;           /* key: no cropping */
+  padding: 28px;                 /* whitespace around logo */
+  filter: none;                  /* keep logo crisp */
+  opacity: .95;
+  transition: transform .35s ease, opacity .25s ease;
+}
+
+/* A soft dim overlay (only on hover so the logo stays clear otherwise) */
+.edu-card::after{
+  content:"";
+  position:absolute; inset:0;
+  background: transparent;
+  transition: background .25s ease;
+}
+.edu-card:hover::after{
+  background: rgba(0,0,0,.55);
+}
+
+/* Overlay text keeps your hover wording readable */
+.edu-overlay{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+  color: #fff;
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+.edu-card:hover .edu-overlay{
+  opacity: 1;
+}
+
+/* Little logo motion on hover (nice polish) */
+.edu-card:hover .edu-logo{
+  transform: scale(1.02);
+  opacity: .9;
+}
+
+/* Tweak for very wide logos (optional): reduce padding on small screens */
+@media (max-width: 768px){
+  .edu-card{ min-height: 220px; }
+  .edu-logo{ padding: 18px; }
+}
+
+/* Footer (match site) */
+footer{background:#000;color:#fff;text-align:center;padding:20px 0}
+footer p{opacity:.8}

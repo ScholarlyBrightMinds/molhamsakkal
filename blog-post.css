@@ -1,0 +1,468 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    background: black;
+    background-size: 400% 400%;
+    animation: gradient 30s ease infinite;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0;
+    position: relative;
+}
+
+/* Navigation Styles */
+.projects-page .nav {
+    width: 100%;
+    background: transparent;
+    padding: 20px 0;
+    transition: background 0.3s ease;
+    z-index: 1000;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 50px; /* Added this line to move the nav items to the right */
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
+.nav-item {
+    font-family: 'Public Sans', sans-serif; /* Updated to match gradient */
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 0 10px;
+    position: relative;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.nav-item:hover {
+    background-color: #1B7476;
+}
+
+.nav-item.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.nav-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #1B7478;
+    min-width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: calc(100% + 8px); 
+    left: 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.nav-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    font-family: 'Public Sans', sans-serif; /* Updated to match nav-item */
+    color: #f1f1f1;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+.dropdown-content a:hover {
+    background-color: #125fdc;
+}
+
+/* Pseudo-element to cover the gap */
+.nav-dropdown:hover::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 10px; /* Match the space added above */
+}
+
+/* Arrow Styles */
+.arrow-container {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 5px;
+}
+
+.arrow {
+    width: 7px;
+    height: 7px;
+    border: solid white;
+    border-width: 2px 2px 0 0;
+    display: inline-block;
+    transform: rotate(135deg);
+    transition: transform 0.3s ease;
+    position: relative;
+    top: -2px;
+    transform-origin: 69% 50%;
+}
+
+.nav-dropdown:hover .arrow {
+    transform: rotate(-45deg) translateY(1.8px);
+}
+
+
+/* Hero Section */
+.content-wrapper {
+    margin-top: -60px;
+    padding-top: 80px;
+}
+
+.project-hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-hero h1 {
+    font-size: 2rem;
+    color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+    letter-spacing: 2px;
+    font-weight: 100;
+    animation: slideUpFadeIn 1.5s ease-out forwards;
+}
+
+/* Keyframes for upward fade-in animation */
+@keyframes slideUpFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px); /* Start from below */
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at original position */
+    }
+}
+
+/* Blog Post Section - Terminal Style */
+.blog-post {
+    background: transparent;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+.blog-post-header {
+    margin-bottom: 20px;
+}
+
+.blog-post-header h1 {
+    font-size: 24px;
+    margin: 0;
+    font-weight: normal;
+    font-family: 'Roboto', sans-serif;
+}
+
+.blog-date {
+    display: block;
+    color: #4af626;
+    margin: 10px 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #333;
+    margin: 20px 0;
+}
+
+details {
+    border: none;
+    margin: 20px 0;
+    padding: 0;
+    background: transparent;
+    font-family: 'Roboto', sans-serif;
+}
+
+details summary {
+    color: #fff;
+    font-weight: normal;
+    cursor: pointer;
+    list-style: none;
+    font-size: 16px;
+}
+
+details summary::before {
+    content: '▶ ';
+    color: #fff;
+}
+
+details[open] summary::before {
+    content: '▼ ';
+}
+
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+details p {
+    margin: 10px 0;
+    padding-left: 20px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.blog-content {
+    margin-top: 20px;
+}
+
+.blog-content p {
+    margin: 0 0 15px 0;
+    color: #fff;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.4;
+}
+
+/* Footer */
+footer {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
+}
+
+footer p {
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .project-hero h1 {
+        font-size: 1.8rem;
+    }
+
+    main {
+        width: 95%;
+    }
+
+    details {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-hero h1 {
+        font-size: 1.5rem;
+    }
+
+    details summary {
+        font-size: 0.85rem;
+    }
+
+    details p {
+        font-size: 0.85rem;
+    }
+}
+
+
+
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    /* Display Hamburger */
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        padding: 13px;
+        position: fixed;
+        top: 10px;
+        right: 5.5px;
+        z-index: 1001;
+        background-color: #1B7476;
+        border-radius: 8px;
+        transform: scale(0.8);
+    }
+
+    .bar {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 5px 0;
+        transition: 0.4s;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav {
+        background: none; /* Remove the gradient background */
+        padding: 0; /* Remove any padding */
+        height: auto; /* Allow the height to adjust automatically */
+    }
+
+    .nav-menu {
+        display: none;
+        position: fixed;
+        top: 50px;
+        right: 11px;
+        width: 200px;
+        background-color: #1B7476;
+        padding: 10px 0;
+        border-radius: 8px 0 8px 8px;
+        overflow: hidden;
+        z-index: 1000;
+    }
+
+    .nav-menu.show {
+        display: block;
+        max-height: 100vh;
+        overflow-y: auto;
+    }
+
+    .nav-item {
+        display: block;
+        padding: 10px 20px;
+        color: white;
+        text-decoration: none;
+        transition: background-color 0.3s;
+        font-size: 16px;
+    }
+
+    .nav-dropdown {
+        position: relative;
+    }
+
+    .nav-dropdown > .nav-item .arrow-container {
+        display: inline-flex; /* Show the arrow for Research menu */
+    }
+
+    .dropdown-content {
+        display: none;
+        background-color: transparent; /* Remove background */
+        box-shadow: none;
+        padding-left: 5px; /* Indent submenu items */
+        position: static; /* Ensure it's not absolutely positioned */
+    }
+
+    .nav-dropdown.active .dropdown-content {
+        display: block; /* Show submenu when active */
+    }
+
+    /* Remove background color and box shadow for active items */
+    .nav-item.active,
+    .nav-item:hover {
+        background-color: transparent !important;
+        box-shadow: none !important;
+    }
+
+    /* Remove any padding changes for active items */
+    .nav-item.active {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    /* Ensure dropdown content is displayed normally */
+    .nav-dropdown.active .dropdown-content {
+        display: block;
+        background-color: transparent;
+    }
+
+    /* Remove hover effects for dropdown items */
+    .dropdown-content a:hover {
+        background-color: transparent;
+    }
+
+    /* Adjust Hero Section for Mobile */
+    .project-hero {
+        height:18vh; /* Allow height to adjust based on content */
+        padding: 10px 0; /* Reduced padding for conciseness */
+    }
+
+    .project-hero h1 {
+        font-size: 2rem; /* Further reduced font size for better fit on mobile */
+        white-space: normal;
+        text-align: center;
+        margin-bottom: 0.5rem; /* Added margin for spacing */
+    }
+
+    .project-hero p {
+        font-size: 0.9rem; /* Adjusted for better readability */
+        margin-top: 0.5rem;
+    }
+
+    .project-container {
+        padding: 2rem 1rem; /* Reduced padding for better fit */
+    }
+
+    .project-container h2 {
+        font-size: 1.5rem; /* Reduced font size */
+    }
+
+    .project-container p {
+        font-size: 0.85rem; /* Reduced font size */
+    }
+
+    .tools-languages {
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    .tools-languages p {
+        font-size: 0.9rem; /* Reduced font size */
+    }
+
+    .tool-icon {
+        width: 24px;  /* Further adjusted for better fit */
+        height: 24px; /* Further adjusted for better fit */
+    }
+
+   
+}
