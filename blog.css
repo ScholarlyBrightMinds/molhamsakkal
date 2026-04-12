@@ -6,7 +6,7 @@ body, html {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     overflow-x: hidden; /* Prevent horizontal scrollbar due to animations */
-    background: black;
+    background: #0f172a;
     background-size: 400% 400%;
     animation: gradient 30s ease infinite;
     display: flex;
@@ -25,7 +25,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Positions nav at top and copyright at bottom */
-    background: black; /* Unified gradient */
+    background: #0f172a; /* Unified gradient */
     background-size: 400% 400%;
     animation: gradient 20s ease infinite;
     position: relative;
@@ -71,7 +71,7 @@ main {
 }
 
 .nav-item:hover {
-    background-color: #1B7476;
+    background-color: #4338ca;
 }
 
 .nav-item.active {
@@ -88,7 +88,7 @@ main {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #1B7478;
+    background-color: #4338ca;
     min-width: 100%;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -113,7 +113,7 @@ main {
 }
 
 .dropdown-content a:hover {
-    background-color: #125fdc;
+    background-color: #6366f1;
 }
 
 /* Pseudo-element to cover the gap */
@@ -226,7 +226,7 @@ main {
 }
 
 .blog-item:hover {
-    color: #4af626; /* Green Hover Effect */
+    color: #a5b4fc; /* Green Hover Effect */
 }
 
 .blog-title {
@@ -351,7 +351,7 @@ main {
         top: 10px;
         right: 5.5px;
         z-index: 1001;
-        background-color: #1B7476;
+        background-color: #4338ca;
         border-radius: 8px;
         transform: scale(0.8);
     }
@@ -388,7 +388,7 @@ main {
         top: 50px;
         right: 11px;
         width: 200px;
-        background-color: #1B7476;
+        background-color: #4338ca;
         padding: 10px 0;
         border-radius: 8px 0 8px 8px;
         overflow: hidden;
@@ -509,7 +509,7 @@ main {
 }
 /* Footer Styles */
 footer {
-    background: black;
+    background: #0f172a;
     background-size: 400% 400%;
     animation: gradient 20s ease infinite;
     color: white;
@@ -612,7 +612,7 @@ footer p {
 
     .read-more {
         display: inline-block; /* Show the read more link */
-        color: #1B7476;
+        color: #4338ca;
         font-size: 14px;
         margin-top: 10px;
         text-decoration: none;

@@ -5,7 +5,7 @@ body, html {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     overflow-x: hidden; /* Prevent horizontal scrollbar due to animations */
-    background: black;
+    background: #0f172a;
     background-size: 400% 400%;
     animation: gradient 30s ease infinite;
 }
@@ -21,7 +21,7 @@ body, html {
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Positions nav at top and copyright at bottom */
-    background: black; /* Unified gradient */
+    background: #0f172a; /* Unified gradient */
     background-size: 400% 400%;
     animation: gradient 20s ease infinite;
     position: relative;
@@ -67,7 +67,7 @@ body, html {
 }
 
 .nav-item:hover {
-    background-color: #1B7476;
+    background-color: #4338ca;
 }
 
 .nav-item.active {
@@ -84,7 +84,7 @@ body, html {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #1B7478;
+    background-color: #4338ca;
     min-width: 100%;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -109,7 +109,7 @@ body, html {
 }
 
 .dropdown-content a:hover {
-    background-color: #125fdc;
+    background-color: #6366f1;
 }
 
 /* Pseudo-element to cover the gap */
@@ -277,7 +277,7 @@ body, html {
 }
 
 .gradient-moving {
-    background: linear-gradient(-45deg, #eafffa, #e6fffd, #f0fffe, #f6fffe);
+    background: linear-gradient(-45deg, #eef2ff, #e0e7ff, #ede9fe, #f5f3ff);
     background-size: 400% 400%;
     animation: gradientAnimation 15s ease infinite;
 }
@@ -330,7 +330,7 @@ body, html {
         top: 10px;
         right: 5.5px;
         z-index: 1001;
-        background-color: #1B7476;
+        background-color: #4338ca;
         border-radius: 8px;
         transform: scale(0.8);
     }
@@ -367,7 +367,7 @@ body, html {
         top: 50px;
         right: 11px;
         width: 200px;
-        background-color: #1B7476;
+        background-color: #4338ca;
         padding: 10px 0;
         border-radius: 8px 0 8px 8px;
         overflow: hidden;
@@ -506,7 +506,7 @@ body, html {
 }
 /* Footer Styles */
 footer {
-    background: black;
+    background: #0f172a;
     background-size: 400% 400%;
     animation: gradient 20s ease infinite;
     color: white;
@@ -626,7 +626,7 @@ footer .footer-links a:hover {
 
     .read-more {
         display: inline-block; /* Show the read more link */
-        color: #1B7476;
+        color: #4338ca;
         font-size: 14px;
         margin-top: 10px;
         text-decoration: none;
