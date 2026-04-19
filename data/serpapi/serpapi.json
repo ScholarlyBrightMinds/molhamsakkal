@@ -1,74 +1,137 @@
 [
   {
-    "title": "Public perceptions of AI-assisted cancer care in Abu Dhabi, UAE: A cross-sectional survey",
-    "authors": "R Ghemrawi, M Sakkal, K Kayed, W Mousa, M Khair",
-    "venue": "Supportive Care in Cancer 34, 162, 2026",
-    "year": "2026",
-    "cited_by": 0,
-    "link": "https://doi.org/10.1007/s00520-026-10389-4",
+    "title": "Nanomedicines: emerging platforms in smart chemotherapy treatment—a recent review",
+    "authors": "M Arafat, M Sakkal, R Beiram, S AbuRuz",
+    "venue": "Pharmaceuticals 17 (3), 315, 2024",
+    "year": "2024",
+    "cited_by": 39,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JO1OQj8AAAAJ&citation_for_view=JO1OQj8AAAAJ:UeHWp8X0CEIC",
+    "author_id": "JO1OQj8AAAAJ"
+  },
+  {
+    "title": "Effect of excipients on the quality of drug formulation and immediate release of generic metformin HCl tablets",
+    "authors": "M Arafat, M Sakkal, P Yuvaraju, A Esmaeil, V Poulose, S Aburuz",
+    "venue": "Pharmaceuticals 16 (4), 539, 2023",
+    "year": "2023",
+    "cited_by": 15,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JO1OQj8AAAAJ&citation_for_view=JO1OQj8AAAAJ:9yKSN-GCB0IC",
+    "author_id": "JO1OQj8AAAAJ"
+  },
+  {
+    "title": "Preparation and characterization of theophylline controlled release matrix system incorporating poloxamer 407, stearyl alcohol, and hydroxypropyl methylcellulose: A novel …",
+    "authors": "M Sakkal, M Arafat, P Yuvaraju, R Beiram, S AbuRuz",
+    "venue": "Polymers 16 (5), 643, 2024",
+    "year": "2024",
+    "cited_by": 12,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JO1OQj8AAAAJ&citation_for_view=JO1OQj8AAAAJ:qjMakFHDy7sC",
     "author_id": "JO1OQj8AAAAJ"
   },
   {
     "title": "Machine learning predictions of tumor progression: How reliable are we?",
-    "authors": "M Sakkal, AZ Al Meslamani",
+    "authors": "M Sakkal, A Abou Hajal",
     "venue": "Computers in Biology and Medicine 191, 110156, 2025",
     "year": "2025",
-    "cited_by": 1,
-    "link": "https://doi.org/10.1016/j.compbiomed.2025.110156",
-    "author_id": "JO1OQj8AAAAJ"
-  },
-  {
-    "title": "Synergistic Modulation of ER Stress and Insulin Potentiation Therapy for Enhanced Cancer Treatment",
-    "authors": "N Al Damook, M Sakkal, S Kremesh, R Ghemrawi",
-    "venue": "Pharmaceuticals 18 (4), 2025",
-    "year": "2025",
-    "cited_by": 0,
-    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JO1OQj8AAAAJ",
-    "author_id": "JO1OQj8AAAAJ"
-  },
-  {
-    "title": "Spatially resolved airway niches: mapping epithelial-immune microenvironments in asthma",
-    "authors": "M Sakkal, A Jarab, AZ Al Meslamani",
-    "venue": "Journal of Asthma, 2025",
-    "year": "2025",
-    "cited_by": 0,
-    "link": "https://www.researchgate.net/publication/396986076",
-    "author_id": "JO1OQj8AAAAJ"
-  },
-  {
-    "title": "Inhalable nanoparticle-based drug delivery system for non-small cell lung cancer therapy: promises and challenges",
-    "authors": "M Sakkal, RWA Abdelmoteleb, A Al Ali, YA Bin Jardan, R Löbenberg, M Sarfraz",
-    "venue": "Saudi Pharmaceutical Journal, 2025",
-    "year": "2025",
-    "cited_by": 2,
-    "link": "https://doi.org/10.1007/s44446-025-00046-y",
-    "author_id": "JO1OQj8AAAAJ"
-  },
-  {
-    "title": "Language models for drug–drug interactions: current applications, pitfalls, and future directions",
-    "authors": "AZ Al Meslamani, M Sakkal",
-    "venue": "Expert Opinion on Drug Metabolism & Toxicology, 2025",
-    "year": "2025",
-    "cited_by": 0,
-    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JO1OQj8AAAAJ",
-    "author_id": "JO1OQj8AAAAJ"
-  },
-  {
-    "title": "Nanomedicines: Emerging Platforms in Smart Chemotherapy Treatment—A Recent Review",
-    "authors": "M Arafat, M Sakkal, R Beiram, S AbuRuz",
-    "venue": "Pharmaceuticals 16 (3), 2024",
-    "year": "2024",
-    "cited_by": 17,
-    "link": "https://pubmed.ncbi.nlm.nih.gov/38543101/",
+    "cited_by": 8,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JO1OQj8AAAAJ&citation_for_view=JO1OQj8AAAAJ:IjCSPb-OGe4C",
     "author_id": "JO1OQj8AAAAJ"
   },
   {
     "title": "Enteric-coating film effect on the delayed drug release of pantoprazole gastro-resistant generic tablets",
-    "authors": "M Arafat, M Sakkal, MF Bostanudin, OA Alhanbali, P Yuvaraju, R Beiram, B Sadek, A Akour, S Aburuz",
+    "authors": "M Arafat, M Sakkal, MF Bostanudin, OA Alhanbali, P Yuvaraju, R Beiram, ...",
     "venue": "F1000Research 12, 1325, 2023",
     "year": "2023",
+    "cited_by": 8,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JO1OQj8AAAAJ&citation_for_view=JO1OQj8AAAAJ:u5HHmVD_uO8C",
+    "author_id": "JO1OQj8AAAAJ"
+  },
+  {
+    "title": "Chemical Composition of the Volatile Oil from Aerial Parts of Rosmarinus officinalis L. Growing in UAE",
+    "authors": "MM Hudaib, AF Abu Hajal, MM Sakkal",
+    "venue": "Journal of Essential Oil Bearing Plants 25 (2), 282-289, 2022",
+    "year": "2022",
+    "cited_by": 7,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JO1OQj8AAAAJ&citation_for_view=JO1OQj8AAAAJ:d1gkVwhDpl0C",
+    "author_id": "JO1OQj8AAAAJ"
+  },
+  {
+    "title": "Effect of hydration forms and polymer grades on theophylline controlled-release tablet: An assessment and evaluation",
+    "authors": "M Sakkal, M Arafat, P Yuvaraju, R Beiram, L Ali, M Altarawneh, ...",
+    "venue": "Pharmaceuticals 17 (3), 271, 2024",
+    "year": "2024",
+    "cited_by": 5,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JO1OQj8AAAAJ&citation_for_view=JO1OQj8AAAAJ:2osOgNQ5qMEC",
+    "author_id": "JO1OQj8AAAAJ"
+  },
+  {
+    "title": "Inhalable nanoparticle-based drug delivery system for non-small cell lung cancer therapy: Promises and challenges",
+    "authors": "M Sakkal, RWA Abdelmoteleb, A Al Ali, YAB Jardan, R Löbenberg, ...",
+    "venue": "Saudi Pharmaceutical Journal 33 (6), 50, 2025",
+    "year": "2025",
     "cited_by": 3,
-    "link": "https://doi.org/10.12688/f1000research.140607.1",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JO1OQj8AAAAJ&citation_for_view=JO1OQj8AAAAJ:YsMSGLbcyi4C",
+    "author_id": "JO1OQj8AAAAJ"
+  },
+  {
+    "title": "Spatially resolved airway niches: mapping epithelial–immune microenvironments in asthma",
+    "authors": "M Sakkal, AS Jarab, AZ Al Meslamani",
+    "venue": "Expert Review of Respiratory Medicine 20 (3), 307-320, 2026",
+    "year": "2026",
+    "cited_by": 1,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JO1OQj8AAAAJ&citation_for_view=JO1OQj8AAAAJ:Y0pCki6q_DkC",
+    "author_id": "JO1OQj8AAAAJ"
+  },
+  {
+    "title": "Targeting Cancer Through Thymoquinone: From Molecular Mechanisms to Clinical Prospects",
+    "authors": "N Al-Damook, M Sakkal, M Khair, WK Mousa, G Khoder, R Ghemrawi",
+    "venue": "International Journal of Molecular Sciences 26 (22), 11029, 2025",
+    "year": "2025",
+    "cited_by": 1,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JO1OQj8AAAAJ&citation_for_view=JO1OQj8AAAAJ:W7OEmFMy1HYC",
+    "author_id": "JO1OQj8AAAAJ"
+  },
+  {
+    "title": "The Discovery of Small ERK5 Inhibitors via Structure-Based Virtual Screening, Biological Evaluation and MD Simulations",
+    "authors": "N Atatreh, RE Mahgoub, R Ghemrawi, M Sakkal, N Sammani, M Khair, ...",
+    "venue": "Molecules 30 (21), 4181, 2025",
+    "year": "2025",
+    "cited_by": 1,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JO1OQj8AAAAJ&citation_for_view=JO1OQj8AAAAJ:Tyk-4Ss8FVUC",
+    "author_id": "JO1OQj8AAAAJ"
+  },
+  {
+    "title": "Synergistic Modulation of ER Stress and Insulin Potentiation Therapy for Enhanced Cancer Treatment",
+    "authors": "N Al-Damook, M Sakkal, S Kremesh, WK Mousa, M Khair, G Khoder, ...",
+    "venue": "Cell Therapy & Engineering Connect 1 (1), 1-10, 2025",
+    "year": "2025",
+    "cited_by": 1,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JO1OQj8AAAAJ&citation_for_view=JO1OQj8AAAAJ:zYLM7Y9cAGgC",
+    "author_id": "JO1OQj8AAAAJ"
+  },
+  {
+    "title": "Introducing AutoML framework for Drug–Drug Interaction Prediction: Application of AutoGluon",
+    "authors": "A Abou Hajal, M Sakkal",
+    "venue": "Toxicology Mechanisms and Methods, 1-11, 2026",
+    "year": "2026",
+    "cited_by": 0,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JO1OQj8AAAAJ&citation_for_view=JO1OQj8AAAAJ:ufrVoPGSRksC",
+    "author_id": "JO1OQj8AAAAJ"
+  },
+  {
+    "title": "Public perceptions of AI-assisted cancer care in Abu Dhabi, UAE: A cross-sectional survey",
+    "authors": "R Ghemrawi, M Sakkal, K Kayed, W Mousa, M Khair",
+    "venue": "Supportive Care in Cancer 34 (2), 162, 2026",
+    "year": "2026",
+    "cited_by": 0,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JO1OQj8AAAAJ&citation_for_view=JO1OQj8AAAAJ:WF5omc3nYNoC",
+    "author_id": "JO1OQj8AAAAJ"
+  },
+  {
+    "title": "Large language models in drug delivery: A review of the current landscape and future perspectives",
+    "authors": "M Sakkal, A Abou Hajal",
+    "venue": "Journal of Pharmaceutical Sciences, 104147, 2025",
+    "year": "2025",
+    "cited_by": 0,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JO1OQj8AAAAJ&citation_for_view=JO1OQj8AAAAJ:eQOLeE2rZwMC",
     "author_id": "JO1OQj8AAAAJ"
   }
 ]
