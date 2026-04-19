@@ -1,102 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <title>About – Molham Sakkal</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <link rel="icon" href="images/profile.png" type="image/png">
-  <link rel="stylesheet" href="about.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-  <script>
-    WebFont.load({ google:{ families:["Public Sans:300,400,500,700","Roboto:300,400,500,700"] }});
-  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="About Molham Sakkal — researcher in AI × drug discovery, career journey, and research pillars.">
+<title>About · Molham Sakkal</title>
+
+<link rel="icon" href="images/profile.png" type="image/png">
+<link rel="apple-touch-icon" href="images/profile.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Manrope:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<script src="theme.config.js"></script>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="about.css">
 </head>
-<body class="projects-page">
-  <header class="header">
-    <nav class="nav">
-      <div class="hamburger"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
-      <div class="nav-content">
-        <div class="nav-menu">
-          <a href="index.html" class="nav-item">Home</a>
-          <a href="about.html" class="nav-item active">About</a>
-          <a href="projects.html" class="nav-item">Ongoing Research</a>
-          <a href="publications.html" class="nav-item">Publications</a>
-        </div>
-      </div>
-    </nav>
+<body>
 
-    <div class="about-hero">
-      <div class="container">
-        <div class="hero-content">
-          <div class="hero-text">
-            <h1>About</h1>
-          </div>
-        </div>
-      </div>
-      <img src="images/boundary.svg" alt="" class="hero-section-cutter-image">
-    </div>
-  </header>
+<!-- Molecular background -->
+<div class="mol-bg" aria-hidden="true">
+    <svg class="mol-1" viewBox="0 0 100 100"><polygon points="30,25 55,25 67,50 55,75 30,75 18,50"/><line x1="67" y1="50" x2="82" y2="50"/><circle cx="85" cy="50" r="2.5"/></svg>
+    <svg class="mol-2 amber" viewBox="0 0 100 100"><polygon points="50,20 78,38 68,68 32,68 22,38"/><line x1="78" y1="38" x2="92" y2="28"/><circle cx="94" cy="28" r="2"/></svg>
+    <svg class="mol-3" viewBox="0 0 140 100"><polygon points="30,30 55,30 67,52 55,74 30,74 18,52"/><polygon points="67,30 92,30 104,52 92,74 67,74 55,52"/><line x1="104" y1="52" x2="120" y2="52"/><circle cx="123" cy="52" r="2.5"/></svg>
+    <svg class="mol-4" viewBox="0 0 100 100"><polygon points="35,28 65,28 80,55 65,82 35,82 20,55"/><circle cx="50" cy="55" r="14" fill="none" stroke-dasharray="2 3"/></svg>
+    <svg class="mol-5 amber" viewBox="0 0 100 100"><line x1="50" y1="50" x2="30" y2="30" stroke-width="1.5"/><line x1="50" y1="50" x2="70" y2="30" stroke-width="1.5"/><line x1="50" y1="50" x2="30" y2="70" stroke-width="1.5"/><line x1="50" y1="50" x2="70" y2="70" stroke-width="1.5"/><circle cx="30" cy="30" r="3"/><circle cx="70" cy="30" r="3"/><circle cx="30" cy="70" r="3"/><circle cx="70" cy="70" r="3"/><circle cx="50" cy="50" r="4"/></svg>
+</div>
 
-  <main class="about-content">
-    <section class="about-grid">
+<nav class="nav" data-page="about"></nav>
 
-      <!-- Bachelor -->
-      <article class="about-card" aria-label="Bachelor of Pharmacy at Al Ain University"
-        style="--bg:url('images/AAU.png');">
-        <div class="card-top">
-          <h2 class="card-title">Bachelor</h2>
-        </div>
-        <div class="card-overlay">
-          <h3>B.Pharm.</h3>
-          <p>
-            <strong>Al Ain University</strong> — Abu Dhabi, UAE.<br/>
-            Bachelor of Pharmacy (BPharm), with hands-on training in pharmaceutical analysis and drug formulation.
-          </p>
-        </div>
-      </article>
+<main>
 
-      <!-- Master -->
-      <article class="about-card" aria-label="Master in Pharmaceutical Sciences"
-        style="--bg:url('images/mast.png');">
-        <div class="card-top">
-          <h2 class="card-title">Master</h2>
-        </div>
-        <div class="card-overlay">
-          <h3>M.Sc. Pharmaceutical Sciences</h3>
-          <p>
-            <strong>Al Ain University</strong> — Abu Dhabi, UAE.<br/>
-            Specialized in <strong>drug delivery and formulation development</strong>, contributing to multiple research projects that sharpened scientific writing, data interpretation, and problem-solving skills.
-          </p>
-        </div>
-      </article>
-
-      <!-- Work -->
-      <article class="about-card" aria-label="Laboratory & Research Supervisor at HBRC"
-        style="--bg:url('images/WORK.png');">
-        <div class="card-top">
-          <h2 class="card-title">Work</h2>
-        </div>
-        <div class="card-overlay">
-          <h3>Lab &amp; Research Supervisor</h3>
-          <p>
-            Currently at the <strong>Health and Biomedical Research Center (HBRC)</strong>,
-            <a class="brand-aau" href="https://www.aau.ac.ae" target="_blank" rel="noopener">Al Ain University</a>.
-            Leading research in molecular oncology, cancer cell biology, and drug delivery systems, with collaborations at UAEU, NYU Abu Dhabi, and the University of Sharjah.
-          </p>
-        </div>
-      </article>
-
+    <section class="sub-hero">
+        <p class="sub-meta">About</p>
+        <h1>The <em>short</em> version.</h1>
+        <p class="sub-lede" data-bind="aboutLede"></p>
     </section>
-  </main>
 
-  <footer>
-    <p>&copy; 2025 Molham Sakkal, a fork of
-      <a href="https://github.com/muhammedrashidx/ScholarSite_2.0" target="_blank" style="text-decoration: underline; color:#a5b4fc;">
-        ScholarSite_2.0
-      </a>
-    </p>
-  </footer>
+    <hr class="rule">
 
-  <script src="scripts.js"></script>
+    <!-- ═══ NARRATIVE + TIMELINE ═══ -->
+    <section class="about-grid reveal">
+        <div class="about-text" data-bind="aboutParagraphs"></div>
+        <div class="timeline" data-bind="timeline" aria-label="Career timeline"></div>
+    </section>
+
+    <hr class="rule">
+
+    <!-- ═══ RESEARCH PILLARS ═══ -->
+    <section class="reveal">
+        <p class="sec-kicker">Research</p>
+        <h2 class="sec-title">Three <em>pillars</em>.</h2>
+        <div class="pillars-grid" data-bind="aboutPillars"></div>
+    </section>
+
+    <hr class="rule">
+
+    <!-- ═══ AWARDS ═══ -->
+    <section class="reveal">
+        <p class="sec-kicker">Recognition</p>
+        <h2 class="sec-title">Awards &amp; <em>honours</em>.</h2>
+        <ul class="awards-list" data-bind="awards"></ul>
+    </section>
+
+</main>
+
+<footer data-bind="footer"></footer>
+
+<script src="scripts.js"></script>
 </body>
 </html>
