@@ -1,117 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <title>Home - Molham Sakkal</title>
-    <meta content="width=device-width, initial-scale=1" name="viewport"/>
-    <link rel="icon" href="images/profile.png" type="image/png">
-    <link href="styles.css" rel="stylesheet" type="text/css"/>
-    <link rel="icon" type="image/png" sizes="32x32" href="images/profile.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/profile.png">
-    <link rel="apple-touch-icon" href="images/profile.png">
-    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        WebFont.load({
-            google: {
-                families: [
-                    "Switzer:100,200,300,regular,500,600,700,800,900",
-                    "Roboto:100,300,regular,500,700,900",
-                    "DM Sans:regular,italic,500,500italic,700,700italic",
-                    "Source Sans Pro:regular,italic,600,700,900"
-                ]
-            }
-        });
-    </script>
-    <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@graph": [
-            {
-              "@type": "Person",
-              "name": "Molham Sakkal",
-              "givenName": "Molham",
-              "familyName": "Sakkal",
-              "description": "Laboratory and Research Supervisor specializing in cancer cell biology and drug delivery",
-              "jobTitle": "Laboratory & Research Supervisor",
-              "url": "https://scholarlybrightminds.github.io/molhamsakkal/",
-              "sameAs": [
-                "https://scholar.google.com/citations?user=JO1OQj8AAAAJ&hl=en",
-                "https://orcid.org/0000-0001-6081-1284",
-                "https://www.linkedin.com/in/mohd-molham-sakkal"
-              ],
-              "affiliation": {
-                "@type": "EducationalOrganization",
-                "name": "Al Ain University",
-                "department": {
-                  "@type": "Organization",
-                  "name": "Health and Biomedical Research Center (HBRC)"
-                }
-              },
-              "knowsAbout": ["Cancer Cell Biology","Drug Delivery","Molecular Oncology","Nanoformulations"]
-            }
-          ]
-        }
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Molham Sakkal · Cancer Biology &amp; Drug Delivery · Researcher &amp; Data Analyst">
+<title>Molham Sakkal · Cancer Biology &amp; Drug Delivery</title>
+
+<link rel="icon" href="images/profile.png" type="image/png">
+<link rel="apple-touch-icon" href="images/profile.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Manrope:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- Theme config (must load BEFORE styles so CSS vars are set) -->
+<script src="theme.config.js"></script>
+
+<!-- Styles -->
+<link rel="stylesheet" href="styles.css">
+
+<style>
+    /* ── home-specific polish only ── */
+    .home-pillars {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+    .hp-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 1.4rem 1.3rem;
+        transition: all .3s var(--ease);
+    }
+    .hp-card:hover {
+        transform: translateY(-2px);
+        border-color: var(--accent);
+        box-shadow: var(--shadow-card);
+    }
+    .hp-icon {
+        width: 34px; height: 34px;
+        border-radius: 8px;
+        background: var(--accent-bg);
+        display: grid;
+        place-items: center;
+        color: var(--accent);
+        margin-bottom: 0.9rem;
+    }
+    .hp-icon svg { width: 18px; height: 18px; }
+    .hp-title {
+        font-family: var(--display);
+        font-size: 1rem;
+        font-weight: 500;
+        margin-bottom: 0.35rem;
+        color: var(--text);
+    }
+    .hp-desc {
+        font-size: 0.82rem;
+        color: var(--text-soft);
+        line-height: 1.5;
+    }
+    @media (max-width: 760px) {
+        .home-pillars { grid-template-columns: 1fr; }
+    }
+</style>
 </head>
 <body>
-    <header class="header">
-        <nav class="nav">
-            <div class="hamburger">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
-            <div class="nav-content">
-                <div class="nav-menu">
-                    <a href="index.html" class="nav-item active">Home</a>
-                    <a href="about.html" class="nav-item">About</a>
-                    <a href="projects.html" class="nav-item">Ongoing Research</a>
-                    <a href="publications.html" class="nav-item">Publications</a>
-                </div>
-            </div>
-        </nav>
 
-        <div class="hero-section">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <h1>Molham Sakkal</h1>
-                        <p>Laboratory &amp; Research Supervisor at
-                        <a href="https://www.aau.ac.ae" target="_blank" rel="noopener">Al Ain University – HBRC</a>
-                        </p>
-                        <p>I am a Laboratory and Research Supervisor at the Health and Biomedical Research Center, Al Ain University, specializing in cancer cell biology and drug delivery. I work on several research projects mainly in the fields of molecular oncology and cell-based therapeutics, while guiding postgraduate students in advanced cell culture techniques and experimental design to support translational cancer research. Passionate about bridging laboratory innovation with real-world therapeutic impact, I strive to advance precision medicine through continuous learning, collaboration, and the pursuit of my PhD studies.</p>
-                        <div class="social-links">
-                            <a href="https://www.scopus.com/authid/detail.uri?authorId=58209400600" target="_blank" class="social-icon">
-                                <img src="images/Scopus.png" alt="Scopus">
-                            </a>
-                            <a href="https://scholar.google.com/citations?user=JO1OQj8AAAAJ&hl=en" target="_blank" class="social-icon">
-                                <img src="images/google-scholar.svg" alt="Google Scholar">
-                            </a>
-                            <a href="https://orcid.org/0000-0001-6081-1284" target="_blank" class="social-icon">
-                                <img src="images/orcid.svg" alt="ORCID">
-                            </a>
-                            <a href="https://www.linkedin.com/in/mohd-molham-sakkal" target="_blank" class="social-icon">
-                                <img src="images/linkedin.svg" alt="LinkedIn">
-                            </a>
-                            <a href="mailto:Molham.sakkal@gmail.com" class="social-icon" aria-label="Email">
-                                <img src="images/Email.png" alt="Email">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="hero-image">
-                        <img src="images/profile.png" alt="Molham Sakkal" class="profile-image">
-                    </div>
-                </div>
-                <div class="copyright">
-                    <p>&copy; 2025 Molham Sakkal, a fork of
-                        <a href="https://github.com/muhammedrashidx/ScholarSite_2.0" target="_blank" style="text-decoration:underline;color:#a5b4fc;">
-                            ScholarSite_2.0
-                        </a>
-                    </p>
-                </div>
-            </div>
+<!-- ═══ MOLECULAR BACKGROUND (subtle) ═══ -->
+<div class="mol-bg" aria-hidden="true">
+    <svg class="mol-1" viewBox="0 0 100 100">
+        <polygon points="30,25 55,25 67,50 55,75 30,75 18,50"/>
+        <line x1="67" y1="50" x2="82" y2="50"/>
+        <circle cx="85" cy="50" r="2.5"/>
+        <line x1="24" y1="37" x2="24" y2="63" stroke-width="2"/>
+        <line x1="60" y1="37" x2="60" y2="63" stroke-width="2"/>
+    </svg>
+    <svg class="mol-2 amber" viewBox="0 0 100 100">
+        <polygon points="50,20 78,38 68,68 32,68 22,38"/>
+        <line x1="50" y1="20" x2="50" y2="5"/>
+        <circle cx="50" cy="3" r="2"/>
+        <line x1="78" y1="38" x2="92" y2="28"/>
+    </svg>
+    <svg class="mol-3" viewBox="0 0 140 100">
+        <polygon points="30,30 55,30 67,52 55,74 30,74 18,52"/>
+        <polygon points="67,30 92,30 104,52 92,74 67,74 55,52"/>
+        <line x1="104" y1="52" x2="120" y2="52"/>
+        <circle cx="123" cy="52" r="2.5"/>
+        <line x1="24" y1="42" x2="24" y2="62" stroke-width="2"/>
+        <line x1="97" y1="42" x2="97" y2="62" stroke-width="2"/>
+    </svg>
+    <svg class="mol-4" viewBox="0 0 100 100">
+        <polygon points="35,28 65,28 80,55 65,82 35,82 20,55"/>
+        <circle cx="50" cy="55" r="14" fill="none" stroke-dasharray="2 3"/>
+    </svg>
+    <svg class="mol-5 amber" viewBox="0 0 100 100">
+        <line x1="50" y1="50" x2="30" y2="30" stroke-width="1.5"/>
+        <line x1="50" y1="50" x2="70" y2="30" stroke-width="1.5"/>
+        <line x1="50" y1="50" x2="30" y2="70" stroke-width="1.5"/>
+        <line x1="50" y1="50" x2="70" y2="70" stroke-width="1.5"/>
+        <circle cx="30" cy="30" r="3"/>
+        <circle cx="70" cy="30" r="3"/>
+        <circle cx="30" cy="70" r="3"/>
+        <circle cx="70" cy="70" r="3"/>
+        <circle cx="50" cy="50" r="4"/>
+    </svg>
+</div>
+
+<!-- Nav rendered by scripts.js based on config -->
+<nav class="nav" data-page="home"></nav>
+
+<main>
+    <!-- ═══ HERO ═══ -->
+    <section class="hero">
+        <div class="hero-text">
+            <span class="hero-status">
+                <span class="live-dot"></span>
+                <span data-bind="statusText">Currently · exploring</span>
+            </span>
+            <h1 data-bind="heading"></h1>
+            <p class="hero-tagline" data-bind="tagline"></p>
+            <p class="hero-bio" data-bind="bio"></p>
+            <div class="chips" data-bind="chips"></div>
+            <div class="social-links" data-bind="social"></div>
         </div>
-    </header>
-    <script src="scripts.js"></script>
+        <div class="hero-image">
+            <img data-bind="photo" alt="Profile">
+        </div>
+    </section>
+
+    <hr class="rule">
+
+    <!-- ═══ RESEARCH PILLARS PREVIEW ═══ -->
+    <section class="reveal">
+        <p class="sec-kicker">Research</p>
+        <h2 class="sec-title">What I <em>work on</em>.</h2>
+        <div class="home-pillars" data-bind="pillars"></div>
+    </section>
+</main>
+
+<footer data-bind="footer"></footer>
+
+<script src="scripts.js"></script>
 </body>
 </html>

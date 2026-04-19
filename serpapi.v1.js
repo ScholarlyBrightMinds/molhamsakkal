@@ -23,12 +23,10 @@ const classify = it => {
     venue.includes("journal") || venue.includes("review") ||
     venue.includes("pharmaceutical") || venue.includes("chemical") ||
     venue.includes("economics") || venue.includes("letters") ||
-    venue.includes("bulletin") || venue.includes("annals") ||
-    venue.includes("cancer") || venue.includes("biology") ||
-    venue.includes("medicine") || venue.includes("care")
+    venue.includes("bulletin") || venue.includes("annals")
   )
     return "article";
-  return "article";
+  return "article"; // default: treat as article rather than hiding it
 };
 
 const hIndex = (arr = []) => {
@@ -48,11 +46,14 @@ const setText = (id, val) => {
 /* ── metrics ─────────────────────────────────────────────────── */
 
 function renderOfficialMetrics(m) {
+  // KEY FIX: don't trust the file if citations AND h-index are both zero —
+  // that means the fetcher's API call failed and wrote zeros to disk.
+  // Fall through to computed metrics instead.
   if (!m || typeof m !== "object") return false;
   const total = Number(m.total_documents);
   const cites = Number(m.total_citations);
   const h     = Number(m.h_index);
-  if (!cites && !h) return false;
+  if (!cites && !h) return false;   // zeros → don't trust, compute instead
   setText("m-total", total);
   setText("m-cites", cites);
   setText("m-h",     h);
@@ -74,7 +75,7 @@ function card(it, kind) {
   const title  = it.title || "Untitled";
   const venue  = it.venue || "Journal";
   const date   = fmtDate(it.year);
-  const MINE   = /sakkal|molham/i;
+  const MINE   = /abou.*hajal|hajal.*abou|abdallah/i;
   const authorsHtml = it.authors
     ? it.authors.split(", ").map(a => MINE.test(a) ? `<strong>${a}</strong>` : a).join(", ")
     : "";
@@ -112,11 +113,13 @@ function card(it, kind) {
   const $list = document.getElementById("list-articles");
   if (!$list) return;
 
+  // Show a loading placeholder immediately
   $list.innerHTML = `<p style="color:#888;font-style:italic;padding:20px;text-align:center">Loading publications…</p>`;
 
   let pubs     = [];
   let official = null;
 
+  // Daily cache-bust — avoids stale data without hammering the CDN every millisecond
   const bust = Math.floor(Date.now() / 86_400_000);
 
   try {
@@ -131,12 +134,14 @@ function card(it, kind) {
     console.error("serpapi.json fetch error:", e);
   }
 
+  // Sort: newest first, then alphabetical within the same year
   pubs.sort((a, b) => {
     const ay = +a.year || 0, by = +b.year || 0;
     if (ay !== by) return by - ay;
     return (a.title || "").localeCompare(b.title || "");
   });
 
+  // Fetch official metrics and apply — fall back to computed if zeros/missing
   try {
     const m = await fetch(`${METRICS_PATH}?v=${bust}`, { cache: "no-store" });
     if (m.ok) official = await m.json();
@@ -148,6 +153,7 @@ function card(it, kind) {
     renderComputedMetrics(pubs);
   }
 
+  // Render all publications
   $list.innerHTML = "";
   if (!pubs.length) {
     $list.innerHTML = `<p style="color:#666">No publications found.</p>`;
