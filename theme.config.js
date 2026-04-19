@@ -138,6 +138,7 @@ window.SITE_CONFIG = {
     },
 
     // ── Ongoing research ─────────────────────────────────────────
+    // statusKind: 'active' | 'review' | 'published' | 'draft'
     projects: [
         {
             n: "01",
@@ -145,7 +146,9 @@ window.SITE_CONFIG = {
             title: "Synergistic Anticancer Drug Combinations",
             desc: "Enhancing treatment outcomes through drug–drug synergy. Evaluating combinations of cytotoxic agents across cancer cell lines to identify formulations that lower effective dose and reduce off-target toxicity.",
             tech: ["Cell Culture", "Cytotoxicity", "Combination Index", "IC50"],
-            status: "Active"
+            status: "Active — wet-lab screening",
+            statusKind: "active",
+            needs: "Looking for collaborators with access to additional cancer cell-line panels or combination-index analysis tooling."
         },
         {
             n: "02",
@@ -153,7 +156,9 @@ window.SITE_CONFIG = {
             title: "Gene Knockout Studies in Resistance Mechanisms",
             desc: "Unraveling molecular pathways and resistance mechanisms in cancer cells. Using gene knockout approaches to identify key drivers of chemoresistance and potential vulnerabilities.",
             tech: ["CRISPR", "Cell Biology", "Molecular Pathways", "Resistance"],
-            status: "Ongoing"
+            status: "Active — ongoing knockout experiments",
+            statusKind: "active",
+            needs: "Open to collaborators in molecular oncology, CRISPR methodology, or resistance-pathway bioinformatics."
         },
         {
             n: "03",
@@ -161,7 +166,9 @@ window.SITE_CONFIG = {
             title: "Novel Compound Cytotoxic Screening",
             desc: "Evaluating cytotoxic potential of novel compounds across a panel of cancer cell lines. Identifying lead structures for further development and mechanism-of-action studies.",
             tech: ["HTS", "Cell Viability", "Cancer Lines", "Lead Discovery"],
-            status: "Active"
+            status: "Active — screening campaigns",
+            statusKind: "active",
+            needs: "Medicinal chemists with novel compound libraries welcome — especially synthetic natural-product derivatives."
         },
         {
             n: "04",
@@ -169,7 +176,9 @@ window.SITE_CONFIG = {
             title: "Computational Identification of Gene Targets",
             desc: "Bioinformatics pipelines for identifying novel therapeutic targets in cancer genomics. Bridging computational predictions with wet-lab validation.",
             tech: ["Bioinformatics", "Cancer Genomics", "Target ID", "Computational Biology"],
-            status: "Ongoing"
+            status: "Active — pipeline development",
+            statusKind: "active",
+            needs: "Computational biologists or ML researchers interested in cancer-genomics target prediction, especially for wet-lab validation partnerships."
         },
         {
             n: "05",
@@ -177,7 +186,8 @@ window.SITE_CONFIG = {
             title: "Engineered Nanoformulations",
             desc: "Engineering targeted delivery systems for improved therapeutic efficacy. Focus on inhalable nanoparticles for non-small cell lung cancer and smart chemotherapy platforms.",
             tech: ["Nanoparticles", "Drug Delivery", "Targeted Therapy", "NSCLC"],
-            status: "Published · Saudi Pharmaceutical Journal"
+            status: "Published · Saudi Pharmaceutical Journal · 2025",
+            statusKind: "published"
         }
     ],
 

@@ -619,7 +619,7 @@ footer {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
     }
-    .nav { flex-wrap: wrap; gap: 1rem; }
+    .nav { flex-wrap: wrap; gap: 1rem; z-index: 100; }
     .brand-meta { display: none; }
     .nav-right { gap: 1rem; }
     .hamburger { display: flex; }
@@ -634,11 +634,13 @@ footer {
         flex-direction: column;
         gap: 0.5rem;
         align-items: flex-start;
-        z-index: 10;
+        z-index: 101;
+        box-shadow: 0 20px 40px -10px rgba(0,0,0,0.35);
     }
     .nav-menu.show { display: flex; }
-    .nav-item { padding: 0.5rem 0; width: 100%; }
+    .nav-item { padding: 0.7rem 0.3rem; width: 100%; font-size: 0.92rem; }
     .nav-item.active::after { display: none; }
+    .nav-item.active { color: var(--accent); }
     footer { grid-template-columns: 1fr; gap: 1.2rem; }
 }
 @media (prefers-reduced-motion: reduce) {

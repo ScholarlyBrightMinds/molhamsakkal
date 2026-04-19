@@ -77,15 +77,92 @@
     border-radius: 0.3rem;
 }
 .proj-status {
-    font-family: var(--display);
-    font-style: italic;
-    font-size: 0.84rem;
+    font-family: var(--mono);
+    font-size: 0.64rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+    border-radius: 0.35rem;
+    border: 1px solid var(--border);
+    background: var(--bg-soft);
     color: var(--text-soft);
+    line-height: 1.3;
 }
-.proj-status::before {
-    content: '·';
-    color: var(--muted);
+/* Status variants — green-ish for published, amber for active, accent for in-review */
+.proj-status--published {
+    color: #7dbf8f;
+    border-color: rgba(125, 191, 143, 0.25);
+    background: rgba(125, 191, 143, 0.08);
+}
+:root[data-theme="light"] .proj-status--published {
+    color: #2e7a44;
+    border-color: rgba(46, 122, 68, 0.25);
+    background: rgba(46, 122, 68, 0.08);
+}
+.proj-status--active {
+    color: var(--amber);
+    border-color: var(--amber-glow);
+    background: var(--amber-bg);
+}
+.proj-status--review {
+    color: var(--accent);
+    border-color: var(--accent-glow);
+    background: var(--accent-bg);
+}
+
+/* Subtle left-border variant hint on the whole card */
+.proj-card--published::before { background: #7dbf8f; }
+:root[data-theme="light"] .proj-card--published::before { background: #2e7a44; }
+.proj-card--active::before    { background: var(--amber); }
+
+/* Needs line — what this project needs right now */
+.proj-needs {
+    margin: 0 0 1rem 0;
+    padding: 0.7rem 0.9rem;
+    background: var(--bg-soft);
+    border: 1px dashed var(--border);
+    border-radius: var(--radius-s);
+    font-size: 0.86rem;
+    color: var(--text-soft);
+    line-height: 1.55;
+    max-width: 620px;
+}
+.proj-needs-label {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--amber);
     margin-right: 0.4rem;
+}
+
+/* Collaborate button */
+.proj-collab {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.55rem 1rem;
+    font-family: var(--body);
+    font-size: 0.84rem;
+    font-weight: 500;
+    color: var(--accent);
+    background: var(--accent-bg);
+    border: 1px solid var(--accent-glow);
+    border-radius: 999px;
+    text-decoration: none;
+    transition: all .25s var(--ease);
+}
+.proj-collab:hover {
+    background: var(--accent);
+    color: var(--card);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px -10px var(--accent-glow);
+}
+.proj-collab-icon {
+    font-size: 0.95em;
+    display: inline-block;
+    transform: translateY(-1px);
 }
 
 .proj-title {

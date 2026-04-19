@@ -223,20 +223,49 @@
     function bindProjects() {
         const el = document.querySelector('[data-bind="projectList"]');
         if (!el || !C.projects) return;
-        el.innerHTML = C.projects.map((p, i) => `
-            <article class="proj-card reveal reveal-d${(i % 3) + 1}">
+
+        // Email for "Want to collaborate?" button
+        const email = C.identity.email
+                   || (C.ids && C.ids.email)
+                   || (C.social && C.social.find(s => s.key === 'email')?.url?.replace('mailto:',''))
+                   || '';
+
+        el.innerHTML = C.projects.map((p, i) => {
+            const kind = (p.statusKind || 'active').toLowerCase();
+            const statusBadge = p.status
+                ? `<span class="proj-status proj-status--${kind}">${p.status}</span>`
+                : '';
+            const needsLine = p.needs
+                ? `<p class="proj-needs"><span class="proj-needs-label">Needs:</span> ${p.needs}</p>`
+                : '';
+            // Only show collaborate button on active / review projects (not already-published ones)
+            const showCollab = kind === 'active' || kind === 'review' || kind === 'draft';
+            const subject = encodeURIComponent(`Collaboration on "${p.title}"`);
+            const body    = encodeURIComponent(`Hi ${C.identity.firstName || ''},\n\nI saw your "${p.title}" project on your website and would like to discuss a potential collaboration.\n\n`);
+            const collabBtn = (showCollab && email)
+                ? `<a class="proj-collab" href="mailto:${email}?subject=${subject}&body=${body}">
+                     <span class="proj-collab-icon">✉</span>
+                     Want to collaborate?
+                   </a>`
+                : '';
+
+            return `
+            <article class="proj-card proj-card--${kind} reveal reveal-d${(i % 3) + 1}">
                 <div class="proj-num">${p.n}</div>
                 <div class="proj-body">
                     <div class="proj-meta">
                         <span class="proj-label">${p.label}</span>
-                        ${p.status ? `<span class="proj-status">${p.status}</span>` : ''}
+                        ${statusBadge}
                     </div>
                     <h3 class="proj-title">${p.title}</h3>
                     <p class="proj-desc">${p.desc}</p>
+                    ${needsLine}
                     ${p.tech ? `<div class="proj-tags">${p.tech.map(t => `<span class="proj-tag">${t}</span>`).join('')}</div>` : ''}
+                    ${collabBtn}
                 </div>
             </article>
-        `).join('');
+            `;
+        }).join('');
 
         if (window.__revealObserver) {
             el.querySelectorAll('.reveal').forEach(r => window.__revealObserver.observe(r));
