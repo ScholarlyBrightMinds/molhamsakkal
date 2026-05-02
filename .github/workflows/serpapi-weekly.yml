@@ -1,0 +1,86 @@
+name: Weekly SerpApi Scholar Update + SEO Build
+
+on:
+  schedule:
+    - cron: '0 5 * * 1'   # Every Monday at 05:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Fetch latest Scholar data via SerpApi
+        env:
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+          SCHOLAR_AUTHOR_ID: 'JO1OQj8AAAAJ'
+        run: |
+          set -euo pipefail
+          python serpapi_fetcher.py
+
+      - name: Pre-render publications + metrics into static HTML (SEO)
+        run: |
+          set -euo pipefail
+          python build_html.py
+
+      - name: Update sitemap.xml lastmod for publications page
+        run: |
+          python - <<'PYEOF'
+          import re
+          from datetime import datetime, timezone
+          from pathlib import Path
+          today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+          p = Path("sitemap.xml")
+          if not p.exists():
+              raise SystemExit(0)
+          t = p.read_text(encoding="utf-8")
+          pat = re.compile(
+              r'(<url>\s*<loc>https://scholarlybrightminds.github.io/molhamsakkal/publications\.html</loc>)(.*?)(</url>)',
+              re.DOTALL,
+          )
+          def _bump(m):
+              body = m.group(2)
+              if "<lastmod>" in body:
+                  body = re.sub(r'<lastmod>[^<]+</lastmod>', f'<lastmod>{today}</lastmod>', body)
+              else:
+                  body = body + f'    <lastmod>{today}</lastmod>\n  '
+              return m.group(1) + body + m.group(3)
+          new = pat.sub(_bump, t)
+          if new != t:
+              p.write_text(new, encoding="utf-8")
+              print(f"sitemap.xml: bumped publications lastmod to {today}")
+          PYEOF
+
+      - name: Upload data artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: serpapi-data
+          path: data/serpapi/
+          retention-days: 7
+
+      - name: Commit updated data, HTML, and sitemap
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'docs: weekly Scholar sync + SEO rebuild'
+          file_pattern: |
+            data/serpapi/*.json
+            data/serpapi/*.csv
+            publications.html
+            theme.config.js
+            sitemap.xml

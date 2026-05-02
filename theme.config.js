@@ -69,7 +69,6 @@ window.SITE_CONFIG = {
     // ── IDs (external profiles) ───────────────────────────────────
     ids: {
         scholar: "JO1OQj8AAAAJ",
-        scopus:  "58209400600",
         orcid:   "0000-0001-6081-1284",
         github:  "ScholarlyBrightMinds",
         email:   "Molham.sakkal@gmail.com"
@@ -78,7 +77,6 @@ window.SITE_CONFIG = {
     // ── Social links ──────────────────────────────────────────────
     social: [
         { key: "scholar", label: "Google Scholar", url: "https://scholar.google.com/citations?user=JO1OQj8AAAAJ&hl=en" },
-        { key: "scopus",  label: "Scopus",         url: "https://www.scopus.com/authid/detail.uri?authorId=58209400600" },
         { key: "orcid",   label: "ORCID",          url: "https://orcid.org/0000-0001-6081-1284" },
         { key: "github",  label: "GitHub",         url: "https://github.com/ScholarlyBrightMinds" },
         { key: "email",   label: "Email",          url: "mailto:Molham.sakkal@gmail.com" }
@@ -92,8 +90,8 @@ window.SITE_CONFIG = {
 
     // ── Hero chips ────────────────────────────────────────────────
     chips: [
-        { label: "8 Publications · 23 Citations" },
-        { label: "h-index 3" },
+        { label: "15 Publications · 105 Citations" },
+        { label: "h-index 6" },
         { label: "Lab &amp; Research Supervisor" },
         { label: "MSc Pharm. Sci. · Al Ain University" },
         { label: "🔬 Cancer Cell Biology", variant: "gold" }
