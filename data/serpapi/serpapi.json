@@ -4,7 +4,7 @@
     "authors": "M Arafat, M Sakkal, R Beiram, S AbuRuz",
     "venue": "Pharmaceuticals 17 (3), 315, 2024",
     "year": "2024",
-    "cited_by": 41,
+    "cited_by": 42,
     "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JO1OQj8AAAAJ&citation_for_view=JO1OQj8AAAAJ:UeHWp8X0CEIC",
     "author_id": "JO1OQj8AAAAJ"
   },
@@ -22,7 +22,7 @@
     "authors": "M Sakkal, M Arafat, P Yuvaraju, R Beiram, S AbuRuz",
     "venue": "Polymers 16 (5), 643, 2024",
     "year": "2024",
-    "cited_by": 13,
+    "cited_by": 14,
     "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JO1OQj8AAAAJ&citation_for_view=JO1OQj8AAAAJ:qjMakFHDy7sC",
     "author_id": "JO1OQj8AAAAJ"
   },
@@ -76,7 +76,7 @@
     "authors": "N Al-Damook, M Sakkal, M Khair, WK Mousa, G Khoder, R Ghemrawi",
     "venue": "International Journal of Molecular Sciences 26 (22), 11029, 2025",
     "year": "2025",
-    "cited_by": 2,
+    "cited_by": 3,
     "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JO1OQj8AAAAJ&citation_for_view=JO1OQj8AAAAJ:W7OEmFMy1HYC",
     "author_id": "JO1OQj8AAAAJ"
   },
@@ -87,6 +87,15 @@
     "year": "2026",
     "cited_by": 1,
     "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JO1OQj8AAAAJ&citation_for_view=JO1OQj8AAAAJ:Y0pCki6q_DkC",
+    "author_id": "JO1OQj8AAAAJ"
+  },
+  {
+    "title": "Large language models in drug delivery: A review of the current landscape and future perspectives",
+    "authors": "M Sakkal, A Abou Hajal",
+    "venue": "Journal of Pharmaceutical Sciences, 104147, 2025",
+    "year": "2025",
+    "cited_by": 1,
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JO1OQj8AAAAJ&citation_for_view=JO1OQj8AAAAJ:eQOLeE2rZwMC",
     "author_id": "JO1OQj8AAAAJ"
   },
   {
@@ -123,15 +132,6 @@
     "year": "2026",
     "cited_by": 0,
     "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JO1OQj8AAAAJ&citation_for_view=JO1OQj8AAAAJ:WF5omc3nYNoC",
-    "author_id": "JO1OQj8AAAAJ"
-  },
-  {
-    "title": "Large language models in drug delivery: A review of the current landscape and future perspectives",
-    "authors": "M Sakkal, A Abou Hajal",
-    "venue": "Journal of Pharmaceutical Sciences, 104147, 2025",
-    "year": "2025",
-    "cited_by": 0,
-    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=JO1OQj8AAAAJ&citation_for_view=JO1OQj8AAAAJ:eQOLeE2rZwMC",
     "author_id": "JO1OQj8AAAAJ"
   }
 ]
