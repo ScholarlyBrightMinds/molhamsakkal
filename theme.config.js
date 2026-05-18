@@ -90,7 +90,7 @@ window.SITE_CONFIG = {
 
     // ── Hero chips ────────────────────────────────────────────────
     chips: [
-        { label: "15 Publications · 105 Citations" },
+        { label: "15 Publications · 112 Citations" },
         { label: "h-index 6" },
         { label: "Lab &amp; Research Supervisor" },
         { label: "MSc Pharm. Sci. · Al Ain University" },

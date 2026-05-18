@@ -170,12 +170,19 @@ def render_article(p: dict, doi: str | None = None) -> str:
 
     if doi:
         doi_safe = escape(doi)
-        # data-hide-no-mentions="true" tells Altmetric's embed script to remove
-        # the badge entirely when no mentions exist for the DOI — avoids the
-        # placeholder "?" donut that otherwise clutters the stats row.
+        # Altmetric badge attributes:
+        #   medium-donut  → 64px ring (readable, sits cleanly with the chips)
+        #   popover-right → keep the mention breakdown on-screen for cards
+        #                   near the right edge of the layout
+        #   link-target   → open the Altmetric details page in a new tab
+        #   hide-no-mentions → collapse the slot entirely when no record
+        #                      exists (no orphan "?" donut)
         stats_parts.append(
             f'<div class="pub-altmetric altmetric-embed" '
-            f'data-badge-type="donut" data-doi="{doi_safe}" '
+            f'data-badge-type="medium-donut" '
+            f'data-badge-popover="right" '
+            f'data-link-target="_blank" '
+            f'data-doi="{doi_safe}" '
             f'data-hide-no-mentions="true" '
             f'title="Altmetric attention score — click for the full mention breakdown"></div>'
         )
@@ -306,14 +313,17 @@ def render_jsonld(pubs: list[dict], dois: dict, ident: dict) -> str:
 # ─────────────────────────────────────────────────────────────────────────
 def _ensure_altmetric_script(html: str) -> str:
     """Idempotently inject the Altmetric embed.js script into <head> if absent.
-    Placed just before </head> so it doesn't block the document parse."""
+    Placed just before </head> so it doesn't block the document parse.
+    Also strips the legacy `data-altmetric-embed` attribute on the script tag
+    (left over from an earlier iteration — the attribute belongs on badge
+    divs, not the loader script, so it was a no-op there)."""
+    legacy = f'<script async src="{ALTMETRIC_EMBED_SRC}" data-altmetric-embed="scholarlybrightminds"></script>'
+    clean  = f'<script async src="{ALTMETRIC_EMBED_SRC}"></script>'
+    if legacy in html:
+        html = html.replace(legacy, clean)
     if ALTMETRIC_EMBED_SRC in html:
         return html
-    snippet = (
-        f'<script async src="{ALTMETRIC_EMBED_SRC}" '
-        f'data-altmetric-embed="scholarlybrightminds"></script>\n'
-    )
-    return html.replace("</head>", snippet + "</head>", 1)
+    return html.replace("</head>", clean + "\n</head>", 1)
 
 
 def patch_publications_html(pubs: list[dict], metrics: dict, dois: dict, ident: dict) -> None:
