@@ -310,18 +310,30 @@
     margin-top: 0.2rem;
 }
 
-/* Altmetric donut — sized prominently, aligned baseline with chips */
+/* Altmetric donut — sized to fit the medium-donut (64×64) badge cleanly.
+   build_html.py emits data-badge-type="medium-donut" so we reserve 64px;
+   the popover (mention breakdown) is appended to <body> by embed.js so
+   it can escape the card's overflow without extra plumbing here. */
 .pub-altmetric {
     flex: 0 0 auto;
-    min-width: 60px;
-    min-height: 60px;
+    min-width: 64px;
+    min-height: 64px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    position: relative;
     transform: translateY(1px);  /* visual centering with chips */
 }
+/* Defensive collapse: if embed.js can't find data and removes the badge
+   (or never runs), the empty slot shouldn't leave a 64px hole in the row.
+   embed.js normally sets display:none on the .altmetric-embed div itself
+   when data-hide-no-mentions matches; :empty covers the script-failed case. */
+.pub-altmetric:empty {
+    min-width: 0;
+    min-height: 0;
+}
 .pub-altmetric > * { transition: transform .25s var(--ease); }
-.pub-altmetric:hover > * { transform: scale(1.08); }
+.pub-altmetric:hover > * { transform: scale(1.06); }
 
 /* Generic chip */
 .pub-stat {
@@ -401,15 +413,6 @@ a.pub-stat-doi:hover .pub-stat-label { color: inherit; }
     .pub-title { font-size: 1.05rem; }
     .pub-meta { gap: 0.55rem; }
     .pub-meta > a.pub-stat-doi:last-child { margin-left: 0; }
-    .pub-altmetric { min-width: 56px; min-height: 56px; }
-}
-
-/* ─── RESPONSIVE ───────────────────────────────────────────────── */
-@media (max-width: 900px) {
-    .metrics-dash { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 540px) {
-    .metrics-dash { grid-template-columns: 1fr; }
-    .publication-item { padding: 1.3rem 1.3rem; }
-    .publication-title { font-size: 1.08rem; }
+    /* On narrow screens keep the slot at medium-donut size — embed.js
+       renders the SVG at a fixed 64px so shrinking the slot would crop it. */
 }
