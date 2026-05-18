@@ -1,0 +1,107 @@
+{
+  "78400849c0db7774": {
+    "doi": "10.3390/ph17030315",
+    "confidence": 1.0,
+    "matched_title": "Nanomedicines: Emerging Platforms in Smart Chemotherapy Treatment—A Recent Review",
+    "matched_year": 2024,
+    "matched_at": "2026-05-18T14:26:10+00:00"
+  },
+  "6ec6a2faace9193d": {
+    "doi": "10.3390/ph16040539",
+    "confidence": 1.0,
+    "matched_title": "Effect of Excipients on the Quality of Drug Formulation and Immediate Release of Generic Metformin HCl Tablets",
+    "matched_year": 2023,
+    "matched_at": "2026-05-18T14:26:12+00:00"
+  },
+  "69e58c7294bd18af": {
+    "doi": "10.3390/polym16050643",
+    "confidence": 0.91,
+    "matched_title": "Preparation and Characterization of Theophylline Controlled Release Matrix System Incorporating Poloxamer 407, Stearyl Alcohol, and Hydroxypropyl Methylcellulose: A Novel Formulation and Development Study",
+    "matched_year": 2024,
+    "matched_at": "2026-05-18T14:26:14+00:00"
+  },
+  "96e7a1e0cd19f77b": {
+    "doi": "10.1016/j.compbiomed.2025.110156",
+    "confidence": 1.0,
+    "matched_title": "Machine learning predictions of tumor progression: How reliable are we?",
+    "matched_year": 2025,
+    "matched_at": "2026-05-18T14:26:16+00:00"
+  },
+  "44c114afbb109f47": {
+    "doi": "10.12688/f1000research.140607.1",
+    "confidence": 1.0,
+    "matched_title": "Enteric-coating film effect on the delayed drug release of pantoprazole gastro-resistant generic tablets",
+    "matched_year": 2023,
+    "matched_at": "2026-05-18T14:26:18+00:00"
+  },
+  "082677426e93343e": {
+    "doi": "10.1080/0972060x.2022.2072177",
+    "confidence": 0.957,
+    "matched_title": "Chemical Composition of the Volatile Oil from Aerial Parts of<i>Rosmarinus officinalis</i>L. Growing in UAE",
+    "matched_year": 2022,
+    "matched_at": "2026-05-18T14:26:21+00:00"
+  },
+  "fbce7ae7e1ac3cff": {
+    "doi": "10.3390/ph17030271",
+    "confidence": 1.0,
+    "matched_title": "Effect of Hydration Forms and Polymer Grades on Theophylline Controlled-Release Tablet: An Assessment and Evaluation",
+    "matched_year": 2024,
+    "matched_at": "2026-05-18T14:26:23+00:00"
+  },
+  "cb0a3546b3031cf4": {
+    "doi": "10.1007/s44446-025-00046-y",
+    "confidence": 1.0,
+    "matched_title": "Inhalable nanoparticle-based drug delivery system for non-small cell lung cancer therapy: promises and challenges",
+    "matched_year": 2025,
+    "matched_at": "2026-05-18T14:26:25+00:00"
+  },
+  "5fedf73a6db93398": {
+    "doi": "10.1080/17476348.2025.2582244",
+    "confidence": 1.0,
+    "matched_title": "Spatially resolved airway niches: mapping epithelial–immune microenvironments in asthma",
+    "matched_year": 2025,
+    "matched_at": "2026-05-18T14:26:27+00:00"
+  },
+  "9f95a8806c0f4d03": {
+    "doi": "10.3390/ijms262211029",
+    "confidence": 1.0,
+    "matched_title": "Targeting Cancer Through Thymoquinone: From Molecular Mechanisms to Clinical Prospects",
+    "matched_year": 2025,
+    "matched_at": "2026-05-18T14:26:29+00:00"
+  },
+  "b5b73ef3064e8d59": {
+    "doi": "10.3390/molecules30214181",
+    "confidence": 1.0,
+    "matched_title": "The Discovery of Small ERK5 Inhibitors via Structure-Based Virtual Screening, Biological Evaluation and MD Simulations",
+    "matched_year": 2025,
+    "matched_at": "2026-05-18T14:26:31+00:00"
+  },
+  "41c85069091425b1": {
+    "doi": "10.69709/cellengc.2025.115467",
+    "confidence": 1.0,
+    "matched_title": "Synergistic Modulation of ER Stress and Insulin Potentiation Therapy for Enhanced Cancer Treatment",
+    "matched_year": 2025,
+    "matched_at": "2026-05-18T14:26:32+00:00"
+  },
+  "8d540a8f2e1c8c34": {
+    "doi": "10.1080/15376516.2026.2628929",
+    "confidence": 1.0,
+    "matched_title": "Introducing AutoML framework for drug–drug interaction prediction: application of AutoGluon",
+    "matched_year": 2026,
+    "matched_at": "2026-05-18T14:26:34+00:00"
+  },
+  "4797e09b1aded22b": {
+    "doi": "10.1007/s00520-026-10389-4",
+    "confidence": 1.0,
+    "matched_title": "Public perceptions of AI-assisted cancer care in Abu Dhabi, UAE: A cross-sectional survey",
+    "matched_year": 2026,
+    "matched_at": "2026-05-18T14:26:36+00:00"
+  },
+  "1fb5616365282fe8": {
+    "doi": "10.1016/j.xphs.2025.104147",
+    "confidence": 1.0,
+    "matched_title": "Large language models in drug delivery: A review of the current landscape and future perspectives",
+    "matched_year": 2026,
+    "matched_at": "2026-05-18T14:26:38+00:00"
+  }
+}

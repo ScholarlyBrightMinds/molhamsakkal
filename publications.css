@@ -233,6 +233,177 @@
 /* ─── LEGACY METRICS BAR (old markup, in case it's kept anywhere) ─ */
 .metrics { display: none; }
 
+/* ═══════════════════════════════════════════════════════════════════
+   PUB-ITEM CARDS (markup emitted by build_html.py)
+   These were previously unstyled. Card chrome mirrors .publication-item
+   so the page looks consistent if both markups ever coexist.
+   ═══════════════════════════════════════════════════════════════════ */
+.pub-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.4rem 1.6rem 1.2rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform .25s var(--ease), border-color .25s var(--ease), box-shadow .25s var(--ease);
+}
+.pub-item::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, var(--accent), var(--amber, var(--accent)));
+    transform: scaleY(0);
+    transform-origin: center;
+    transition: transform .3s var(--ease);
+}
+.pub-item:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+    box-shadow: var(--shadow-card);
+}
+.pub-item:hover::before { transform: scaleY(1); }
+
+.pub-title {
+    font-family: var(--display);
+    font-size: 1.15rem;
+    font-weight: 400;
+    line-height: 1.35;
+    letter-spacing: -0.005em;
+    margin: 0 0 .45rem;
+    color: var(--text);
+}
+.pub-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .2s;
+}
+.pub-title a:hover { color: var(--accent); }
+
+.pub-authors {
+    font-size: 0.86rem;
+    color: var(--text-soft);
+    line-height: 1.55;
+    margin: 0 0 .35rem;
+}
+
+.pub-venue {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 0.88rem;
+    color: var(--muted);
+    margin: 0 0 .8rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   STATS ROW — Altmetric donut + colored chips
+   The donut is the visual anchor (left); chips align right and wrap on
+   narrow screens. Each chip is color-coded for instant scannability.
+   ═══════════════════════════════════════════════════════════════════ */
+.pub-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.7rem 0.9rem;
+    padding-top: 0.8rem;
+    border-top: 1px dashed var(--border);
+    margin-top: 0.2rem;
+}
+
+/* Altmetric donut — sized prominently, aligned baseline with chips */
+.pub-altmetric {
+    flex: 0 0 auto;
+    min-width: 60px;
+    min-height: 60px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(1px);  /* visual centering with chips */
+}
+.pub-altmetric > * { transition: transform .25s var(--ease); }
+.pub-altmetric:hover > * { transform: scale(1.08); }
+
+/* Generic chip */
+.pub-stat {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.38rem 0.7rem;
+    border-radius: 999px;
+    background: var(--bg-soft, rgba(255,255,255,0.04));
+    border: 1px solid var(--border);
+    font-family: var(--body);
+    font-size: 0.78rem;
+    line-height: 1;
+    color: var(--text-soft);
+    text-decoration: none;
+    transition: all .2s var(--ease);
+    white-space: nowrap;
+}
+.pub-stat-icon {
+    font-size: 0.92rem;
+    line-height: 1;
+    display: inline-block;
+}
+.pub-stat-num {
+    font-family: var(--mono);
+    font-weight: 600;
+    color: var(--text);
+    font-size: 0.84rem;
+}
+.pub-stat-label {
+    color: var(--text-soft);
+}
+
+/* Citations — accent (warm) */
+.pub-stat-cites {
+    background: var(--accent-bg, rgba(255,184,77,0.08));
+    border-color: var(--accent-glow, rgba(255,184,77,0.22));
+}
+.pub-stat-cites .pub-stat-num { color: var(--accent); }
+.pub-stat-cites:hover {
+    transform: translateY(-1px);
+    border-color: var(--accent);
+}
+
+/* Year — muted, monospaced */
+.pub-stat-year {
+    background: transparent;
+}
+.pub-stat-year .pub-stat-num { color: var(--text); }
+
+/* DOI link — prominent, hover-glow */
+a.pub-stat-doi {
+    cursor: pointer;
+    color: var(--accent);
+    border-color: var(--accent-glow, rgba(255,184,77,0.3));
+}
+a.pub-stat-doi:hover {
+    background: var(--accent);
+    color: var(--bg, #0d1411);
+    border-color: var(--accent);
+    transform: translateY(-1px);
+}
+a.pub-stat-doi:hover .pub-stat-label { color: inherit; }
+
+/* Push DOI to the right edge of the row when there's space */
+.pub-meta > a.pub-stat-doi:last-child { margin-left: auto; }
+
+/* ─── RESPONSIVE ───────────────────────────────────────────────── */
+@media (max-width: 900px) {
+    .metrics-dash { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 540px) {
+    .metrics-dash { grid-template-columns: 1fr; }
+    .publication-item { padding: 1.3rem 1.3rem; }
+    .publication-title { font-size: 1.08rem; }
+    .pub-item { padding: 1.2rem 1.2rem 1rem; }
+    .pub-title { font-size: 1.05rem; }
+    .pub-meta { gap: 0.55rem; }
+    .pub-meta > a.pub-stat-doi:last-child { margin-left: 0; }
+    .pub-altmetric { min-width: 56px; min-height: 56px; }
+}
+
 /* ─── RESPONSIVE ───────────────────────────────────────────────── */
 @media (max-width: 900px) {
     .metrics-dash { grid-template-columns: repeat(2, 1fr); }
