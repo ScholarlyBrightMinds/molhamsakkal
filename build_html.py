@@ -175,15 +175,16 @@ def render_article(p: dict, doi: str | None = None) -> str:
         #   popover-right → keep the mention breakdown on-screen for cards
         #                   near the right edge of the layout
         #   link-target   → open the Altmetric details page in a new tab
-        #   hide-no-mentions → collapse the slot entirely when no record
-        #                      exists (no orphan "?" donut)
+        # Intentionally NOT setting data-hide-no-mentions: we want the donut
+        # to render for every indexed paper, even when the score is 0/—. The
+        # visible grey ring with "—" signals "Altmetric is tracking this DOI,
+        # no mentions yet" which is more informative than an invisible slot.
         stats_parts.append(
             f'<div class="pub-altmetric altmetric-embed" '
             f'data-badge-type="medium-donut" '
             f'data-badge-popover="right" '
             f'data-link-target="_blank" '
             f'data-doi="{doi_safe}" '
-            f'data-hide-no-mentions="true" '
             f'title="Altmetric attention score — click for the full mention breakdown"></div>'
         )
 
