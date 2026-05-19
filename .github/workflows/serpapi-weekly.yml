@@ -1,4 +1,4 @@
-name: Weekly SerpApi Scholar Update + SEO Build
+name: Weekly Scholar + ORCID + OpenAlex Sync + SEO Build
 
 on:
   schedule:
@@ -33,10 +33,39 @@ jobs:
           set -euo pipefail
           python serpapi_fetcher.py
 
+      - name: Fetch ORCID public record
+        env:
+          ORCID_CLIENT_ID:     ${{ secrets.ORCID_CLIENT_ID }}
+          ORCID_CLIENT_SECRET: ${{ secrets.ORCID_CLIENT_SECRET }}
+          ORCID_ID:            '0000-0001-6081-1284'
+        run: |
+          set -euo pipefail
+          python orcid_fetcher.py
+
+      - name: Fetch OpenAlex author + works
+        env:
+          ORCID_ID:               '0000-0001-6081-1284'
+          OPENALEX_AUTHOR_ID:     'A5072660555'
+          OPENALEX_DISPLAY_NAME:  'Molham Sakkal'
+          OPENALEX_MAILTO:        'Molham.sakkal@gmail.com'
+        run: |
+          set -euo pipefail
+          python openalex_fetcher.py
+
       - name: Pre-render publications + metrics into static HTML (SEO)
         run: |
           set -euo pipefail
           python build_html.py
+
+      - name: Bake ORCID-verified panel into about.html
+        run: |
+          set -euo pipefail
+          python build_orcid_html.py
+
+      - name: Bake OpenAlex research-topics panel into about.html
+        run: |
+          set -euo pipefail
+          python build_openalex_html.py
 
       - name: Update sitemap.xml lastmod for publications page
         run: |
@@ -77,10 +106,13 @@ jobs:
       - name: Commit updated data, HTML, and sitemap
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: 'docs: weekly Scholar sync + SEO rebuild'
+          commit_message: 'docs: weekly Scholar + ORCID + OpenAlex sync + SEO rebuild'
           file_pattern: |
             data/serpapi/*.json
             data/serpapi/*.csv
+            data/orcid/*.json
+            data/openalex/*.json
             publications.html
+            about.html
             theme.config.js
             sitemap.xml
