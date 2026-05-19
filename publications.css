@@ -310,30 +310,36 @@
     margin-top: 0.2rem;
 }
 
-/* Altmetric donut — sized to fit the medium-donut (64×64) badge cleanly.
-   build_html.py emits data-badge-type="medium-donut" so we reserve 64px;
-   the popover (mention breakdown) is appended to <body> by embed.js so
-   it can escape the card's overflow without extra plumbing here. */
+/* Altmetric slot — kept for the eventual return of Altmetric badges
+   (once their API key arrives and we have a server-side prefetch).
+   Currently unused because Altmetric paywalled their API on 2025-11-10. */
 .pub-altmetric {
     flex: 0 0 auto;
-    min-width: 64px;
-    min-height: 64px;
+    min-width: 60px;
+    min-height: 60px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    transform: translateY(1px);  /* visual centering with chips */
+    transform: translateY(1px);
 }
-/* Defensive collapse: if embed.js can't find data and removes the badge
-   (or never runs), the empty slot shouldn't leave a 64px hole in the row.
-   embed.js normally sets display:none on the .altmetric-embed div itself
-   when data-hide-no-mentions matches; :empty covers the script-failed case. */
-.pub-altmetric:empty {
-    min-width: 0;
-    min-height: 0;
-}
+.pub-altmetric:empty { min-width: 0; min-height: 0; }
 .pub-altmetric > * { transition: transform .25s var(--ease); }
-.pub-altmetric:hover > * { transform: scale(1.06); }
+.pub-altmetric:hover > * { transform: scale(1.08); }
+
+/* Dimensions Badge slot — by Digital Science, free, no API key.
+   data-style="small_circle" renders at ~32px. */
+.pub-dimensions {
+    flex: 0 0 auto;
+    min-width: 36px;
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(1px);
+}
+.pub-dimensions:empty { min-width: 0; min-height: 0; }
+.pub-dimensions > * { transition: transform .25s var(--ease); }
+.pub-dimensions:hover > * { transform: scale(1.08); }
 
 /* Generic chip */
 .pub-stat {
@@ -413,6 +419,5 @@ a.pub-stat-doi:hover .pub-stat-label { color: inherit; }
     .pub-title { font-size: 1.05rem; }
     .pub-meta { gap: 0.55rem; }
     .pub-meta > a.pub-stat-doi:last-child { margin-left: 0; }
-    /* On narrow screens keep the slot at medium-donut size — embed.js
-       renders the SVG at a fixed 64px so shrinking the slot would crop it. */
+    .pub-altmetric { min-width: 56px; min-height: 56px; }
 }

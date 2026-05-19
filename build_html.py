@@ -47,9 +47,16 @@ THEME_CFG  = REPO_ROOT / "theme.config.js"
 
 ORG_BASE   = "https://scholarlybrightminds.github.io"
 
-# Altmetric embed CDN — referenced once in publications.html <head>.
-# Loading the script async makes the badge zero-cost for first paint.
+# Altmetric embed CDN — paywalled since 2025-11-10 (unauthenticated calls
+# return HTTP 403). Kept as a constant so _strip_altmetric_script can find
+# and remove any leftover loader tag from a previous build.
 ALTMETRIC_EMBED_SRC = "https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"
+
+# Dimensions Badge — by Digital Science (same parent as Altmetric).
+# Free, no API key needed. Renders citation impact + recommendations +
+# mentions as a circular donut. Replacement for Altmetric until that key
+# arrives and we wire up a server-side prefetch.
+DIMENSIONS_EMBED_SRC = "https://badge.dimensions.ai/badge.js"
 
 
 # ─────────────────────────────────────────────────────────────────────────
@@ -170,22 +177,16 @@ def render_article(p: dict, doi: str | None = None) -> str:
 
     if doi:
         doi_safe = escape(doi)
-        # Altmetric badge attributes:
-        #   medium-donut  → 64px ring (readable, sits cleanly with the chips)
-        #   popover-right → keep the mention breakdown on-screen for cards
-        #                   near the right edge of the layout
-        #   link-target   → open the Altmetric details page in a new tab
-        # Intentionally NOT setting data-hide-no-mentions: we want the donut
-        # to render for every indexed paper, even when the score is 0/—. The
-        # visible grey ring with "—" signals "Altmetric is tracking this DOI,
-        # no mentions yet" which is more informative than an invisible slot.
+        # Dimensions Badge (by Digital Science — same parent as Altmetric).
+        #   small_circle → ~32px circular donut
+        #   hover-right  → mention/citation legend appears to the right on hover
+        # No API key, no paywall — renders for every DOI Dimensions has indexed.
         stats_parts.append(
-            f'<div class="pub-altmetric altmetric-embed" '
-            f'data-badge-type="medium-donut" '
-            f'data-badge-popover="right" '
-            f'data-link-target="_blank" '
+            f'<span class="pub-dimensions __dimensions_badge_embed__" '
             f'data-doi="{doi_safe}" '
-            f'title="Altmetric attention score — click for the full mention breakdown"></div>'
+            f'data-style="small_circle" '
+            f'data-legend="hover-right" '
+            f'title="Dimensions citation impact — click for details"></span>'
         )
 
     if cites:
@@ -312,19 +313,26 @@ def render_jsonld(pubs: list[dict], dois: dict, ident: dict) -> str:
 # ─────────────────────────────────────────────────────────────────────────
 # Patch: publications.html
 # ─────────────────────────────────────────────────────────────────────────
-def _ensure_altmetric_script(html: str) -> str:
-    """Idempotently inject the Altmetric embed.js script into <head> if absent.
-    Placed just before </head> so it doesn't block the document parse.
-    Also strips the legacy `data-altmetric-embed` attribute on the script tag
-    (left over from an earlier iteration — the attribute belongs on badge
-    divs, not the loader script, so it was a no-op there)."""
-    legacy = f'<script async src="{ALTMETRIC_EMBED_SRC}" data-altmetric-embed="scholarlybrightminds"></script>'
-    clean  = f'<script async src="{ALTMETRIC_EMBED_SRC}"></script>'
-    if legacy in html:
-        html = html.replace(legacy, clean)
-    if ALTMETRIC_EMBED_SRC in html:
+def _strip_altmetric_script(html: str) -> str:
+    """Remove the Altmetric embed.js loader if a previous build left it in
+    <head>. Altmetric's free badges API was paywalled on 2025-11-10 and now
+    returns HTTP 403 for unauthenticated callers, so loading this script
+    only produces console errors and no rendered badges. Re-enable once
+    we have a registered Altmetric API key AND a server-side prefetch
+    pipeline (so the key isn't exposed in page source)."""
+    return re.sub(
+        r'\s*<script[^>]*' + re.escape(ALTMETRIC_EMBED_SRC) + r'[^>]*></script>',
+        '',
+        html
+    )
+
+
+def _ensure_dimensions_script(html: str) -> str:
+    """Idempotently inject the Dimensions Badge loader into <head>."""
+    snippet = f'<script async src="{DIMENSIONS_EMBED_SRC}" charset="utf-8"></script>'
+    if DIMENSIONS_EMBED_SRC in html:
         return html
-    return html.replace("</head>", clean + "\n</head>", 1)
+    return html.replace("</head>", snippet + "\n</head>", 1)
 
 
 def patch_publications_html(pubs: list[dict], metrics: dict, dois: dict, ident: dict) -> None:
@@ -334,8 +342,10 @@ def patch_publications_html(pubs: list[dict], metrics: dict, dois: dict, ident: 
     html = PUBS_HTML.read_text(encoding="utf-8")
     orig = html
 
-    # 0. Make sure the Altmetric embed script is in <head> (one-time, idempotent).
-    html = _ensure_altmetric_script(html)
+    # 0. Strip the broken Altmetric loader (paywalled 2025-11-10) and inject
+    #    the Dimensions Badge loader in its place.
+    html = _strip_altmetric_script(html)
+    html = _ensure_dimensions_script(html)
 
     # 1. Replace article list inner content
     articles = render_articles_block(pubs, dois)
