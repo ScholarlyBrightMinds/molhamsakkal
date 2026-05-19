@@ -67,6 +67,11 @@ jobs:
           set -euo pipefail
           python build_openalex_html.py
 
+      - name: Bake co-author network into publications.html
+        run: |
+          set -euo pipefail
+          python build_coauthor_html.py
+
       - name: Update sitemap.xml lastmod for publications page
         run: |
           python - <<'PYEOF'

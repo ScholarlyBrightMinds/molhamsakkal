@@ -421,3 +421,122 @@ a.pub-stat-doi:hover .pub-stat-label { color: inherit; }
     .pub-meta > a.pub-stat-doi:last-child { margin-left: 0; }
     .pub-altmetric { min-width: 56px; min-height: 56px; }
 }
+
+
+/* ── Co-author network — baked from data/openalex/openalex.json each Monday by build_coauthor_html.py ── */
+.coauth-panel {
+    margin-top: 3.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border, rgba(255,255,255,0.08));
+}
+.coauth-lede {
+    color: var(--text-soft);
+    font-size: 0.96rem;
+    max-width: 640px;
+    margin-bottom: 1.4rem;
+    line-height: 1.6;
+}
+.coauth-wrap {
+    margin: 0 auto 1.4rem;
+    max-width: 760px;
+}
+.coauth-network {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: visible;
+}
+.coauth-edge {
+    stroke: var(--accent, #ffb84d);
+    transition: stroke-opacity .25s var(--ease, cubic-bezier(0.4,0,0.2,1));
+}
+.coauth-centre {
+    fill: var(--accent, #ffb84d);
+    stroke: var(--bg, #0e0d0a);
+    stroke-width: 4;
+    transition: filter .25s var(--ease);
+}
+.coauth-centre-label {
+    font-family: var(--display, Georgia, serif);
+    font-size: 1.5rem;
+    font-weight: 600;
+    fill: var(--bg, #0e0d0a);
+    pointer-events: none;
+}
+.coauth-node {
+    fill: var(--card, rgba(255,255,255,0.06));
+    stroke: rgba(72, 145, 220, 0.65);
+    stroke-width: 1.5;
+    cursor: pointer;
+    transition: fill .2s var(--ease), stroke-width .2s var(--ease), transform .25s var(--ease);
+}
+.coauth-node:hover {
+    fill: rgba(72, 145, 220, 0.32);
+    stroke-width: 2.5;
+}
+.coauth-label {
+    font-family: var(--body, sans-serif);
+    font-size: 0.78rem;
+    fill: var(--text-soft);
+    pointer-events: none;
+}
+.coauth-label .coauth-name { font-weight: 500; }
+.coauth-label .coauth-papers {
+    fill: var(--accent, #ffb84d);
+    font-weight: 600;
+    font-family: var(--display, Georgia, serif);
+}
+
+/* Co-author tabular list — sits below the SVG; also serves as the
+   accessible reading-order fallback for screen readers. */
+.coauth-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 0.45rem;
+}
+.coauth-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.55rem 0.85rem;
+    background: var(--card, rgba(255,255,255,0.04));
+    border: 1px solid var(--border, rgba(255,255,255,0.08));
+    border-radius: 10px;
+    transition: border-color .2s var(--ease);
+}
+.coauth-row:hover { border-color: rgba(72,145,220,0.45); }
+.coauth-row-name {
+    color: var(--text, #fff);
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 0.93rem;
+}
+.coauth-row-name:hover { color: rgba(72,145,220,1); }
+.coauth-row-inst {
+    color: var(--text-soft);
+    font-size: 0.78rem;
+    font-style: italic;
+}
+.coauth-row-count {
+    background: rgba(72,145,220,0.16);
+    color: rgba(106,169,224,1);
+    border-radius: 999px;
+    padding: 0.18rem 0.6rem;
+    font-family: var(--display, Georgia, serif);
+    font-weight: 600;
+    font-size: 0.85rem;
+    min-width: 28px;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .coauth-label { font-size: 0.7rem; }
+    .coauth-centre-label { font-size: 1.2rem; }
+    .coauth-list { grid-template-columns: 1fr; }
+    .coauth-row { grid-template-columns: 1fr auto; gap: 0.45rem; }
+    .coauth-row-inst { grid-column: 1 / -1; }
+}
