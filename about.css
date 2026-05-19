@@ -224,3 +224,157 @@
     .award-item { grid-template-columns: 42px 1fr; gap: 0.9rem; padding: 1rem 1.1rem; }
     .award-icon { width: 38px; height: 38px; font-size: 1.05rem; }
 }
+
+
+/* ── ORCID verified panel — baked from data/orcid/orcid.json each Monday ── */
+.orcid-panel {
+    margin-top: 1rem;
+}
+.orcid-lede {
+    color: var(--text-soft);
+    font-size: 0.96rem;
+    max-width: 640px;
+    margin-bottom: 1.4rem;
+    line-height: 1.6;
+}
+.orcid-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 1.4rem;
+    align-items: center;
+}
+/* ORCID iD with their signature green chip */
+.orcid-id {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.55rem 0.95rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--text);
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+    font-size: 0.86rem;
+    transition: border-color .25s var(--ease), transform .25s var(--ease);
+}
+.orcid-id:hover {
+    border-color: #a6ce39;       /* ORCID brand green */
+    transform: translateY(-1px);
+    color: var(--text);
+}
+.orcid-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #a6ce39;
+    color: #fff;
+    font-family: var(--display);
+    font-size: 0.78rem;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: -0.03em;
+}
+.orcid-id-text {
+    color: var(--text-soft);
+    letter-spacing: 0.01em;
+}
+.orcid-id:hover .orcid-id-text {
+    color: var(--text);
+}
+/* Pills row */
+.orcid-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+}
+.orcid-pill {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.32rem;
+    padding: 0.4rem 0.85rem;
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-size: 0.83rem;
+    color: var(--text-soft);
+    transition: border-color .25s var(--ease);
+}
+.orcid-pill:hover { border-color: var(--accent); }
+.orcid-pill strong {
+    color: var(--text);
+    font-weight: 600;
+    font-family: var(--display);
+    font-size: 0.98rem;
+}
+.orcid-synced {
+    color: var(--muted);
+    font-size: 0.78rem;
+    margin-top: 1rem;
+}
+
+/* ── OpenAlex research-focus panel ── */
+.openalex-panel {
+    margin-top: 1rem;
+}
+.oa-lede {
+    color: var(--text-soft);
+    font-size: 0.96rem;
+    max-width: 640px;
+    margin-bottom: 1.4rem;
+    line-height: 1.6;
+}
+.oa-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.2rem;
+}
+.oa-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.45rem 1rem;
+    background: var(--accent-bg);
+    border: 1px solid var(--accent);
+    border-color: rgba(111,171,152,0.32);
+    border-radius: 999px;
+    color: var(--accent-d);
+    font-family: var(--display);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    transition: transform .25s var(--ease), background-color .25s var(--ease);
+}
+.oa-chip:hover { transform: translateY(-1px); background-color: rgba(111,171,152,0.18); }
+
+.oa-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+}
+.oa-badge {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.3rem;
+    padding: 0.38rem 0.85rem;
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-size: 0.83rem;
+    color: var(--text-soft);
+}
+.oa-badge strong {
+    color: var(--text);
+    font-family: var(--display);
+    font-weight: 600;
+}
+.oa-profile-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: var(--accent);
+    font-size: 0.86rem;
+    font-weight: 500;
+}
+.oa-profile-link:hover { color: var(--accent-d); }

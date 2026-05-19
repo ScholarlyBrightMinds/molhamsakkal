@@ -1,0 +1,2037 @@
+{
+  "orcid_id": "0000-0001-6081-1284",
+  "last_fetched": "2026-05-19T11:10:06.292134+00:00",
+  "summary": {
+    "works_count": 11,
+    "peer_reviews_count": 0,
+    "employments_count": 2,
+    "educations_count": 0,
+    "fundings_count": 0,
+    "distinctions_count": 0,
+    "services_count": 0
+  },
+  "sections": {
+    "person": {
+      "last-modified-date": {
+        "value": 1731768055729
+      },
+      "name": {
+        "created-date": {
+          "value": 1602569212141
+        },
+        "last-modified-date": {
+          "value": 1662367650488
+        },
+        "given-names": {
+          "value": "Molham"
+        },
+        "family-name": {
+          "value": "Sakkal"
+        },
+        "credit-name": {
+          "value": "Molham Sakkal"
+        },
+        "source": null,
+        "visibility": "public",
+        "path": "0000-0001-6081-1284"
+      },
+      "other-names": {
+        "last-modified-date": {
+          "value": 1662367650851
+        },
+        "other-name": [
+          {
+            "created-date": {
+              "value": 1662367650851
+            },
+            "last-modified-date": {
+              "value": 1662367650851
+            },
+            "source": {
+              "source-orcid": {
+                "uri": "https://orcid.org/0000-0001-6081-1284",
+                "path": "0000-0001-6081-1284",
+                "host": "orcid.org"
+              },
+              "source-client-id": null,
+              "source-name": {
+                "value": "Molham Sakkal"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "content": "Mohammad M. Sakkal",
+            "visibility": "public",
+            "path": "/0000-0001-6081-1284/other-names/1790274",
+            "put-code": 1790274,
+            "display-index": 1
+          }
+        ],
+        "path": "/0000-0001-6081-1284/other-names"
+      },
+      "biography": {
+        "created-date": {
+          "value": 1661236807757
+        },
+        "last-modified-date": {
+          "value": 1661236807757
+        },
+        "content": "Research & Lab Assistant\n\nAl Ain University\nCollege of Pharmacy\nP. O. Box: 64141, AI Ain \u2013 UAE\nTel: +97137024980\nEmail: mohd.sakkal@aau.ac.ae\n\nEducation:\nB.Pharm, MSc AL Ain University, United Arab Emirates",
+        "visibility": "public",
+        "path": "/0000-0001-6081-1284/biography"
+      },
+      "researcher-urls": {
+        "last-modified-date": null,
+        "researcher-url": [],
+        "path": "/0000-0001-6081-1284/researcher-urls"
+      },
+      "emails": {
+        "last-modified-date": {
+          "value": 1731768055729
+        },
+        "email": [
+          {
+            "created-date": {
+              "value": 1676617356152
+            },
+            "last-modified-date": {
+              "value": 1676617484199
+            },
+            "source": {
+              "source-orcid": {
+                "uri": "https://orcid.org/0000-0001-6081-1284",
+                "path": "0000-0001-6081-1284",
+                "host": "orcid.org"
+              },
+              "source-client-id": null,
+              "source-name": {
+                "value": "Molham Sakkal"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "email": "molham.sakkal@gmail.com",
+            "path": null,
+            "visibility": "public",
+            "verified": true,
+            "primary": true,
+            "put-code": null
+          },
+          {
+            "created-date": {
+              "value": 1602569212133
+            },
+            "last-modified-date": {
+              "value": 1660559873165
+            },
+            "source": {
+              "source-orcid": {
+                "uri": "https://orcid.org/0000-0001-6081-1284",
+                "path": "0000-0001-6081-1284",
+                "host": "orcid.org"
+              },
+              "source-client-id": null,
+              "source-name": {
+                "value": "Molham Sakkal"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "email": "201620348@aau.ac.ae",
+            "path": null,
+            "visibility": "public",
+            "verified": true,
+            "primary": false,
+            "put-code": null
+          },
+          {
+            "created-date": {
+              "value": 1602569212133
+            },
+            "last-modified-date": {
+              "value": 1660559873175
+            },
+            "source": {
+              "source-orcid": {
+                "uri": "https://orcid.org/0000-0001-6081-1284",
+                "path": "0000-0001-6081-1284",
+                "host": "orcid.org"
+              },
+              "source-client-id": null,
+              "source-name": {
+                "value": "Molham Sakkal"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "email": "m.molhamsk1998@gmail.com",
+            "path": null,
+            "visibility": "public",
+            "verified": true,
+            "primary": false,
+            "put-code": null
+          },
+          {
+            "created-date": {
+              "value": 1645166429922
+            },
+            "last-modified-date": {
+              "value": 1660559873159
+            },
+            "source": {
+              "source-orcid": {
+                "uri": "https://orcid.org/0000-0001-6081-1284",
+                "path": "0000-0001-6081-1284",
+                "host": "orcid.org"
+              },
+              "source-client-id": null,
+              "source-name": {
+                "value": "Molham Sakkal"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "email": "Mohd.Sakkal@aau.ac.ae",
+            "path": null,
+            "visibility": "public",
+            "verified": true,
+            "primary": false,
+            "put-code": null
+          },
+          {
+            "created-date": {
+              "value": 1602569212133
+            },
+            "last-modified-date": {
+              "value": 1660559873170
+            },
+            "source": {
+              "source-orcid": {
+                "uri": "https://orcid.org/0000-0001-6081-1284",
+                "path": "0000-0001-6081-1284",
+                "host": "orcid.org"
+              },
+              "source-client-id": null,
+              "source-name": {
+                "value": "Molham Sakkal"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "email": "m.molham1998@hotmail.com",
+            "path": null,
+            "visibility": "public",
+            "verified": true,
+            "primary": false,
+            "put-code": null
+          },
+          {
+            "created-date": {
+              "value": 1731754545992
+            },
+            "last-modified-date": {
+              "value": 1731768055729
+            },
+            "source": {
+              "source-orcid": {
+                "uri": "https://orcid.org/0000-0001-6081-1284",
+                "path": "0000-0001-6081-1284",
+                "host": "orcid.org"
+              },
+              "source-client-id": null,
+              "source-name": {
+                "value": "Molham Sakkal"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "email": "Mohammad.sakkal@aau.ac.ae",
+            "path": null,
+            "visibility": "public",
+            "verified": true,
+            "primary": false,
+            "put-code": null
+          }
+        ],
+        "path": "/0000-0001-6081-1284/email"
+      },
+      "addresses": {
+        "last-modified-date": null,
+        "address": [],
+        "path": "/0000-0001-6081-1284/address"
+      },
+      "keywords": {
+        "last-modified-date": null,
+        "keyword": [],
+        "path": "/0000-0001-6081-1284/keywords"
+      },
+      "external-identifiers": {
+        "last-modified-date": {
+          "value": 1678356031034
+        },
+        "external-identifier": [
+          {
+            "created-date": {
+              "value": 1678356031034
+            },
+            "last-modified-date": {
+              "value": 1678356031034
+            },
+            "source": {
+              "source-orcid": null,
+              "source-client-id": {
+                "uri": "https://orcid.org/client/APP-WRQOUAK78G5F7GMD",
+                "path": "APP-WRQOUAK78G5F7GMD",
+                "host": "orcid.org"
+              },
+              "source-name": {
+                "value": "Multidisciplinary Digital Publishing Institute"
+              },
+              "assertion-origin-orcid": null,
+              "assertion-origin-client-id": null,
+              "assertion-origin-name": null
+            },
+            "external-id-type": "SciProfiles",
+            "external-id-value": "2389953",
+            "external-id-url": {
+              "value": "https://sciprofiles.com/profile/2389953"
+            },
+            "external-id-relationship": "self",
+            "visibility": "public",
+            "path": "/0000-0001-6081-1284/external-identifiers/2958625",
+            "put-code": 2958625,
+            "display-index": 0
+          }
+        ],
+        "path": "/0000-0001-6081-1284/external-identifiers"
+      },
+      "path": "/0000-0001-6081-1284/person"
+    },
+    "works": {
+      "last-modified-date": {
+        "value": 1765813026393
+      },
+      "group": [
+        {
+          "last-modified-date": {
+            "value": 1765813026393
+          },
+          "external-ids": {
+            "external-id": [
+              {
+                "external-id-type": "doi",
+                "external-id-value": "10.1007/s44446-025-00046-y",
+                "external-id-normalized": {
+                  "value": "10.1007/s44446-025-00046-y",
+                  "transient": true
+                },
+                "external-id-normalized-error": null,
+                "external-id-url": {
+                  "value": "https://doi.org/10.1007/s44446-025-00046-y"
+                },
+                "external-id-relationship": "self"
+              }
+            ]
+          },
+          "work-summary": [
+            {
+              "put-code": 199788269,
+              "created-date": {
+                "value": 1765813026393
+              },
+              "last-modified-date": {
+                "value": 1765813026393
+              },
+              "source": {
+                "source-orcid": null,
+                "source-client-id": {
+                  "uri": "https://orcid.org/client/0000-0001-9884-1913",
+                  "path": "0000-0001-9884-1913",
+                  "host": "orcid.org"
+                },
+                "source-name": {
+                  "value": "Crossref"
+                },
+                "assertion-origin-orcid": null,
+                "assertion-origin-client-id": null,
+                "assertion-origin-name": null
+              },
+              "title": {
+                "title": {
+                  "value": "Inhalable nanoparticle-based drug delivery system for non-small cell lung cancer therapy: promises and challenges"
+                },
+                "subtitle": null,
+                "translated-title": null
+              },
+              "external-ids": {
+                "external-id": [
+                  {
+                    "external-id-type": "doi",
+                    "external-id-value": "10.1007/s44446-025-00046-y",
+                    "external-id-normalized": {
+                      "value": "10.1007/s44446-025-00046-y",
+                      "transient": true
+                    },
+                    "external-id-normalized-error": null,
+                    "external-id-url": {
+                      "value": "https://doi.org/10.1007/s44446-025-00046-y"
+                    },
+                    "external-id-relationship": "self"
+                  }
+                ]
+              },
+              "url": {
+                "value": "https://doi.org/10.1007/s44446-025-00046-y"
+              },
+              "type": "journal-article",
+              "publication-date": {
+                "year": {
+                  "value": "2025"
+                },
+                "month": {
+                  "value": "12"
+                },
+                "day": null
+              },
+              "journal-title": {
+                "value": "Saudi Pharmaceutical Journal"
+              },
+              "visibility": "public",
+              "path": "/0000-0001-6081-1284/work/199788269",
+              "display-index": "1"
+            }
+          ]
+        },
+        {
+          "last-modified-date": {
+            "value": 1763514284400
+          },
+          "external-ids": {
+            "external-id": [
+              {
+                "external-id-type": "doi",
+                "external-id-value": "10.3390/ijms262211029",
+                "external-id-normalized": {
+                  "value": "10.3390/ijms262211029",
+                  "transient": true
+                },
+                "external-id-normalized-error": null,
+                "external-id-url": {
+                  "value": "https://doi.org/10.3390/ijms262211029"
+                },
+                "external-id-relationship": "self"
+              }
+            ]
+          },
+          "work-summary": [
+            {
+              "put-code": 196936381,
+              "created-date": {
+                "value": 1763127201715
+              },
+              "last-modified-date": {
+                "value": 1763127201715
+              },
+              "source": {
+                "source-orcid": null,
+                "source-client-id": {
+                  "uri": "https://orcid.org/client/0000-0001-9884-1913",
+                  "path": "0000-0001-9884-1913",
+                  "host": "orcid.org"
+                },
+                "source-name": {
+                  "value": "Crossref"
+                },
+                "assertion-origin-orcid": null,
+                "assertion-origin-client-id": null,
+                "assertion-origin-name": null
+              },
+              "title": {
+                "title": {
+                  "value": "Targeting Cancer Through Thymoquinone: From Molecular Mechanisms to Clinical Prospects"
+                },
+                "subtitle": null,
+                "translated-title": null
+              },
+              "external-ids": {
+                "external-id": [
+                  {
+                    "external-id-type": "doi",
+                    "external-id-value": "10.3390/ijms262211029",
+                    "external-id-normalized": {
+                      "value": "10.3390/ijms262211029",
+                      "transient": true
+                    },
+                    "external-id-normalized-error": null,
+                    "external-id-url": {
+                      "value": "https://doi.org/10.3390/ijms262211029"
+                    },
+                    "external-id-relationship": "self"
+                  }
+                ]
+              },
+              "url": {
+                "value": "https://doi.org/10.3390/ijms262211029"
+              },
+              "type": "journal-article",
+              "publication-date": {
+                "year": {
+                  "value": "2025"
+                },
+                "month": {
+                  "value": "11"
+                },
+                "day": {
+                  "value": "14"
+                }
+              },
+              "journal-title": {
+                "value": "International Journal of Molecular Sciences"
+              },
+              "visibility": "public",
+              "path": "/0000-0001-6081-1284/work/196936381",
+              "display-index": "1"
+            },
+            {
+              "put-code": 197318385,
+              "created-date": {
+                "value": 1763514284400
+              },
+              "last-modified-date": {
+                "value": 1763514284400
+              },
+              "source": {
+                "source-orcid": null,
+                "source-client-id": {
+                  "uri": "https://orcid.org/client/APP-WRQOUAK78G5F7GMD",
+                  "path": "APP-WRQOUAK78G5F7GMD",
+                  "host": "orcid.org"
+                },
+                "source-name": {
+                  "value": "Multidisciplinary Digital Publishing Institute"
+                },
+                "assertion-origin-orcid": null,
+                "assertion-origin-client-id": null,
+                "assertion-origin-name": null
+              },
+              "title": {
+                "title": {
+                  "value": "Targeting Cancer Through Thymoquinone: From Molecular Mechanisms to Clinical Prospects"
+                },
+                "subtitle": null,
+                "translated-title": null
+              },
+              "external-ids": {
+                "external-id": [
+                  {
+                    "external-id-type": "doi",
+                    "external-id-value": "10.3390/ijms262211029",
+                    "external-id-normalized": {
+                      "value": "10.3390/ijms262211029",
+                      "transient": true
+                    },
+                    "external-id-normalized-error": null,
+                    "external-id-url": {
+                      "value": "https://doi.org/10.3390/ijms262211029"
+                    },
+                    "external-id-relationship": "self"
+                  }
+                ]
+              },
+              "url": {
+                "value": "https://www.mdpi.com/1422-0067/26/22/11029"
+              },
+              "type": "journal-article",
+              "publication-date": {
+                "year": {
+                  "value": "2025"
+                },
+                "month": {
+                  "value": "11"
+                },
+                "day": null
+              },
+              "journal-title": {
+                "value": "International Journal of Molecular Sciences"
+              },
+              "visibility": "public",
+              "path": "/0000-0001-6081-1284/work/197318385",
+              "display-index": "1"
+            }
+          ]
+        },
+        {
+          "last-modified-date": {
+            "value": 1761786226130
+          },
+          "external-ids": {
+            "external-id": [
+              {
+                "external-id-type": "doi",
+                "external-id-value": "10.3390/molecules30214181",
+                "external-id-normalized": {
+                  "value": "10.3390/molecules30214181",
+                  "transient": true
+                },
+                "external-id-normalized-error": null,
+                "external-id-url": {
+                  "value": "https://doi.org/10.3390/molecules30214181"
+                },
+                "external-id-relationship": "self"
+              }
+            ]
+          },
+          "work-summary": [
+            {
+              "put-code": 195463063,
+              "created-date": {
+                "value": 1761725641815
+              },
+              "last-modified-date": {
+                "value": 1761725641815
+              },
+              "source": {
+                "source-orcid": null,
+                "source-client-id": {
+                  "uri": "https://orcid.org/client/0000-0001-9884-1913",
+                  "path": "0000-0001-9884-1913",
+                  "host": "orcid.org"
+                },
+                "source-name": {
+                  "value": "Crossref"
+                },
+                "assertion-origin-orcid": null,
+                "assertion-origin-client-id": null,
+                "assertion-origin-name": null
+              },
+              "title": {
+                "title": {
+                  "value": "The Discovery of Small ERK5 Inhibitors via Structure-Based Virtual Screening, Biological Evaluation and MD Simulations"
+                },
+                "subtitle": null,
+                "translated-title": null
+              },
+              "external-ids": {
+                "external-id": [
+                  {
+                    "external-id-type": "doi",
+                    "external-id-value": "10.3390/molecules30214181",
+                    "external-id-normalized": {
+                      "value": "10.3390/molecules30214181",
+                      "transient": true
+                    },
+                    "external-id-normalized-error": null,
+                    "external-id-url": {
+                      "value": "https://doi.org/10.3390/molecules30214181"
+                    },
+                    "external-id-relationship": "self"
+                  }
+                ]
+              },
+              "url": {
+                "value": "https://doi.org/10.3390/molecules30214181"
+              },
+              "type": "journal-article",
+              "publication-date": {
+                "year": {
+                  "value": "2025"
+                },
+                "month": {
+                  "value": "10"
+                },
+                "day": {
+                  "value": "25"
+                }
+              },
+              "journal-title": {
+                "value": "Molecules"
+              },
+              "visibility": "public",
+              "path": "/0000-0001-6081-1284/work/195463063",
+              "display-index": "1"
+            },
+            {
+              "put-code": 195546295,
+              "created-date": {
+                "value": 1761786226130
+              },
+              "last-modified-date": {
+                "value": 1761786226130
+              },
+              "source": {
+                "source-orcid": null,
+                "source-client-id": {
+                  "uri": "https://orcid.org/client/APP-WRQOUAK78G5F7GMD",
+                  "path": "APP-WRQOUAK78G5F7GMD",
+                  "host": "orcid.org"
+                },
+                "source-name": {
+                  "value": "Multidisciplinary Digital Publishing Institute"
+                },
+                "assertion-origin-orcid": null,
+                "assertion-origin-client-id": null,
+                "assertion-origin-name": null
+              },
+              "title": {
+                "title": {
+                  "value": "The Discovery of Small ERK5 Inhibitors via Structure-Based Virtual Screening, Biological Evaluation and MD Simulations"
+                },
+                "subtitle": null,
+                "translated-title": null
+              },
+              "external-ids": {
+                "external-id": [
+                  {
+                    "external-id-type": "doi",
+                    "external-id-value": "10.3390/molecules30214181",
+                    "external-id-normalized": {
+                      "value": "10.3390/molecules30214181",
+                      "transient": true
+                    },
+                    "external-id-normalized-error": null,
+                    "external-id-url": {
+                      "value": "https://doi.org/10.3390/molecules30214181"
+                    },
+                    "external-id-relationship": "self"
+                  }
+                ]
+              },
+              "url": {
+                "value": "https://www.mdpi.com/1420-3049/30/21/4181"
+              },
+              "type": "journal-article",
+              "publication-date": {
+                "year": {
+                  "value": "2025"
+                },
+                "month": {
+                  "value": "10"
+                },
+                "day": null
+              },
+              "journal-title": {
+                "value": "Molecules"
+              },
+              "visibility": "public",
+              "path": "/0000-0001-6081-1284/work/195546295",
+              "display-index": "1"
+            }
+          ]
+        },
+        {
+          "last-modified-date": {
+            "value": 1745081018821
+          },
+          "external-ids": {
+            "external-id": [
+              {
+                "external-id-type": "doi",
+                "external-id-value": "10.1016/j.compbiomed.2025.110156",
+                "external-id-normalized": {
+                  "value": "10.1016/j.compbiomed.2025.110156",
+                  "transient": true
+                },
+                "external-id-normalized-error": null,
+                "external-id-url": {
+                  "value": "https://doi.org/10.1016/j.compbiomed.2025.110156"
+                },
+                "external-id-relationship": "self"
+              }
+            ]
+          },
+          "work-summary": [
+            {
+              "put-code": 182557458,
+              "created-date": {
+                "value": 1745081018821
+              },
+              "last-modified-date": {
+                "value": 1745081018821
+              },
+              "source": {
+                "source-orcid": null,
+                "source-client-id": {
+                  "uri": "https://orcid.org/client/0000-0001-9884-1913",
+                  "path": "0000-0001-9884-1913",
+                  "host": "orcid.org"
+                },
+                "source-name": {
+                  "value": "Crossref"
+                },
+                "assertion-origin-orcid": null,
+                "assertion-origin-client-id": null,
+                "assertion-origin-name": null
+              },
+              "title": {
+                "title": {
+                  "value": "Machine learning predictions of tumor progression: How reliable are we?"
+                },
+                "subtitle": null,
+                "translated-title": null
+              },
+              "external-ids": {
+                "external-id": [
+                  {
+                    "external-id-type": "doi",
+                    "external-id-value": "10.1016/j.compbiomed.2025.110156",
+                    "external-id-normalized": {
+                      "value": "10.1016/j.compbiomed.2025.110156",
+                      "transient": true
+                    },
+                    "external-id-normalized-error": null,
+                    "external-id-url": {
+                      "value": "https://doi.org/10.1016/j.compbiomed.2025.110156"
+                    },
+                    "external-id-relationship": "self"
+                  }
+                ]
+              },
+              "url": {
+                "value": "https://doi.org/10.1016/j.compbiomed.2025.110156"
+              },
+              "type": "journal-article",
+              "publication-date": {
+                "year": {
+                  "value": "2025"
+                },
+                "month": {
+                  "value": "06"
+                },
+                "day": null
+              },
+              "journal-title": {
+                "value": "Computers in Biology and Medicine"
+              },
+              "visibility": "public",
+              "path": "/0000-0001-6081-1284/work/182557458",
+              "display-index": "1"
+            }
+          ]
+        },
+        {
+          "last-modified-date": {
+            "value": 1761685810329
+          },
+          "external-ids": {
+            "external-id": [
+              {
+                "external-id-type": "doi",
+                "external-id-value": "10.69709/CellEngC.2025.115467",
+                "external-id-normalized": {
+                  "value": "10.69709/cellengc.2025.115467",
+                  "transient": true
+                },
+                "external-id-normalized-error": null,
+                "external-id-url": {
+                  "value": "https://doi.org/10.69709/CellEngC.2025.115467"
+                },
+                "external-id-relationship": "self"
+              }
+            ]
+          },
+          "work-summary": [
+            {
+              "put-code": 182197907,
+              "created-date": {
+                "value": 1744628064472
+              },
+              "last-modified-date": {
+                "value": 1761685810329
+              },
+              "source": {
+                "source-orcid": null,
+                "source-client-id": {
+                  "uri": "https://orcid.org/client/0000-0001-9884-1913",
+                  "path": "0000-0001-9884-1913",
+                  "host": "orcid.org"
+                },
+                "source-name": {
+                  "value": "Crossref"
+                },
+                "assertion-origin-orcid": null,
+                "assertion-origin-client-id": null,
+                "assertion-origin-name": null
+              },
+              "title": {
+                "title": {
+                  "value": "Synergistic Modulation of ER Stress and Insulin Potentiation Therapy for Enhanced Cancer Treatment"
+                },
+                "subtitle": null,
+                "translated-title": null
+              },
+              "external-ids": {
+                "external-id": [
+                  {
+                    "external-id-type": "doi",
+                    "external-id-value": "10.69709/CellEngC.2025.115467",
+                    "external-id-normalized": {
+                      "value": "10.69709/cellengc.2025.115467",
+                      "transient": true
+                    },
+                    "external-id-normalized-error": null,
+                    "external-id-url": {
+                      "value": "https://doi.org/10.69709/CellEngC.2025.115467"
+                    },
+                    "external-id-relationship": "self"
+                  }
+                ]
+              },
+              "url": {
+                "value": "https://doi.org/10.69709/CellEngC.2025.115467"
+              },
+              "type": "journal-article",
+              "publication-date": {
+                "year": {
+                  "value": "2025"
+                },
+                "month": {
+                  "value": "04"
+                },
+                "day": {
+                  "value": "28"
+                }
+              },
+              "journal-title": {
+                "value": "Cell Therapy & Engineering Connect"
+              },
+              "visibility": "public",
+              "path": "/0000-0001-6081-1284/work/182197907",
+              "display-index": "1"
+            }
+          ]
+        },
+        {
+          "last-modified-date": {
+            "value": 1709514422454
+          },
+          "external-ids": {
+            "external-id": [
+              {
+                "external-id-type": "doi",
+                "external-id-value": "10.3390/ph17030315",
+                "external-id-normalized": {
+                  "value": "10.3390/ph17030315",
+                  "transient": true
+                },
+                "external-id-normalized-error": null,
+                "external-id-url": {
+                  "value": "https://doi.org/10.3390/ph17030315"
+                },
+                "external-id-relationship": "self"
+              }
+            ]
+          },
+          "work-summary": [
+            {
+              "put-code": 154251689,
+              "created-date": {
+                "value": 1709134119456
+              },
+              "last-modified-date": {
+                "value": 1709134119456
+              },
+              "source": {
+                "source-orcid": null,
+                "source-client-id": {
+                  "uri": "https://orcid.org/client/0000-0001-9884-1913",
+                  "path": "0000-0001-9884-1913",
+                  "host": "orcid.org"
+                },
+                "source-name": {
+                  "value": "Crossref"
+                },
+                "assertion-origin-orcid": null,
+                "assertion-origin-client-id": null,
+                "assertion-origin-name": null
+              },
+              "title": {
+                "title": {
+                  "value": "Nanomedicines: Emerging Platforms in Smart Chemotherapy Treatment\u2014A Recent Review"
+                },
+                "subtitle": null,
+                "translated-title": null
+              },
+              "external-ids": {
+                "external-id": [
+                  {
+                    "external-id-type": "doi",
+                    "external-id-value": "10.3390/ph17030315",
+                    "external-id-normalized": {
+                      "value": "10.3390/ph17030315",
+                      "transient": true
+                    },
+                    "external-id-normalized-error": null,
+                    "external-id-url": {
+                      "value": "https://doi.org/10.3390/ph17030315"
+                    },
+                    "external-id-relationship": "self"
+                  }
+                ]
+              },
+              "url": {
+                "value": "https://doi.org/10.3390/ph17030315"
+              },
+              "type": "journal-article",
+              "publication-date": {
+                "year": {
+                  "value": "2024"
+                },
+                "month": {
+                  "value": "02"
+                },
+                "day": {
+                  "value": "28"
+                }
+              },
+              "journal-title": {
+                "value": "Pharmaceuticals"
+              },
+              "visibility": "public",
+              "path": "/0000-0001-6081-1284/work/154251689",
+              "display-index": "0"
+            },
+            {
+              "put-code": 154558419,
+              "created-date": {
+                "value": 1709514422454
+              },
+              "last-modified-date": {
+                "value": 1709514422454
+              },
+              "source": {
+                "source-orcid": null,
+                "source-client-id": {
+                  "uri": "https://orcid.org/client/APP-WRQOUAK78G5F7GMD",
+                  "path": "APP-WRQOUAK78G5F7GMD",
+                  "host": "orcid.org"
+                },
+                "source-name": {
+                  "value": "Multidisciplinary Digital Publishing Institute"
+                },
+                "assertion-origin-orcid": null,
+                "assertion-origin-client-id": null,
+                "assertion-origin-name": null
+              },
+              "title": {
+                "title": {
+                  "value": "Nanomedicines: Emerging Platforms in Smart Chemotherapy Treatment\u2014A Recent Review"
+                },
+                "subtitle": null,
+                "translated-title": null
+              },
+              "external-ids": {
+                "external-id": [
+                  {
+                    "external-id-type": "doi",
+                    "external-id-value": "10.3390/ph17030315",
+                    "external-id-normalized": {
+                      "value": "10.3390/ph17030315",
+                      "transient": true
+                    },
+                    "external-id-normalized-error": null,
+                    "external-id-url": {
+                      "value": "https://doi.org/10.3390/ph17030315"
+                    },
+                    "external-id-relationship": "self"
+                  }
+                ]
+              },
+              "url": {
+                "value": "https://www.mdpi.com/1424-8247/17/3/315"
+              },
+              "type": "journal-article",
+              "publication-date": {
+                "year": {
+                  "value": "2024"
+                },
+                "month": {
+                  "value": "02"
+                },
+                "day": null
+              },
+              "journal-title": {
+                "value": "Pharmaceuticals"
+              },
+              "visibility": "public",
+              "path": "/0000-0001-6081-1284/work/154558419",
+              "display-index": "0"
+            }
+          ]
+        },
+        {
+          "last-modified-date": {
+            "value": 1709428060129
+          },
+          "external-ids": {
+            "external-id": [
+              {
+                "external-id-type": "doi",
+                "external-id-value": "10.3390/polym16050643",
+                "external-id-normalized": {
+                  "value": "10.3390/polym16050643",
+                  "transient": true
+                },
+                "external-id-normalized-error": null,
+                "external-id-url": {
+                  "value": "https://doi.org/10.3390/polym16050643"
+                },
+                "external-id-relationship": "self"
+              }
+            ]
+          },
+          "work-summary": [
+            {
+              "put-code": 154229208,
+              "created-date": {
+                "value": 1709118497255
+              },
+              "last-modified-date": {
+                "value": 1709118497255
+              },
+              "source": {
+                "source-orcid": null,
+                "source-client-id": {
+                  "uri": "https://orcid.org/client/0000-0001-9884-1913",
+                  "path": "0000-0001-9884-1913",
+                  "host": "orcid.org"
+                },
+                "source-name": {
+                  "value": "Crossref"
+                },
+                "assertion-origin-orcid": null,
+                "assertion-origin-client-id": null,
+                "assertion-origin-name": null
+              },
+              "title": {
+                "title": {
+                  "value": "Preparation and Characterization of Theophylline Controlled Release Matrix System Incorporating Poloxamer 407, Stearyl Alcohol, and Hydroxypropyl Methylcellulose: A Novel Formulation and Development Study"
+                },
+                "subtitle": null,
+                "translated-title": null
+              },
+              "external-ids": {
+                "external-id": [
+                  {
+                    "external-id-type": "doi",
+                    "external-id-value": "10.3390/polym16050643",
+                    "external-id-normalized": {
+                      "value": "10.3390/polym16050643",
+                      "transient": true
+                    },
+                    "external-id-normalized-error": null,
+                    "external-id-url": {
+                      "value": "https://doi.org/10.3390/polym16050643"
+                    },
+                    "external-id-relationship": "self"
+                  }
+                ]
+              },
+              "url": {
+                "value": "https://doi.org/10.3390/polym16050643"
+              },
+              "type": "journal-article",
+              "publication-date": {
+                "year": {
+                  "value": "2024"
+                },
+                "month": {
+                  "value": "02"
+                },
+                "day": {
+                  "value": "27"
+                }
+              },
+              "journal-title": {
+                "value": "Polymers"
+              },
+              "visibility": "public",
+              "path": "/0000-0001-6081-1284/work/154229208",
+              "display-index": "0"
+            },
+            {
+              "put-code": 154514782,
+              "created-date": {
+                "value": 1709428060129
+              },
+              "last-modified-date": {
+                "value": 1709428060129
+              },
+              "source": {
+                "source-orcid": null,
+                "source-client-id": {
+                  "uri": "https://orcid.org/client/APP-WRQOUAK78G5F7GMD",
+                  "path": "APP-WRQOUAK78G5F7GMD",
+                  "host": "orcid.org"
+                },
+                "source-name": {
+                  "value": "Multidisciplinary Digital Publishing Institute"
+                },
+                "assertion-origin-orcid": null,
+                "assertion-origin-client-id": null,
+                "assertion-origin-name": null
+              },
+              "title": {
+                "title": {
+                  "value": "Preparation and Characterization of Theophylline Controlled Release Matrix System Incorporating Poloxamer 407, Stearyl Alcohol, and Hydroxypropyl Methylcellulose: A Novel Formulation and Development Study"
+                },
+                "subtitle": null,
+                "translated-title": null
+              },
+              "external-ids": {
+                "external-id": [
+                  {
+                    "external-id-type": "doi",
+                    "external-id-value": "10.3390/polym16050643",
+                    "external-id-normalized": {
+                      "value": "10.3390/polym16050643",
+                      "transient": true
+                    },
+                    "external-id-normalized-error": null,
+                    "external-id-url": {
+                      "value": "https://doi.org/10.3390/polym16050643"
+                    },
+                    "external-id-relationship": "self"
+                  }
+                ]
+              },
+              "url": {
+                "value": "https://www.mdpi.com/2073-4360/16/5/643"
+              },
+              "type": "journal-article",
+              "publication-date": {
+                "year": {
+                  "value": "2024"
+                },
+                "month": {
+                  "value": "02"
+                },
+                "day": null
+              },
+              "journal-title": {
+                "value": "Polymers"
+              },
+              "visibility": "public",
+              "path": "/0000-0001-6081-1284/work/154514782",
+              "display-index": "0"
+            }
+          ]
+        },
+        {
+          "last-modified-date": {
+            "value": 1708909285353
+          },
+          "external-ids": {
+            "external-id": [
+              {
+                "external-id-type": "doi",
+                "external-id-value": "10.3390/ph17030271",
+                "external-id-normalized": {
+                  "value": "10.3390/ph17030271",
+                  "transient": true
+                },
+                "external-id-normalized-error": null,
+                "external-id-url": {
+                  "value": "https://doi.org/10.3390/ph17030271"
+                },
+                "external-id-relationship": "self"
+              }
+            ]
+          },
+          "work-summary": [
+            {
+              "put-code": 153694578,
+              "created-date": {
+                "value": 1708519954174
+              },
+              "last-modified-date": {
+                "value": 1708519954174
+              },
+              "source": {
+                "source-orcid": null,
+                "source-client-id": {
+                  "uri": "https://orcid.org/client/0000-0001-9884-1913",
+                  "path": "0000-0001-9884-1913",
+                  "host": "orcid.org"
+                },
+                "source-name": {
+                  "value": "Crossref"
+                },
+                "assertion-origin-orcid": null,
+                "assertion-origin-client-id": null,
+                "assertion-origin-name": null
+              },
+              "title": {
+                "title": {
+                  "value": "Effect of Hydration Forms and Polymer Grades on Theophylline Controlled-Release Tablet: An Assessment and Evaluation"
+                },
+                "subtitle": null,
+                "translated-title": null
+              },
+              "external-ids": {
+                "external-id": [
+                  {
+                    "external-id-type": "doi",
+                    "external-id-value": "10.3390/ph17030271",
+                    "external-id-normalized": {
+                      "value": "10.3390/ph17030271",
+                      "transient": true
+                    },
+                    "external-id-normalized-error": null,
+                    "external-id-url": {
+                      "value": "https://doi.org/10.3390/ph17030271"
+                    },
+                    "external-id-relationship": "self"
+                  }
+                ]
+              },
+              "url": {
+                "value": "https://doi.org/10.3390/ph17030271"
+              },
+              "type": "journal-article",
+              "publication-date": {
+                "year": {
+                  "value": "2024"
+                },
+                "month": {
+                  "value": "02"
+                },
+                "day": {
+                  "value": "21"
+                }
+              },
+              "journal-title": {
+                "value": "Pharmaceuticals"
+              },
+              "visibility": "public",
+              "path": "/0000-0001-6081-1284/work/153694578",
+              "display-index": "0"
+            },
+            {
+              "put-code": 154006549,
+              "created-date": {
+                "value": 1708909285353
+              },
+              "last-modified-date": {
+                "value": 1708909285353
+              },
+              "source": {
+                "source-orcid": null,
+                "source-client-id": {
+                  "uri": "https://orcid.org/client/APP-WRQOUAK78G5F7GMD",
+                  "path": "APP-WRQOUAK78G5F7GMD",
+                  "host": "orcid.org"
+                },
+                "source-name": {
+                  "value": "Multidisciplinary Digital Publishing Institute"
+                },
+                "assertion-origin-orcid": null,
+                "assertion-origin-client-id": null,
+                "assertion-origin-name": null
+              },
+              "title": {
+                "title": {
+                  "value": "Effect of Hydration Forms and Polymer Grades on Theophylline Controlled-Release Tablet: An Assessment and Evaluation"
+                },
+                "subtitle": null,
+                "translated-title": null
+              },
+              "external-ids": {
+                "external-id": [
+                  {
+                    "external-id-type": "doi",
+                    "external-id-value": "10.3390/ph17030271",
+                    "external-id-normalized": {
+                      "value": "10.3390/ph17030271",
+                      "transient": true
+                    },
+                    "external-id-normalized-error": null,
+                    "external-id-url": {
+                      "value": "https://doi.org/10.3390/ph17030271"
+                    },
+                    "external-id-relationship": "self"
+                  }
+                ]
+              },
+              "url": {
+                "value": "https://www.mdpi.com/1424-8247/17/3/271"
+              },
+              "type": "journal-article",
+              "publication-date": {
+                "year": {
+                  "value": "2024"
+                },
+                "month": {
+                  "value": "02"
+                },
+                "day": null
+              },
+              "journal-title": {
+                "value": "Pharmaceuticals"
+              },
+              "visibility": "public",
+              "path": "/0000-0001-6081-1284/work/154006549",
+              "display-index": "0"
+            }
+          ]
+        },
+        {
+          "last-modified-date": {
+            "value": 1712591565407
+          },
+          "external-ids": {
+            "external-id": [
+              {
+                "external-id-type": "doi",
+                "external-id-value": "10.12688/f1000research.140607.1",
+                "external-id-normalized": {
+                  "value": "10.12688/f1000research.140607.1",
+                  "transient": true
+                },
+                "external-id-normalized-error": null,
+                "external-id-url": {
+                  "value": "https://f1000research.com/articles/12-1325/v1"
+                },
+                "external-id-relationship": "self"
+              }
+            ]
+          },
+          "work-summary": [
+            {
+              "put-code": 144277601,
+              "created-date": {
+                "value": 1697128411808
+              },
+              "last-modified-date": {
+                "value": 1712591565407
+              },
+              "source": {
+                "source-orcid": null,
+                "source-client-id": {
+                  "uri": "https://orcid.org/client/0000-0003-0835-9299",
+                  "path": "0000-0003-0835-9299",
+                  "host": "orcid.org"
+                },
+                "source-name": {
+                  "value": "F1000"
+                },
+                "assertion-origin-orcid": null,
+                "assertion-origin-client-id": null,
+                "assertion-origin-name": null
+              },
+              "title": {
+                "title": {
+                  "value": "Enteric-coating film effect on the delayed drug release of pantoprazole gastro-resistant generic tablets [version 1; peer review: 2 approved]"
+                },
+                "subtitle": null,
+                "translated-title": null
+              },
+              "external-ids": {
+                "external-id": [
+                  {
+                    "external-id-type": "doi",
+                    "external-id-value": "10.12688/f1000research.140607.1",
+                    "external-id-normalized": {
+                      "value": "10.12688/f1000research.140607.1",
+                      "transient": true
+                    },
+                    "external-id-normalized-error": null,
+                    "external-id-url": {
+                      "value": "https://f1000research.com/articles/12-1325/v1"
+                    },
+                    "external-id-relationship": "self"
+                  },
+                  {
+                    "external-id-type": "issn",
+                    "external-id-value": "2046-1402",
+                    "external-id-normalized": {
+                      "value": "2046-1402",
+                      "transient": true
+                    },
+                    "external-id-normalized-error": null,
+                    "external-id-url": {
+                      "value": "https://f1000research.com/"
+                    },
+                    "external-id-relationship": "part-of"
+                  },
+                  {
+                    "external-id-type": "grant_number",
+                    "external-id-value": "700032854",
+                    "external-id-normalized": {
+                      "value": "700032854",
+                      "transient": true
+                    },
+                    "external-id-normalized-error": null,
+                    "external-id-url": {
+                      "value": "http://dx.doi.org/10.13039/501100006014"
+                    },
+                    "external-id-relationship": "funded-by"
+                  },
+                  {
+                    "external-id-type": "grant_number",
+                    "external-id-value": "Ph2021-2-902",
+                    "external-id-normalized": {
+                      "value": "ph2021-2-902",
+                      "transient": true
+                    },
+                    "external-id-normalized-error": null,
+                    "external-id-url": {
+                      "value": "http://dx.doi.org/10.13039/100020599"
+                    },
+                    "external-id-relationship": "funded-by"
+                  }
+                ]
+              },
+              "url": {
+                "value": "https://f1000research.com/articles/12-1325/v1"
+              },
+              "type": "journal-article",
+              "publication-date": {
+                "year": {
+                  "value": "2023"
+                },
+                "month": {
+                  "value": "10"
+                },
+                "day": {
+                  "value": "12"
+                }
+              },
+              "journal-title": null,
+              "visibility": "public",
+              "path": "/0000-0001-6081-1284/work/144277601",
+              "display-index": "0"
+            },
+            {
+              "put-code": 144281083,
+              "created-date": {
+                "value": 1697131331163
+              },
+              "last-modified-date": {
+                "value": 1697131331163
+              },
+              "source": {
+                "source-orcid": null,
+                "source-client-id": {
+                  "uri": "https://orcid.org/client/0000-0001-9884-1913",
+                  "path": "0000-0001-9884-1913",
+                  "host": "orcid.org"
+                },
+                "source-name": {
+                  "value": "Crossref"
+                },
+                "assertion-origin-orcid": null,
+                "assertion-origin-client-id": null,
+                "assertion-origin-name": null
+              },
+              "title": {
+                "title": {
+                  "value": "Enteric-coating film effect on the delayed drug release of pantoprazole gastro-resistant generic tablets"
+                },
+                "subtitle": null,
+                "translated-title": null
+              },
+              "external-ids": {
+                "external-id": [
+                  {
+                    "external-id-type": "doi",
+                    "external-id-value": "10.12688/f1000research.140607.1",
+                    "external-id-normalized": {
+                      "value": "10.12688/f1000research.140607.1",
+                      "transient": true
+                    },
+                    "external-id-normalized-error": null,
+                    "external-id-url": {
+                      "value": "https://doi.org/10.12688/f1000research.140607.1"
+                    },
+                    "external-id-relationship": "self"
+                  }
+                ]
+              },
+              "url": {
+                "value": "https://doi.org/10.12688/f1000research.140607.1"
+              },
+              "type": "journal-article",
+              "publication-date": {
+                "year": {
+                  "value": "2023"
+                },
+                "month": {
+                  "value": "10"
+                },
+                "day": {
+                  "value": "12"
+                }
+              },
+              "journal-title": {
+                "value": "F1000Research"
+              },
+              "visibility": "public",
+              "path": "/0000-0001-6081-1284/work/144281083",
+              "display-index": "0"
+            }
+          ]
+        },
+        {
+          "last-modified-date": {
+            "value": 1681064157683
+          },
+          "external-ids": {
+            "external-id": [
+              {
+                "external-id-type": "doi",
+                "external-id-value": "10.3390/ph16040539",
+                "external-id-normalized": {
+                  "value": "10.3390/ph16040539",
+                  "transient": true
+                },
+                "external-id-normalized-error": null,
+                "external-id-url": {
+                  "value": "https://doi.org/10.3390/ph16040539"
+                },
+                "external-id-relationship": "self"
+              }
+            ]
+          },
+          "work-summary": [
+            {
+              "put-code": 132759662,
+              "created-date": {
+                "value": 1681029030374
+              },
+              "last-modified-date": {
+                "value": 1681064157683
+              },
+              "source": {
+                "source-orcid": null,
+                "source-client-id": {
+                  "uri": "https://orcid.org/client/APP-WRQOUAK78G5F7GMD",
+                  "path": "APP-WRQOUAK78G5F7GMD",
+                  "host": "orcid.org"
+                },
+                "source-name": {
+                  "value": "Multidisciplinary Digital Publishing Institute"
+                },
+                "assertion-origin-orcid": null,
+                "assertion-origin-client-id": null,
+                "assertion-origin-name": null
+              },
+              "title": {
+                "title": {
+                  "value": "Effect of Excipients on the Quality of Drug Formulation and Immediate Release of Generic Metformin HCl Tablets"
+                },
+                "subtitle": null,
+                "translated-title": null
+              },
+              "external-ids": {
+                "external-id": [
+                  {
+                    "external-id-type": "doi",
+                    "external-id-value": "10.3390/ph16040539",
+                    "external-id-normalized": {
+                      "value": "10.3390/ph16040539",
+                      "transient": true
+                    },
+                    "external-id-normalized-error": null,
+                    "external-id-url": {
+                      "value": "https://doi.org/10.3390/ph16040539"
+                    },
+                    "external-id-relationship": "self"
+                  }
+                ]
+              },
+              "url": {
+                "value": "https://www.mdpi.com/1424-8247/16/4/539"
+              },
+              "type": "journal-article",
+              "publication-date": {
+                "year": {
+                  "value": "2023"
+                },
+                "month": {
+                  "value": "04"
+                },
+                "day": null
+              },
+              "journal-title": {
+                "value": "Pharmaceuticals"
+              },
+              "visibility": "public",
+              "path": "/0000-0001-6081-1284/work/132759662",
+              "display-index": "2"
+            },
+            {
+              "put-code": 132384067,
+              "created-date": {
+                "value": 1680610744287
+              },
+              "last-modified-date": {
+                "value": 1680610744287
+              },
+              "source": {
+                "source-orcid": null,
+                "source-client-id": {
+                  "uri": "https://orcid.org/client/0000-0001-9884-1913",
+                  "path": "0000-0001-9884-1913",
+                  "host": "orcid.org"
+                },
+                "source-name": {
+                  "value": "Crossref"
+                },
+                "assertion-origin-orcid": null,
+                "assertion-origin-client-id": null,
+                "assertion-origin-name": null
+              },
+              "title": {
+                "title": {
+                  "value": "Effect of Excipients on the Quality of Drug Formulation and Immediate Release of Generic Metformin HCl Tablets"
+                },
+                "subtitle": null,
+                "translated-title": null
+              },
+              "external-ids": {
+                "external-id": [
+                  {
+                    "external-id-type": "doi",
+                    "external-id-value": "10.3390/ph16040539",
+                    "external-id-normalized": {
+                      "value": "10.3390/ph16040539",
+                      "transient": true
+                    },
+                    "external-id-normalized-error": null,
+                    "external-id-url": {
+                      "value": "https://doi.org/10.3390/ph16040539"
+                    },
+                    "external-id-relationship": "self"
+                  }
+                ]
+              },
+              "url": {
+                "value": "https://doi.org/10.3390/ph16040539"
+              },
+              "type": "journal-article",
+              "publication-date": {
+                "year": {
+                  "value": "2023"
+                },
+                "month": {
+                  "value": "04"
+                },
+                "day": {
+                  "value": "04"
+                }
+              },
+              "journal-title": {
+                "value": "Pharmaceuticals"
+              },
+              "visibility": "public",
+              "path": "/0000-0001-6081-1284/work/132384067",
+              "display-index": "0"
+            }
+          ]
+        },
+        {
+          "last-modified-date": {
+            "value": 1681066073579
+          },
+          "external-ids": {
+            "external-id": [
+              {
+                "external-id-type": "doi",
+                "external-id-value": "10.1080/0972060x.2022.2072177",
+                "external-id-normalized": {
+                  "value": "10.1080/0972060x.2022.2072177",
+                  "transient": true
+                },
+                "external-id-normalized-error": null,
+                "external-id-url": null,
+                "external-id-relationship": "self"
+              }
+            ]
+          },
+          "work-summary": [
+            {
+              "put-code": 132777205,
+              "created-date": {
+                "value": 1681066073579
+              },
+              "last-modified-date": {
+                "value": 1681066073579
+              },
+              "source": {
+                "source-orcid": null,
+                "source-client-id": {
+                  "uri": "https://orcid.org/client/0000-0002-3054-1567",
+                  "path": "0000-0002-3054-1567",
+                  "host": "orcid.org"
+                },
+                "source-name": {
+                  "value": "Crossref Metadata Search"
+                },
+                "assertion-origin-orcid": {
+                  "uri": "https://orcid.org/0000-0001-6081-1284",
+                  "path": "0000-0001-6081-1284",
+                  "host": "orcid.org"
+                },
+                "assertion-origin-client-id": null,
+                "assertion-origin-name": {
+                  "value": "Molham Sakkal"
+                }
+              },
+              "title": {
+                "title": {
+                  "value": "Chemical Composition of the Volatile Oil from Aerial Parts of <i>Rosmarinus officinalis</i> L. Growing in UAE"
+                },
+                "subtitle": null,
+                "translated-title": null
+              },
+              "external-ids": {
+                "external-id": [
+                  {
+                    "external-id-type": "doi",
+                    "external-id-value": "10.1080/0972060x.2022.2072177",
+                    "external-id-normalized": {
+                      "value": "10.1080/0972060x.2022.2072177",
+                      "transient": true
+                    },
+                    "external-id-normalized-error": null,
+                    "external-id-url": null,
+                    "external-id-relationship": "self"
+                  },
+                  {
+                    "external-id-type": "issn",
+                    "external-id-value": "0972-060X",
+                    "external-id-normalized": {
+                      "value": "0972-060X",
+                      "transient": true
+                    },
+                    "external-id-normalized-error": null,
+                    "external-id-url": null,
+                    "external-id-relationship": "part-of"
+                  }
+                ]
+              },
+              "url": null,
+              "type": "journal-article",
+              "publication-date": {
+                "year": {
+                  "value": "2022"
+                },
+                "month": {
+                  "value": "05"
+                },
+                "day": {
+                  "value": "10"
+                }
+              },
+              "journal-title": {
+                "value": "Journal of Essential Oil Bearing Plants"
+              },
+              "visibility": "public",
+              "path": "/0000-0001-6081-1284/work/132777205",
+              "display-index": "0"
+            }
+          ]
+        }
+      ],
+      "path": "/0000-0001-6081-1284/works"
+    },
+    "employments": {
+      "last-modified-date": {
+        "value": 1745260091522
+      },
+      "affiliation-group": [
+        {
+          "last-modified-date": {
+            "value": 1745260060408
+          },
+          "external-ids": {
+            "external-id": []
+          },
+          "summaries": [
+            {
+              "employment-summary": {
+                "created-date": {
+                  "value": 1745260060408
+                },
+                "last-modified-date": {
+                  "value": 1745260060408
+                },
+                "source": {
+                  "source-orcid": {
+                    "uri": "https://orcid.org/0000-0001-6081-1284",
+                    "path": "0000-0001-6081-1284",
+                    "host": "orcid.org"
+                  },
+                  "source-client-id": null,
+                  "source-name": {
+                    "value": "Molham Sakkal"
+                  },
+                  "assertion-origin-orcid": null,
+                  "assertion-origin-client-id": null,
+                  "assertion-origin-name": null
+                },
+                "put-code": 28815462,
+                "department-name": "College of Pharmacy ",
+                "role-title": "Researcher and Lab Supervisor ",
+                "start-date": {
+                  "year": {
+                    "value": "2024"
+                  },
+                  "month": {
+                    "value": "09"
+                  },
+                  "day": {
+                    "value": "01"
+                  }
+                },
+                "end-date": null,
+                "organization": {
+                  "name": "Al Ain University",
+                  "address": {
+                    "city": "Al Ain",
+                    "region": "Abu Dhabi",
+                    "country": "AE"
+                  },
+                  "disambiguated-organization": {
+                    "disambiguated-organization-identifier": "https://ror.org/023abrt21",
+                    "disambiguation-source": "ROR"
+                  }
+                },
+                "url": {
+                  "value": "https://aau.ac.ae/en/staff/mohammad-Molham-Sakkal"
+                },
+                "external-ids": null,
+                "display-index": "0",
+                "visibility": "public",
+                "path": "/0000-0001-6081-1284/employment/28815462"
+              }
+            }
+          ]
+        },
+        {
+          "last-modified-date": {
+            "value": 1745260091522
+          },
+          "external-ids": {
+            "external-id": []
+          },
+          "summaries": [
+            {
+              "employment-summary": {
+                "created-date": {
+                  "value": 1661237051884
+                },
+                "last-modified-date": {
+                  "value": 1745260091522
+                },
+                "source": {
+                  "source-orcid": {
+                    "uri": "https://orcid.org/0000-0001-6081-1284",
+                    "path": "0000-0001-6081-1284",
+                    "host": "orcid.org"
+                  },
+                  "source-client-id": null,
+                  "source-name": {
+                    "value": "Molham Sakkal"
+                  },
+                  "assertion-origin-orcid": null,
+                  "assertion-origin-client-id": null,
+                  "assertion-origin-name": null
+                },
+                "put-code": 18316930,
+                "department-name": "Pharmacy Collage ",
+                "role-title": "Research & Lab Assistant",
+                "start-date": {
+                  "year": {
+                    "value": "2022"
+                  },
+                  "month": {
+                    "value": "01"
+                  },
+                  "day": {
+                    "value": "24"
+                  }
+                },
+                "end-date": {
+                  "year": {
+                    "value": "2024"
+                  },
+                  "month": {
+                    "value": "01"
+                  },
+                  "day": {
+                    "value": "24"
+                  }
+                },
+                "organization": {
+                  "name": "Al Ain University",
+                  "address": {
+                    "city": "Al Ain",
+                    "region": "Abu Dhabi",
+                    "country": "AE"
+                  },
+                  "disambiguated-organization": null
+                },
+                "url": {
+                  "value": "https://pharmacy.aau.ac.ae/en/pharmacy-admin-staff/staff/mohammad-sakkal"
+                },
+                "external-ids": null,
+                "display-index": "0",
+                "visibility": "public",
+                "path": "/0000-0001-6081-1284/employment/18316930"
+              }
+            }
+          ]
+        }
+      ],
+      "path": "/0000-0001-6081-1284/employments"
+    },
+    "educations": {
+      "last-modified-date": null,
+      "affiliation-group": [],
+      "path": "/0000-0001-6081-1284/educations"
+    },
+    "qualifications": {
+      "last-modified-date": null,
+      "affiliation-group": [],
+      "path": "/0000-0001-6081-1284/qualifications"
+    },
+    "distinctions": {
+      "last-modified-date": null,
+      "affiliation-group": [],
+      "path": "/0000-0001-6081-1284/distinctions"
+    },
+    "fundings": {
+      "last-modified-date": null,
+      "group": [],
+      "path": "/0000-0001-6081-1284/fundings"
+    },
+    "memberships": {
+      "last-modified-date": null,
+      "affiliation-group": [],
+      "path": "/0000-0001-6081-1284/memberships"
+    },
+    "peer-reviews": {
+      "last-modified-date": null,
+      "group": [],
+      "path": "/0000-0001-6081-1284/peer-reviews"
+    },
+    "services": {
+      "last-modified-date": null,
+      "affiliation-group": [],
+      "path": "/0000-0001-6081-1284/services"
+    },
+    "invited-positions": {
+      "last-modified-date": null,
+      "affiliation-group": [],
+      "path": "/0000-0001-6081-1284/invited-positions"
+    }
+  }
+}
