@@ -113,8 +113,17 @@ function card(it, kind) {
   const $list = document.getElementById("list-articles");
   if (!$list) return;
 
-  // Show a loading placeholder immediately
-  $list.innerHTML = `<p style="color:#888;font-style:italic;padding:20px;text-align:center">Loading publications…</p>`;
+  // build_html.py pre-renders <article class="pub-item"> blocks into
+  // #list-articles with Dimensions Badge spans, citation/year/DOI chips,
+  // and full SEO markup. If that pre-render is present (which is the
+  // normal case — runs every Monday via the weekly cron), we leave the
+  // article list alone and only refresh the metric tiles in case
+  // serpapi.json is fresher than the last build_html run.
+  //
+  // If there is no pre-render (broken pipeline, fresh clone before the
+  // first cron, etc.), we fall back to the old client-side card render
+  // so something useful still appears.
+  const hasPrerender = $list.querySelector("article.pub-item") !== null;
 
   let pubs     = [];
   let official = null;
@@ -153,7 +162,17 @@ function card(it, kind) {
     renderComputedMetrics(pubs);
   }
 
-  // Render all publications
+  if (hasPrerender) {
+    // Server already rendered the full article list — leave it alone so
+    // the Dimensions badges, DOI links, and other server-only markup
+    // survive. Just refreshed the metric chips above; we're done.
+    return;
+  }
+
+  // Fallback: no server-rendered articles. Render with the legacy card()
+  // so the page still has content. Note: legacy cards do NOT include
+  // Dimensions badges, DOI chips, or year chips — this path only fires
+  // when the weekly build hasn't run yet.
   $list.innerHTML = "";
   if (!pubs.length) {
     $list.innerHTML = `<p style="color:#666">No publications found.</p>`;
