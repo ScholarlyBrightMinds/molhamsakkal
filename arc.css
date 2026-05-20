@@ -1,0 +1,489 @@
+/* ═══════════════════════════════════════════════════════════════════
+   arc.css — Scrollytelling research-arc page
+   Two-column layout: left sticky stage (illustrations), right scrolling
+   track of chapter sections. IntersectionObserver in arc.js drives
+   which stage frame is visible.
+   ═══════════════════════════════════════════════════════════════════ */
+
+.arc-main {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 4rem 1.6rem 5rem;
+}
+
+/* ─── Hero ───────────────────────────────────────────────────── */
+.arc-hero {
+    text-align: center;
+    margin: 0 auto 3.4rem;
+    max-width: 760px;
+}
+.arc-hero-kicker {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 1rem;
+}
+.arc-hero-h1 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(2rem, 4.2vw, 3.2rem);
+    line-height: 1.15;
+    margin: 0 0 1.4rem;
+    letter-spacing: -0.01em;
+    color: var(--text);
+}
+.arc-hero-h1 em {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 500;
+}
+.arc-hero-intro {
+    font-family: var(--body);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-soft);
+    max-width: 620px;
+    margin: 0 auto;
+}
+.arc-hero-progress {
+    margin: 2rem auto 0;
+    max-width: 280px;
+    height: 3px;
+    background: rgba(255,184,77,0.10);
+    border-radius: 999px;
+    overflow: hidden;
+}
+.arc-hero-progress-fill {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, var(--accent), var(--accent-d, var(--accent)));
+    border-radius: 999px;
+    transition: width .4s var(--ease);
+}
+
+/* ─── Two-column scrollytelling layout ────────────────────────── */
+.arc-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    align-items: flex-start;
+    position: relative;
+}
+
+/* Left: sticky stage with rotating frames */
+.arc-stage {
+    position: sticky;
+    top: 6rem;
+    height: calc(100vh - 8rem);
+    max-height: 640px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.arc-stage-inner {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    max-width: 480px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    overflow: hidden;
+}
+.arc-frame {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
+    transition: opacity .55s var(--ease), transform .55s var(--ease);
+    pointer-events: none;
+    padding: 1.4rem;
+}
+.arc-frame.is-active {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+.arc-svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* ─── Stage SVG styling — Frame 1: Origin ──────────────────────── */
+.arc-hex {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 2;
+    stroke-linejoin: round;
+}
+.arc-bond {
+    stroke: var(--accent);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+}
+.arc-atom {
+    fill: var(--accent);
+}
+@media (prefers-reduced-motion: no-preference) {
+    .arc-frame.is-active .arc-hex,
+    .arc-frame.is-active .arc-bond {
+        animation: arc-draw 0.9s ease-out both;
+    }
+    .arc-frame.is-active .arc-atom {
+        animation: arc-pop 0.6s 0.4s var(--ease) both;
+    }
+}
+@keyframes arc-draw {
+    from { stroke-dasharray: 600; stroke-dashoffset: 600; }
+    to   { stroke-dasharray: 600; stroke-dashoffset: 0; }
+}
+@keyframes arc-pop {
+    from { transform: scale(0); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+}
+
+/* ─── Stage — Frame 2: Sieve ──────────────────────────────────── */
+.arc-grid polygon {
+    fill: none;
+    stroke: var(--text-soft);
+    stroke-width: 1.2;
+}
+.arc-wave {
+    stroke: var(--accent);
+    stroke-width: 2;
+    stroke-dasharray: 4 4;
+    opacity: 0.7;
+}
+.arc-hex--lit {
+    fill: rgba(255,184,77,0.22);
+    stroke: var(--accent);
+    stroke-width: 2.6;
+    filter: drop-shadow(0 0 12px rgba(255,184,77,0.5));
+}
+.arc-tag {
+    fill: var(--accent);
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+@media (prefers-reduced-motion: no-preference) {
+    .arc-frame.is-active .arc-wave {
+        stroke-dasharray: 4 4;
+        animation: arc-wave-shift 2.4s linear infinite;
+    }
+}
+@keyframes arc-wave-shift {
+    to { stroke-dashoffset: -32; }
+}
+
+/* ─── Stage — Frame 3: Editorial ──────────────────────────────── */
+.arc-page {
+    fill: var(--card-soft, #1a2622);
+    stroke: var(--border);
+    stroke-width: 1;
+}
+.arc-page--top {
+    fill: var(--card);
+}
+.arc-page-lines line {
+    stroke: var(--text-soft);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    opacity: 0.6;
+}
+.arc-stamp {
+    fill: rgba(255,184,77,0.16);
+    stroke: var(--accent);
+    stroke-width: 1.5;
+    stroke-dasharray: 3 3;
+}
+.arc-stamp-text {
+    fill: var(--accent);
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+@media (prefers-reduced-motion: no-preference) {
+    .arc-frame.is-active .arc-stamp {
+        animation: arc-stamp-rotate 14s linear infinite;
+        transform-origin: 232px 92px;
+    }
+}
+@keyframes arc-stamp-rotate {
+    to { transform: rotate(360deg); }
+}
+
+/* ─── Stage — Frame 4: Network ─────────────────────────────────── */
+.arc-node {
+    fill: var(--card-soft, #1a2622);
+    stroke: var(--accent);
+    stroke-width: 1.5;
+}
+.arc-node--center {
+    fill: var(--accent);
+    stroke: var(--accent);
+}
+.arc-node--center + .arc-node-text {
+    fill: var(--bg, #0d1411);
+    font-weight: 700;
+}
+.arc-node-text {
+    fill: var(--text);
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+}
+.arc-edge {
+    stroke: var(--accent);
+    stroke-width: 1.4;
+    stroke-linecap: round;
+    opacity: 0.55;
+}
+@media (prefers-reduced-motion: no-preference) {
+    .arc-frame.is-active .arc-edge {
+        stroke-dasharray: 140;
+        stroke-dashoffset: 140;
+        animation: arc-edge-draw .9s .2s ease-out forwards;
+    }
+    .arc-frame.is-active .arc-node--tool {
+        animation: arc-pop 0.5s .6s var(--ease) both;
+    }
+}
+@keyframes arc-edge-draw {
+    to { stroke-dashoffset: 0; }
+}
+
+/* ─── Stage — Frame 5: Horizon ─────────────────────────────────── */
+.arc-horizon-base {
+    stroke: var(--text-soft);
+    stroke-width: 1.5;
+    opacity: 0.4;
+    stroke-dasharray: 2 4;
+}
+.arc-branch {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    opacity: 0.65;
+}
+.arc-branch-end {
+    fill: var(--accent);
+}
+.arc-branch-anchor {
+    fill: var(--accent);
+    stroke: var(--bg, #0d1411);
+    stroke-width: 2;
+}
+@media (prefers-reduced-motion: no-preference) {
+    .arc-frame.is-active .arc-branch {
+        stroke-dasharray: 220;
+        stroke-dashoffset: 220;
+        animation: arc-edge-draw 1s ease-out forwards;
+    }
+    .arc-frame.is-active .arc-branch:nth-child(4) { animation-delay: .1s; }
+    .arc-frame.is-active .arc-branch:nth-child(5) { animation-delay: .2s; }
+    .arc-frame.is-active .arc-branch:nth-child(6) { animation-delay: .3s; }
+    .arc-frame.is-active .arc-branch:nth-child(7) { animation-delay: .4s; }
+    .arc-frame.is-active .arc-branch-end {
+        animation: arc-pop .5s .9s var(--ease) both;
+    }
+}
+
+/* ─── Right: scrolling track of chapters ──────────────────────── */
+.arc-track {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+.arc-step {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 0;
+    position: relative;
+}
+.arc-step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 30%;
+    bottom: 0;
+    height: 1px;
+    background: linear-gradient(90deg, var(--accent-glow), transparent);
+    opacity: 0.5;
+}
+.arc-step-kicker {
+    font-family: var(--mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 0.85rem;
+}
+.arc-step-title {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(1.4rem, 2.6vw, 2rem);
+    line-height: 1.25;
+    color: var(--text);
+    margin: 0 0 1.3rem;
+    letter-spacing: -0.005em;
+}
+.arc-step-body {
+    font-family: var(--body);
+    font-size: 1rem;
+    line-height: 1.78;
+    color: var(--text-soft);
+    margin: 0 0 1.2rem;
+}
+.arc-step-body strong { color: var(--text); font-weight: 600; }
+.arc-step-body em     { color: var(--text); font-style: italic; }
+
+/* Milestone card at the bottom of a chapter */
+.arc-milestone {
+    margin-top: 0.6rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.85rem 1.1rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color .25s var(--ease), transform .25s var(--ease);
+    max-width: 100%;
+}
+a.arc-milestone:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+.arc-milestone-dot {
+    flex: 0 0 10px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px rgba(255,184,77,0.18);
+}
+.arc-milestone-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+.arc-milestone-label {
+    font-family: var(--mono);
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.02em;
+}
+.arc-milestone-sub {
+    font-family: var(--body);
+    font-size: 0.84rem;
+    color: var(--text-soft);
+    line-height: 1.4;
+}
+
+/* ─── In-view emphasis (driven by arc.js) ──────────────────────── */
+.arc-step {
+    opacity: 0.45;
+    transform: translateY(0);
+    transition: opacity .5s var(--ease);
+}
+.arc-step.is-active {
+    opacity: 1;
+}
+
+/* ─── Final CTA ──────────────────────────────────────────────── */
+.arc-final {
+    margin: 4rem auto 0;
+    text-align: center;
+    max-width: 600px;
+    padding: 2.2rem;
+    background: linear-gradient(180deg, var(--card) 0%, var(--card-soft, var(--card)) 100%);
+    border: 1px solid var(--accent-glow);
+    border-radius: var(--radius);
+}
+.arc-final-body {
+    color: var(--text-soft);
+    font-size: 0.98rem;
+    line-height: 1.7;
+    margin: 0.7rem 0 1.4rem;
+}
+.arc-final-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.78rem 1.4rem;
+    border-radius: 999px;
+    background: var(--accent);
+    color: var(--bg);
+    border: 1px solid var(--accent);
+    font-family: var(--body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all .25s var(--ease);
+}
+.arc-final-cta svg {
+    width: 16px;
+    height: 16px;
+}
+.arc-final-cta:hover {
+    background: var(--accent-d, var(--accent));
+    border-color: var(--accent-d, var(--accent));
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px -10px var(--accent-glow);
+}
+.arc-final-sub {
+    margin: 1.3rem 0 0;
+    font-size: 0.84rem;
+    color: var(--text-soft);
+}
+.arc-final-sub a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-glow);
+}
+.arc-final-sub a:hover { color: var(--accent-d, var(--accent)); }
+
+/* ─── Responsive: collapse to single-column on narrow ─────────── */
+@media (max-width: 880px) {
+    .arc-wrap {
+        grid-template-columns: 1fr;
+        gap: 1.4rem;
+    }
+    .arc-stage {
+        position: relative;
+        top: 0;
+        height: auto;
+        max-height: none;
+        order: 0;
+    }
+    .arc-stage-inner {
+        max-width: 360px;
+        margin: 0 auto;
+    }
+    .arc-track {
+        order: 1;
+    }
+    .arc-step {
+        min-height: auto;
+        opacity: 1;
+        padding: 1.4rem 0;
+    }
+    /* On mobile, hide the rotating stage — the chapters work standalone */
+    .arc-stage { display: none; }
+}
