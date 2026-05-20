@@ -38,9 +38,11 @@ from html import escape
 from pathlib import Path
 
 REPO_ROOT  = Path(__file__).resolve().parent
-DATA_PUBS  = REPO_ROOT / "data" / "serpapi" / "serpapi.json"
-DATA_METR  = REPO_ROOT / "data" / "serpapi" / "metrics.json"
-DATA_DOIS  = REPO_ROOT / "data" / "serpapi" / "dois.json"
+DATA_PUBS    = REPO_ROOT / "data" / "serpapi" / "serpapi.json"
+DATA_METR    = REPO_ROOT / "data" / "serpapi" / "metrics.json"
+DATA_DOIS    = REPO_ROOT / "data" / "serpapi" / "dois.json"
+DATA_TLDRS   = REPO_ROOT / "data" / "tldrs.json"
+DATA_OPENALX = REPO_ROOT / "data" / "openalex" / "openalex.json"
 PUBS_HTML  = REPO_ROOT / "publications.html"
 INDEX_HTML = REPO_ROOT / "index.html"
 THEME_CFG  = REPO_ROOT / "theme.config.js"
@@ -131,6 +133,131 @@ def load_dois() -> dict:
         return json.load(f)
 
 
+def load_tldrs() -> dict:
+    """tldrs.json keyed by DOI -> {tldr, topics}. `topics` is a space-separated
+    list of filter codes (ml, llms, review, pharm, thesis). Keys starting with
+    '_' are ignored (used for inline documentation in the file)."""
+    if not DATA_TLDRS.exists():
+        return {}
+    try:
+        with DATA_TLDRS.open(encoding="utf-8") as f:
+            raw = json.load(f)
+    except (json.JSONDecodeError, OSError) as e:
+        print(f"[WARN] tldrs.json could not be parsed: {e}")
+        return {}
+    return {k: v for k, v in raw.items() if not k.startswith("_")}
+
+
+def load_openalex_cites() -> dict:
+    """Return DOI -> list of {year, cited_by_count} from data/openalex/openalex.json.
+    DOIs are normalised (lower-case, leading https://doi.org/ stripped) so the
+    keys line up with what enrich_dois.py produces."""
+    if not DATA_OPENALX.exists():
+        return {}
+    try:
+        with DATA_OPENALX.open(encoding="utf-8") as f:
+            data = json.load(f)
+    except (json.JSONDecodeError, OSError) as e:
+        print(f"[WARN] openalex.json could not be parsed: {e}")
+        return {}
+    out: dict[str, list[dict]] = {}
+    for w in data.get("works", []):
+        doi = (w.get("doi") or "").strip().lower()
+        if not doi:
+            continue
+        if doi.startswith("https://doi.org/"):
+            doi = doi[len("https://doi.org/"):]
+        history = w.get("counts_by_year") or []
+        if history:
+            out[doi] = sorted(history, key=lambda r: int(r.get("year") or 0))
+    return out
+
+
+def _render_sparkline(history: list[dict]) -> str:
+    """Inline SVG sparkline of yearly citation counts.
+
+    Produces a 72x22 viewBox polyline plus end-dot. Single-year papers get a
+    single dot (no polyline). Zero-history papers get an empty string."""
+    if not history:
+        return ""
+    years  = [int(r.get("year") or 0) for r in history]
+    counts = [int(r.get("cited_by_count") or 0) for r in history]
+    if not any(counts):
+        return ""
+
+    w, h, pad = 72, 22, 3
+    inner_w = w - 2 * pad
+    inner_h = h - 2 * pad
+
+    cmax = max(counts) or 1
+    if len(history) == 1:
+        # Single-year papers — show a baseline + dot in the middle of the
+        # canvas so the chip reads as "one year of data" rather than
+        # ambiguously plotted at an edge.
+        x = w / 2
+        y = h / 2
+        title = f"{years[0]}: {counts[0]} cite{'s' if counts[0] != 1 else ''}"
+        return (
+            f'<svg class="pub-spark" viewBox="0 0 {w} {h}" role="img" '
+            f'aria-label="{escape(title)}">'
+            f'<title>{escape(title)}</title>'
+            f'<line class="pub-spark-line" x1="{pad}" y1="{y:.1f}" '
+            f'x2="{w - pad}" y2="{y:.1f}" '
+            f'stroke-dasharray="2 2" opacity="0.5"/>'
+            f'<circle cx="{x:.1f}" cy="{y:.1f}" r="3" class="pub-spark-dot"/>'
+            f'</svg>'
+        )
+
+    span = max(years) - min(years) or 1
+    pts = []
+    for yr, c in zip(years, counts):
+        px = pad + ((yr - min(years)) / span) * inner_w
+        py = h - pad - (c / cmax) * inner_h
+        pts.append(f"{px:.1f},{py:.1f}")
+    polyline = " ".join(pts)
+    end_x, end_y = pts[-1].split(",")
+    total = sum(counts)
+    breakdown = " · ".join(f"{y}: {c}" for y, c in zip(years, counts))
+    title = f"Citations by year ({total} total) — {breakdown}"
+
+    # Build area-under-curve as a soft fill for visual weight on dense histories
+    area_pts = (
+        f"{pad:.1f},{h - pad:.1f} " + polyline +
+        f" {(pad + inner_w):.1f},{h - pad:.1f}"
+    )
+    return (
+        f'<svg class="pub-spark" viewBox="0 0 {w} {h}" role="img" '
+        f'aria-label="{escape(title)}">'
+        f'<title>{escape(title)}</title>'
+        f'<polygon class="pub-spark-area" points="{area_pts}"/>'
+        f'<polyline class="pub-spark-line" points="{polyline}"/>'
+        f'<circle cx="{end_x}" cy="{end_y}" r="2.2" class="pub-spark-dot"/>'
+        f'</svg>'
+    )
+
+
+# Heuristic topic fallback for publications without a DOI-keyed entry in
+# tldrs.json. Run against the title (lower-cased). The first match wins.
+_TOPIC_HEURISTICS = [
+    ("ml",    ["machine learning", "automl", "autogluon", "fingerprint", "cheminformatics",
+               "graph", "neural network", "deep learning", "ensemble"]),
+    ("llms",  ["language model", "llm", "chatgpt", "transformer", "gpt"]),
+    ("review",["review", "introduction to", "insights into", "barriers", "perspectives"]),
+    ("pharm", ["pharmacy", "pharmacist", "rosmarinus", "essential oil", "covid",
+               "allergic", "osce", "online learning"]),
+]
+
+
+def _infer_topics(title: str) -> str:
+    """Best-effort topic tag for a paper missing from tldrs.json."""
+    t = (title or "").lower()
+    tags = []
+    for tag, keywords in _TOPIC_HEURISTICS:
+        if any(k in t for k in keywords):
+            tags.append(tag)
+    return " ".join(tags) if tags else "other"
+
+
 def _pub_doi_key(pub: dict) -> str:
     """Mirror of enrich_dois.pub_key() — keep these two in sync."""
     import hashlib
@@ -158,7 +285,12 @@ def _journal_name_from_venue(venue: str) -> str:
     return name or venue.strip()
 
 
-def render_article(p: dict, doi: str | None = None) -> str:
+def render_article(
+    p: dict,
+    doi: str | None = None,
+    tldr_info: dict | None = None,
+    cite_history: list[dict] | None = None,
+) -> str:
     title    = escape(p.get("title", "").strip() or "Untitled")
     authors  = escape(p.get("authors", "").strip())
     venue    = (p.get("venue") or p.get("publication") or "").strip()
@@ -171,22 +303,36 @@ def render_article(p: dict, doi: str | None = None) -> str:
         link = ""
     link_attr = f' href="{escape(link)}" target="_blank" rel="noopener noreferrer"' if link else ""
 
-    # Stats row: Altmetric donut + citation chip + year chip + DOI link.
-    # Each chip is omitted gracefully when the underlying value is missing.
+    # Topic + TLDR (Tier-1 plain-language summary). Data attrs drive the
+    # filter buttons; the <p class="pub-tldr"> block is what readers see.
+    info = tldr_info or {}
+    topics = info.get("topics") or _infer_topics(p.get("title", ""))
+    tldr_html = (
+        f'<p class="pub-tldr">{escape(info["tldr"])}</p>'
+        if info.get("tldr") else ""
+    )
+    data_attrs = (
+        f' data-year="{year}"' if year else ""
+    ) + (
+        f' data-topic="{escape(topics)}"' if topics else ""
+    )
+
+    # Stats row: Dimensions donut, Scholar citation chip, year chip,
+    # DOI link. Each chip is omitted gracefully when the value is missing.
     stats_parts: list[str] = []
 
     if doi:
         doi_safe = escape(doi)
-        # Dimensions Badge (by Digital Science — same parent as Altmetric).
-        #   small_circle → ~32px circular donut
-        #   hover-right  → mention/citation legend appears to the right on hover
-        # No API key, no paywall — renders for every DOI Dimensions has indexed.
+        # Dimensions Badge by Digital Science. Free, no API key, renders
+        # for every DOI Dimensions has indexed.
+        #   small_circle: ~32px circular donut
+        #   hover-right:  mention/citation legend appears to the right on hover
         stats_parts.append(
             f'<span class="pub-dimensions __dimensions_badge_embed__" '
             f'data-doi="{doi_safe}" '
             f'data-style="small_circle" '
             f'data-legend="hover-right" '
-            f'title="Dimensions citation impact — click for details"></span>'
+            f'title="Dimensions citation impact (click for details)"></span>'
         )
 
     if cites:
@@ -196,6 +342,13 @@ def render_article(p: dict, doi: str | None = None) -> str:
             f'<span class="pub-stat-num">{cites}</span>'
             f'<span class="pub-stat-label">citation{"s" if cites != 1 else ""}</span>'
             f'</span>'
+        )
+
+    spark_svg = _render_sparkline(cite_history or [])
+    if spark_svg:
+        stats_parts.append(
+            f'<span class="pub-stat pub-stat-spark" '
+            f'title="Yearly citation trend (OpenAlex)">{spark_svg}</span>'
         )
 
     if year:
@@ -225,22 +378,27 @@ def render_article(p: dict, doi: str | None = None) -> str:
     )
     venue_block = f'<p class="pub-venue">{venue_e}</p>' if venue_e else ""
 
-    return f"""        <article class="pub-item">
+    return f"""        <article class="pub-item"{data_attrs}>
             <h3 class="pub-title"><a{link_attr}>{title}</a></h3>
             <p class="pub-authors">{authors}</p>
+            {tldr_html}
             {venue_block}
             {stats_block}
         </article>"""
 
 
-def render_articles_block(pubs: list[dict], dois: dict) -> str:
+def render_articles_block(pubs: list[dict], dois: dict, tldrs: dict, oa_cites: dict) -> str:
     if not pubs:
         return '        <p class="pub-loading">No publications found.</p>'
     rendered = []
     for p in pubs:
-        info = dois.get(_pub_doi_key(p)) or {}
-        doi = info.get("doi") or None
-        rendered.append(render_article(p, doi=doi))
+        doi_info = dois.get(_pub_doi_key(p)) or {}
+        doi = doi_info.get("doi") or None
+        tldr_info = tldrs.get(doi) if doi else None
+        cite_history = oa_cites.get((doi or "").lower()) if doi else None
+        rendered.append(render_article(
+            p, doi=doi, tldr_info=tldr_info, cite_history=cite_history
+        ))
     return "\n".join(rendered)
 
 
@@ -286,7 +444,7 @@ def render_jsonld(pubs: list[dict], dois: dict, ident: dict) -> str:
         "@context": "https://schema.org",
         "@type": "CollectionPage",
         "url": f"{site_base}/publications.html",
-        "name": f"Publications — {full_name}",
+        "name": f"Publications · {full_name}",
         "isPartOf": {
             "@type": "WebSite",
             "url": f"{site_base}/"
@@ -335,7 +493,14 @@ def _ensure_dimensions_script(html: str) -> str:
     return html.replace("</head>", snippet + "\n</head>", 1)
 
 
-def patch_publications_html(pubs: list[dict], metrics: dict, dois: dict, ident: dict) -> None:
+def patch_publications_html(
+    pubs: list[dict],
+    metrics: dict,
+    dois: dict,
+    tldrs: dict,
+    oa_cites: dict,
+    ident: dict,
+) -> None:
     if not PUBS_HTML.exists():
         print(f"[FAIL] {PUBS_HTML} missing")
         sys.exit(1)
@@ -348,7 +513,7 @@ def patch_publications_html(pubs: list[dict], metrics: dict, dois: dict, ident: 
     html = _ensure_dimensions_script(html)
 
     # 1. Replace article list inner content
-    articles = render_articles_block(pubs, dois)
+    articles = render_articles_block(pubs, dois, tldrs, oa_cites)
     pattern = re.compile(
         r'(<section id="list-articles"[^>]*>)(.*?)(</section>)',
         re.DOTALL
@@ -443,10 +608,14 @@ def main() -> int:
     pubs = load_publications()
     metrics = load_metrics()
     dois = load_dois()
+    tldrs = load_tldrs()
+    oa_cites = load_openalex_cites()
     resolved_dois = sum(1 for v in dois.values() if v.get("doi"))
     print(f"[build_html] loaded {len(pubs)} publications, "
-          f"{resolved_dois} DOIs, metrics keys: {list(metrics.keys())}")
-    patch_publications_html(pubs, metrics, dois, ident)
+          f"{resolved_dois} DOIs, {len(tldrs)} TLDRs, "
+          f"{len(oa_cites)} OpenAlex cite histories, "
+          f"metrics keys: {list(metrics.keys())}")
+    patch_publications_html(pubs, metrics, dois, tldrs, oa_cites, ident)
     patch_index_chips(pubs, metrics)
     print("[build_html] done")
     return 0
