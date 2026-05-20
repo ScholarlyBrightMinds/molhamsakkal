@@ -650,3 +650,316 @@ footer {
     .hero > *, .hero-text > * { animation: none; opacity: 1; }
     .reveal { opacity: 1; transform: none; }
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   PHD CTA — primary conversion block on the home page
+   Wide, accent-bordered card that sits between hero and impact stats.
+   ═══════════════════════════════════════════════════════════════════ */
+.phd-cta {
+    position: relative;
+    margin: 2.5rem 0 1rem;
+    padding: 0;
+    border-radius: var(--radius);
+    background:
+        radial-gradient(circle at 8% 15%, var(--accent-glow), transparent 55%),
+        radial-gradient(circle at 92% 85%, var(--amber-glow), transparent 60%),
+        var(--card);
+    border: 1px solid var(--accent-glow);
+    box-shadow: 0 28px 60px -30px var(--accent-glow);
+    overflow: hidden;
+    isolation: isolate;
+}
+.phd-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg, transparent 0%, var(--card) 100%);
+    opacity: 0.45;
+    z-index: -1;
+    pointer-events: none;
+}
+.phd-cta-inner {
+    padding: 1.9rem 2.2rem 2rem;
+    display: grid;
+    gap: 0.85rem;
+    position: relative;
+}
+.phd-cta-ribbon {
+    align-self: start;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--bg);
+    background: var(--accent);
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    box-shadow: 0 8px 20px -8px var(--accent-glow);
+}
+.phd-cta-ribbon::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--bg);
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.15) inset;
+}
+.phd-cta-title {
+    font-family: var(--display);
+    font-size: clamp(1.4rem, 2.2vw, 1.7rem);
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin: 0;
+}
+.phd-cta-body {
+    font-size: 0.96rem;
+    line-height: 1.65;
+    color: var(--text-soft);
+    max-width: 680px;
+    margin: 0;
+}
+.phd-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 0.5rem;
+}
+.phd-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.7rem 1.15rem;
+    border-radius: 999px;
+    font-family: var(--body);
+    font-size: 0.84rem;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: all .25s var(--ease);
+    white-space: nowrap;
+}
+.phd-cta-btn svg {
+    width: 15px;
+    height: 15px;
+}
+.phd-cta-btn--primary {
+    background: var(--accent);
+    color: var(--bg);
+    border-color: var(--accent);
+}
+.phd-cta-btn--primary:hover {
+    background: var(--accent-d);
+    border-color: var(--accent-d);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px -10px var(--accent-glow);
+}
+.phd-cta-btn--secondary {
+    background: transparent;
+    color: var(--accent);
+    border-color: var(--accent-glow);
+}
+.phd-cta-btn--secondary:hover {
+    background: var(--accent-bg);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+.phd-cta-arrow {
+    transition: transform .25s var(--ease);
+}
+.phd-cta-btn--secondary:hover .phd-cta-arrow { transform: translateX(3px); }
+.phd-cta-btn--tertiary {
+    background: var(--bg-soft);
+    color: var(--text-soft);
+    border-color: var(--border);
+}
+.phd-cta-btn--tertiary:hover {
+    color: var(--amber);
+    border-color: var(--amber-glow);
+    background: var(--amber-bg);
+    transform: translateY(-2px);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   IMPACT STATS — "By the numbers" tile grid on the home page
+   Five tiles, large numbers, scannable in <2 seconds.
+   ═══════════════════════════════════════════════════════════════════ */
+.impact-section .impact-lede {
+    max-width: 600px;
+    margin: -0.8rem 0 1.8rem;
+    color: var(--text-soft);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.9rem;
+}
+.impact-tile {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.4rem 1.2rem 1.25rem;
+    transition: all .3s var(--ease);
+    position: relative;
+    overflow: hidden;
+}
+.impact-tile::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .35s var(--ease);
+}
+.impact-tile:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+    box-shadow: var(--shadow-card);
+}
+.impact-tile:hover::before { transform: scaleX(1); }
+.impact-num {
+    font-family: var(--display);
+    font-size: clamp(2.4rem, 4vw, 3rem);
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--accent);
+    margin-bottom: 0.4rem;
+}
+.impact-tile--gold .impact-num { color: var(--amber); }
+.impact-tile--gold::before {
+    background: linear-gradient(90deg, var(--amber), transparent);
+}
+.impact-label {
+    font-family: var(--body);
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.3rem;
+    letter-spacing: -0.005em;
+}
+.impact-sub {
+    font-size: 0.74rem;
+    color: var(--text-soft);
+    line-height: 1.45;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   RESPONSIVE — PhD CTA + impact tiles
+   ═══════════════════════════════════════════════════════════════════ */
+@media (max-width: 900px) {
+    .impact-grid { grid-template-columns: repeat(3, 1fr); }
+    .impact-tile:nth-child(4),
+    .impact-tile:nth-child(5) { grid-column: span 1; }
+}
+@media (max-width: 640px) {
+    .phd-cta-inner { padding: 1.6rem 1.5rem 1.7rem; }
+    .phd-cta-btn { padding: 0.6rem 0.95rem; font-size: 0.8rem; }
+    .impact-grid { grid-template-columns: repeat(2, 1fr); }
+    .impact-tile:nth-child(5) { grid-column: span 2; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   PUBLICATION TLDR — plain-language summary per paper
+   ═══════════════════════════════════════════════════════════════════ */
+.pub-tldr {
+    margin: 0.4rem 0 0.8rem;
+    padding: 0.7rem 0.95rem;
+    background: var(--accent-bg);
+    border-left: 2px solid var(--accent);
+    border-radius: 0 var(--radius-s) var(--radius-s) 0;
+    font-family: var(--body);
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: var(--text-soft);
+    max-width: 760px;
+}
+.pub-tldr::before {
+    content: 'TL;DR · ';
+    font-family: var(--mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-right: 0.2rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   PUBLICATION FILTERS — sit above the article list on publications.html
+   Pure DOM hide/show; SSR + Schema.org JSON-LD remain unchanged for SEO.
+   ═══════════════════════════════════════════════════════════════════ */
+.pub-filter-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+    padding: 0.6rem 0;
+    border-top: 1px dashed var(--border);
+    border-bottom: 1px dashed var(--border);
+}
+.pub-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    align-items: center;
+}
+.pub-filter {
+    font-family: var(--body);
+    font-size: 0.78rem;
+    font-weight: 500;
+    padding: 0.42rem 0.85rem;
+    border-radius: 999px;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-soft);
+    cursor: pointer;
+    transition: all .2s var(--ease);
+    white-space: nowrap;
+}
+.pub-filter:hover {
+    color: var(--accent);
+    border-color: var(--accent-glow);
+    background: var(--accent-bg);
+}
+.pub-filter.active {
+    color: var(--bg);
+    background: var(--accent);
+    border-color: var(--accent);
+    font-weight: 600;
+}
+.pub-filter-sep {
+    display: inline-block;
+    width: 1px;
+    height: 18px;
+    background: var(--border);
+    margin: 0 0.25rem;
+}
+.pub-filter-count {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+}
+.pub-hidden {
+    display: none !important;
+}
+
+@media (max-width: 640px) {
+    .pub-filter-sep { display: none; }
+    .pub-filter { font-size: 0.72rem; padding: 0.36rem 0.7rem; }
+    .pub-filter-bar { gap: 0.5rem; }
+}
