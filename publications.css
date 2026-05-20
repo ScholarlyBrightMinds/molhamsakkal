@@ -390,6 +390,53 @@
 }
 .pub-stat-year .pub-stat-num { color: var(--text); }
 
+/* Citation sparkline (OpenAlex counts_by_year). Sits next to the cite count
+   chip. Pure inline SVG, no JS. The polyline shows the trend across years,
+   the soft fill underneath gives visual weight, and the end-dot marks the
+   most recent year. */
+.pub-stat-spark {
+    padding: 0.18rem 0.45rem;
+    background: rgba(120, 200, 180, 0.06);
+    border-color: rgba(120, 200, 180, 0.22);
+}
+.pub-stat-spark:hover {
+    background: rgba(120, 200, 180, 0.12);
+    border-color: rgba(120, 200, 180, 0.4);
+}
+.pub-spark {
+    display: block;
+    width: 72px;
+    height: 22px;
+    overflow: visible;
+}
+.pub-spark-line {
+    fill: none;
+    stroke: var(--accent, #ffb84d);
+    stroke-width: 1.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.pub-spark-area {
+    fill: var(--accent, #ffb84d);
+    fill-opacity: 0.14;
+    stroke: none;
+}
+.pub-spark-dot {
+    fill: var(--accent, #ffb84d);
+    stroke: var(--bg, #0d1411);
+    stroke-width: 0.8;
+}
+@media (prefers-reduced-motion: no-preference) {
+    .pub-stat-spark .pub-spark-line {
+        stroke-dasharray: 200;
+        stroke-dashoffset: 200;
+        animation: pub-spark-draw 1.2s ease-out forwards;
+    }
+}
+@keyframes pub-spark-draw {
+    to { stroke-dashoffset: 0; }
+}
+
 /* DOI link — prominent, hover-glow */
 a.pub-stat-doi {
     cursor: pointer;
@@ -421,7 +468,6 @@ a.pub-stat-doi:hover .pub-stat-label { color: inherit; }
     .pub-meta > a.pub-stat-doi:last-child { margin-left: 0; }
     .pub-altmetric { min-width: 56px; min-height: 56px; }
 }
-
 
 /* ── Co-author network — baked from data/openalex/openalex.json each Monday by build_coauthor_html.py ── */
 .coauth-panel {

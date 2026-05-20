@@ -1,0 +1,64 @@
+{
+  "_about": "Plain-language summaries + topic tags per publication, keyed by DOI. Picked up by build_html.py and rendered into publications.html. Topics drive the filter buttons; recognised values: cancer, nanomed, chem, delivery, review, thesis. A pub can carry multiple space-separated topics.",
+  "_updated": "2026-05-21",
+  "10.3390/ph17030315": {
+    "tldr": "A landscape review of nanomedicine platforms used in smart chemotherapy. Maps how surface chemistry, stimulus-responsive carriers, and combination approaches are being used to lower off-target toxicity.",
+    "topics": "nanomed delivery review"
+  },
+  "10.3390/ph16040539": {
+    "tldr": "We show how excipient choice changes the immediate-release profile of generic metformin HCl tablets, with practical implications for formulation re-validation.",
+    "topics": "delivery chem"
+  },
+  "10.3390/polym16050643": {
+    "tldr": "First-author work on a theophylline controlled-release matrix system combining poloxamer 407, stearyl alcohol, and HPMC. Reports a formulation that survives multi-batch dissolution-profile testing.",
+    "topics": "delivery chem"
+  },
+  "10.1016/j.compbiomed.2025.110156": {
+    "tldr": "A methodological audit of tumour-progression ML papers, showing how weak validation choices inflate apparent performance and what an honest benchmark would look like in oncology.",
+    "topics": "cancer review"
+  },
+  "10.12688/f1000research.140607.1": {
+    "tldr": "Effect of enteric-coating film on the delayed release of pantoprazole gastro-resistant generic tablets. Walks through the formulation choices that survived re-validation across batches.",
+    "topics": "delivery chem"
+  },
+  "10.1080/0972060x.2022.2072177": {
+    "tldr": "GC-MS characterisation of UAE-grown rosemary essential oil. Reports the major-constituent profile and contrasts it with regional sources.",
+    "topics": "chem"
+  },
+  "10.3390/ph17030271": {
+    "tldr": "First-author follow-up on theophylline controlled-release tablets. Examines how hydration forms and polymer grades change release kinetics and how to control for them in formulation work.",
+    "topics": "delivery chem"
+  },
+  "10.1007/s44446-025-00046-y": {
+    "tldr": "First-author review of inhalable nanoparticle-based drug delivery for non-small cell lung cancer. Maps the design choices that improve targeting and the translational gaps still in the way.",
+    "topics": "cancer nanomed delivery review"
+  },
+  "10.1080/17476348.2025.2582244": {
+    "tldr": "First-author work on spatially resolved airway niches in asthma, mapping epithelial-immune microenvironments that shape disease heterogeneity.",
+    "topics": "review"
+  },
+  "10.3390/ijms262211029": {
+    "tldr": "Review of thymoquinone as a targeted cancer therapy. Walks through molecular mechanisms and the clinical prospects that depend on solving the formulation problem.",
+    "topics": "cancer review"
+  },
+  "10.3390/molecules30214181": {
+    "tldr": "Discovery of small ERK5 inhibitors through structure-based virtual screening, biological evaluation, and MD simulations. Reports candidates that survived in-vitro validation.",
+    "topics": "cancer chem"
+  },
+  "10.69709/cellengc.2025.115467": {
+    "tldr": "Synergistic modulation of ER stress combined with insulin potentiation therapy for enhanced cancer treatment. Reports a combination strategy validated across cancer cell lines.",
+    "topics": "cancer delivery"
+  },
+  "10.1080/15376516.2026.2628929": {
+    "tldr": "We use AutoGluon to predict drug-drug interactions and show that automated model search with molecular fingerprints can match handcrafted pipelines while staying simple to reproduce.",
+    "topics": "review"
+  },
+  "10.1007/s00520-026-10389-4": {
+    "tldr": "Cross-sectional survey of public perceptions of AI-assisted cancer care in Abu Dhabi. Reports attitudes, trust gaps, and the demographic patterns that shape adoption.",
+    "topics": "cancer"
+  },
+  "10.1016/j.xphs.2025.104147": {
+    "tldr": "First-author review of large language models in drug delivery. Covers what LLM-powered tools currently do for formulation and what would have to be true before they replace manual triage.",
+    "topics": "delivery review"
+  }
+}

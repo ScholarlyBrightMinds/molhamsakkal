@@ -42,7 +42,7 @@
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "url": "https://scholarlybrightminds.github.io/molhamsakkal/publications.html",
-  "name": "Publications — Molham Sakkal",
+  "name": "Publications · Molham Sakkal",
   "isPartOf": {
     "@type": "WebSite",
     "url": "https://scholarlybrightminds.github.io/molhamsakkal/"
@@ -837,165 +837,212 @@
                 <span class="update-note" id="update-note"></span>
             </p>
         </div>
+        <!-- Filter bar — topic codes match data-topic attrs baked in by build_html.py
+             from data/tldrs.json. Years are static for Molham's actively-published window. -->
+        <div class="pub-filter-bar">
+            <div class="pub-filters" role="tablist" aria-label="Filter publications">
+                <button class="pub-filter" data-filter="all"           role="tab">All</button>
+                <span class="pub-filter-sep" aria-hidden="true"></span>
+                <button class="pub-filter" data-filter="topic:cancer"  role="tab" title="Cancer biology &amp; oncology">Cancer</button>
+                <button class="pub-filter" data-filter="topic:nanomed" role="tab" title="Nanomedicine">Nanomedicine</button>
+                <button class="pub-filter" data-filter="topic:delivery" role="tab" title="Drug delivery &amp; formulation">Drug delivery</button>
+                <button class="pub-filter" data-filter="topic:chem"    role="tab" title="Chemistry &amp; characterisation">Chemistry</button>
+                <button class="pub-filter" data-filter="topic:review"  role="tab" title="Review articles">Reviews</button>
+                <span class="pub-filter-sep" aria-hidden="true"></span>
+                <button class="pub-filter" data-filter="year:2026"     role="tab">2026</button>
+                <button class="pub-filter" data-filter="year:2025"     role="tab">2025</button>
+                <button class="pub-filter" data-filter="year:2024"     role="tab">2024</button>
+                <button class="pub-filter" data-filter="year:2023"     role="tab">2023</button>
+                <button class="pub-filter" data-filter="year:2022"     role="tab">2022</button>
+            </div>
+            <span class="pub-filter-count" aria-live="polite"></span>
+        </div>
         <section id="list-articles" class="publication-list" aria-live="polite">
-        <article class="pub-item">
+        <article class="pub-item" data-year="2026" data-topic="review">
             <h3 class="pub-title"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=JO1OQj8AAAAJ&amp;citation_for_view=JO1OQj8AAAAJ:Y0pCki6q_DkC" target="_blank" rel="noopener noreferrer">Spatially resolved airway niches: mapping epithelial–immune microenvironments in asthma</a></h3>
             <p class="pub-authors">M Sakkal, AS Jarab, AZ Al Meslamani</p>
+            <p class="pub-tldr">First-author work on spatially resolved airway niches in asthma, mapping epithelial-immune microenvironments that shape disease heterogeneity.</p>
             <p class="pub-venue">Expert Review of Respiratory Medicine 20 (3), 307-320, 2026</p>
             <div class="pub-meta">
-            <span class="pub-dimensions __dimensions_badge_embed__" data-doi="10.1080/17476348.2025.2582244" data-style="small_circle" data-legend="hover-right" title="Dimensions citation impact — click for details"></span>
+            <span class="pub-dimensions __dimensions_badge_embed__" data-doi="10.1080/17476348.2025.2582244" data-style="small_circle" data-legend="hover-right" title="Dimensions citation impact (click for details)"></span>
             <span class="pub-stat pub-stat-cites" title="Google Scholar citations"><span class="pub-stat-icon" aria-hidden="true">&#9733;</span><span class="pub-stat-num">1</span><span class="pub-stat-label">citation</span></span>
+            <span class="pub-stat pub-stat-spark" title="Yearly citation trend (OpenAlex)"><svg class="pub-spark" viewBox="0 0 72 22" role="img" aria-label="2026: 1 cite"><title>2026: 1 cite</title><line class="pub-spark-line" x1="3" y1="11.0" x2="69" y2="11.0" stroke-dasharray="2 2" opacity="0.5"/><circle cx="36.0" cy="11.0" r="3" class="pub-spark-dot"/></svg></span>
             <span class="pub-stat pub-stat-year" title="Year of publication"><span class="pub-stat-icon" aria-hidden="true">&#128197;</span><span class="pub-stat-num">2026</span></span>
             <a class="pub-stat pub-stat-doi" href="https://doi.org/10.1080/17476348.2025.2582244" target="_blank" rel="noopener noreferrer" title="Open at publisher via DOI"><span class="pub-stat-icon" aria-hidden="true">&#128279;</span><span class="pub-stat-label">DOI</span></a>
         </div>
         </article>
-        <article class="pub-item">
+        <article class="pub-item" data-year="2026" data-topic="review">
             <h3 class="pub-title"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=JO1OQj8AAAAJ&amp;citation_for_view=JO1OQj8AAAAJ:ufrVoPGSRksC" target="_blank" rel="noopener noreferrer">Introducing AutoML framework for Drug–Drug Interaction Prediction: Application of AutoGluon</a></h3>
             <p class="pub-authors">A Abou Hajal, M Sakkal</p>
+            <p class="pub-tldr">We use AutoGluon to predict drug-drug interactions and show that automated model search with molecular fingerprints can match handcrafted pipelines while staying simple to reproduce.</p>
             <p class="pub-venue">Toxicology Mechanisms and Methods, 1-11, 2026</p>
             <div class="pub-meta">
-            <span class="pub-dimensions __dimensions_badge_embed__" data-doi="10.1080/15376516.2026.2628929" data-style="small_circle" data-legend="hover-right" title="Dimensions citation impact — click for details"></span>
+            <span class="pub-dimensions __dimensions_badge_embed__" data-doi="10.1080/15376516.2026.2628929" data-style="small_circle" data-legend="hover-right" title="Dimensions citation impact (click for details)"></span>
             <span class="pub-stat pub-stat-year" title="Year of publication"><span class="pub-stat-icon" aria-hidden="true">&#128197;</span><span class="pub-stat-num">2026</span></span>
             <a class="pub-stat pub-stat-doi" href="https://doi.org/10.1080/15376516.2026.2628929" target="_blank" rel="noopener noreferrer" title="Open at publisher via DOI"><span class="pub-stat-icon" aria-hidden="true">&#128279;</span><span class="pub-stat-label">DOI</span></a>
         </div>
         </article>
-        <article class="pub-item">
+        <article class="pub-item" data-year="2026" data-topic="cancer">
             <h3 class="pub-title"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=JO1OQj8AAAAJ&amp;citation_for_view=JO1OQj8AAAAJ:WF5omc3nYNoC" target="_blank" rel="noopener noreferrer">Public perceptions of AI-assisted cancer care in Abu Dhabi, UAE: A cross-sectional survey</a></h3>
             <p class="pub-authors">R Ghemrawi, M Sakkal, K Kayed, W Mousa, M Khair</p>
+            <p class="pub-tldr">Cross-sectional survey of public perceptions of AI-assisted cancer care in Abu Dhabi. Reports attitudes, trust gaps, and the demographic patterns that shape adoption.</p>
             <p class="pub-venue">Supportive Care in Cancer 34 (2), 162, 2026</p>
             <div class="pub-meta">
-            <span class="pub-dimensions __dimensions_badge_embed__" data-doi="10.1007/s00520-026-10389-4" data-style="small_circle" data-legend="hover-right" title="Dimensions citation impact — click for details"></span>
+            <span class="pub-dimensions __dimensions_badge_embed__" data-doi="10.1007/s00520-026-10389-4" data-style="small_circle" data-legend="hover-right" title="Dimensions citation impact (click for details)"></span>
             <span class="pub-stat pub-stat-year" title="Year of publication"><span class="pub-stat-icon" aria-hidden="true">&#128197;</span><span class="pub-stat-num">2026</span></span>
             <a class="pub-stat pub-stat-doi" href="https://doi.org/10.1007/s00520-026-10389-4" target="_blank" rel="noopener noreferrer" title="Open at publisher via DOI"><span class="pub-stat-icon" aria-hidden="true">&#128279;</span><span class="pub-stat-label">DOI</span></a>
         </div>
         </article>
-        <article class="pub-item">
+        <article class="pub-item" data-year="2025" data-topic="cancer review">
             <h3 class="pub-title"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=JO1OQj8AAAAJ&amp;citation_for_view=JO1OQj8AAAAJ:IjCSPb-OGe4C" target="_blank" rel="noopener noreferrer">Machine learning predictions of tumor progression: How reliable are we?</a></h3>
             <p class="pub-authors">M Sakkal, A Abou Hajal</p>
+            <p class="pub-tldr">A methodological audit of tumour-progression ML papers, showing how weak validation choices inflate apparent performance and what an honest benchmark would look like in oncology.</p>
             <p class="pub-venue">Computers in Biology and Medicine 191, 110156, 2025</p>
             <div class="pub-meta">
-            <span class="pub-dimensions __dimensions_badge_embed__" data-doi="10.1016/j.compbiomed.2025.110156" data-style="small_circle" data-legend="hover-right" title="Dimensions citation impact — click for details"></span>
+            <span class="pub-dimensions __dimensions_badge_embed__" data-doi="10.1016/j.compbiomed.2025.110156" data-style="small_circle" data-legend="hover-right" title="Dimensions citation impact (click for details)"></span>
             <span class="pub-stat pub-stat-cites" title="Google Scholar citations"><span class="pub-stat-icon" aria-hidden="true">&#9733;</span><span class="pub-stat-num">9</span><span class="pub-stat-label">citations</span></span>
+            <span class="pub-stat pub-stat-spark" title="Yearly citation trend (OpenAlex)"><svg class="pub-spark" viewBox="0 0 72 22" role="img" aria-label="Citations by year (7 total) — 2025: 5 · 2026: 2"><title>Citations by year (7 total) — 2025: 5 · 2026: 2</title><polygon class="pub-spark-area" points="3.0,19.0 3.0,3.0 69.0,12.6 69.0,19.0"/><polyline class="pub-spark-line" points="3.0,3.0 69.0,12.6"/><circle cx="69.0" cy="12.6" r="2.2" class="pub-spark-dot"/></svg></span>
             <span class="pub-stat pub-stat-year" title="Year of publication"><span class="pub-stat-icon" aria-hidden="true">&#128197;</span><span class="pub-stat-num">2025</span></span>
             <a class="pub-stat pub-stat-doi" href="https://doi.org/10.1016/j.compbiomed.2025.110156" target="_blank" rel="noopener noreferrer" title="Open at publisher via DOI"><span class="pub-stat-icon" aria-hidden="true">&#128279;</span><span class="pub-stat-label">DOI</span></a>
         </div>
         </article>
-        <article class="pub-item">
+        <article class="pub-item" data-year="2025" data-topic="cancer nanomed delivery review">
             <h3 class="pub-title"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=JO1OQj8AAAAJ&amp;citation_for_view=JO1OQj8AAAAJ:YsMSGLbcyi4C" target="_blank" rel="noopener noreferrer">Inhalable nanoparticle-based drug delivery system for non-small cell lung cancer therapy: Promises and challenges</a></h3>
             <p class="pub-authors">M Sakkal, RWA Abdelmoteleb, A Al Ali, YAB Jardan, R Löbenberg, ...</p>
+            <p class="pub-tldr">First-author review of inhalable nanoparticle-based drug delivery for non-small cell lung cancer. Maps the design choices that improve targeting and the translational gaps still in the way.</p>
             <p class="pub-venue">Saudi Pharmaceutical Journal 33 (6), 50, 2025</p>
             <div class="pub-meta">
-            <span class="pub-dimensions __dimensions_badge_embed__" data-doi="10.1007/s44446-025-00046-y" data-style="small_circle" data-legend="hover-right" title="Dimensions citation impact — click for details"></span>
+            <span class="pub-dimensions __dimensions_badge_embed__" data-doi="10.1007/s44446-025-00046-y" data-style="small_circle" data-legend="hover-right" title="Dimensions citation impact (click for details)"></span>
             <span class="pub-stat pub-stat-cites" title="Google Scholar citations"><span class="pub-stat-icon" aria-hidden="true">&#9733;</span><span class="pub-stat-num">4</span><span class="pub-stat-label">citations</span></span>
+            <span class="pub-stat pub-stat-spark" title="Yearly citation trend (OpenAlex)"><svg class="pub-spark" viewBox="0 0 72 22" role="img" aria-label="2026: 4 cites"><title>2026: 4 cites</title><line class="pub-spark-line" x1="3" y1="11.0" x2="69" y2="11.0" stroke-dasharray="2 2" opacity="0.5"/><circle cx="36.0" cy="11.0" r="3" class="pub-spark-dot"/></svg></span>
             <span class="pub-stat pub-stat-year" title="Year of publication"><span class="pub-stat-icon" aria-hidden="true">&#128197;</span><span class="pub-stat-num">2025</span></span>
             <a class="pub-stat pub-stat-doi" href="https://doi.org/10.1007/s44446-025-00046-y" target="_blank" rel="noopener noreferrer" title="Open at publisher via DOI"><span class="pub-stat-icon" aria-hidden="true">&#128279;</span><span class="pub-stat-label">DOI</span></a>
         </div>
         </article>
-        <article class="pub-item">
+        <article class="pub-item" data-year="2025" data-topic="cancer review">
             <h3 class="pub-title"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=JO1OQj8AAAAJ&amp;citation_for_view=JO1OQj8AAAAJ:W7OEmFMy1HYC" target="_blank" rel="noopener noreferrer">Targeting Cancer Through Thymoquinone: From Molecular Mechanisms to Clinical Prospects</a></h3>
             <p class="pub-authors">N Al-Damook, M Sakkal, M Khair, WK Mousa, G Khoder, R Ghemrawi</p>
+            <p class="pub-tldr">Review of thymoquinone as a targeted cancer therapy. Walks through molecular mechanisms and the clinical prospects that depend on solving the formulation problem.</p>
             <p class="pub-venue">International Journal of Molecular Sciences 26 (22), 11029, 2025</p>
             <div class="pub-meta">
-            <span class="pub-dimensions __dimensions_badge_embed__" data-doi="10.3390/ijms262211029" data-style="small_circle" data-legend="hover-right" title="Dimensions citation impact — click for details"></span>
+            <span class="pub-dimensions __dimensions_badge_embed__" data-doi="10.3390/ijms262211029" data-style="small_circle" data-legend="hover-right" title="Dimensions citation impact (click for details)"></span>
             <span class="pub-stat pub-stat-cites" title="Google Scholar citations"><span class="pub-stat-icon" aria-hidden="true">&#9733;</span><span class="pub-stat-num">4</span><span class="pub-stat-label">citations</span></span>
+            <span class="pub-stat pub-stat-spark" title="Yearly citation trend (OpenAlex)"><svg class="pub-spark" viewBox="0 0 72 22" role="img" aria-label="2026: 6 cites"><title>2026: 6 cites</title><line class="pub-spark-line" x1="3" y1="11.0" x2="69" y2="11.0" stroke-dasharray="2 2" opacity="0.5"/><circle cx="36.0" cy="11.0" r="3" class="pub-spark-dot"/></svg></span>
             <span class="pub-stat pub-stat-year" title="Year of publication"><span class="pub-stat-icon" aria-hidden="true">&#128197;</span><span class="pub-stat-num">2025</span></span>
             <a class="pub-stat pub-stat-doi" href="https://doi.org/10.3390/ijms262211029" target="_blank" rel="noopener noreferrer" title="Open at publisher via DOI"><span class="pub-stat-icon" aria-hidden="true">&#128279;</span><span class="pub-stat-label">DOI</span></a>
         </div>
         </article>
-        <article class="pub-item">
+        <article class="pub-item" data-year="2025" data-topic="delivery review">
             <h3 class="pub-title"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=JO1OQj8AAAAJ&amp;citation_for_view=JO1OQj8AAAAJ:eQOLeE2rZwMC" target="_blank" rel="noopener noreferrer">Large language models in drug delivery: A review of the current landscape and future perspectives</a></h3>
             <p class="pub-authors">M Sakkal, A Abou Hajal</p>
+            <p class="pub-tldr">First-author review of large language models in drug delivery. Covers what LLM-powered tools currently do for formulation and what would have to be true before they replace manual triage.</p>
             <p class="pub-venue">Journal of Pharmaceutical Sciences, 104147, 2025</p>
             <div class="pub-meta">
-            <span class="pub-dimensions __dimensions_badge_embed__" data-doi="10.1016/j.xphs.2025.104147" data-style="small_circle" data-legend="hover-right" title="Dimensions citation impact — click for details"></span>
+            <span class="pub-dimensions __dimensions_badge_embed__" data-doi="10.1016/j.xphs.2025.104147" data-style="small_circle" data-legend="hover-right" title="Dimensions citation impact (click for details)"></span>
             <span class="pub-stat pub-stat-cites" title="Google Scholar citations"><span class="pub-stat-icon" aria-hidden="true">&#9733;</span><span class="pub-stat-num">1</span><span class="pub-stat-label">citation</span></span>
+            <span class="pub-stat pub-stat-spark" title="Yearly citation trend (OpenAlex)"><svg class="pub-spark" viewBox="0 0 72 22" role="img" aria-label="2026: 1 cite"><title>2026: 1 cite</title><line class="pub-spark-line" x1="3" y1="11.0" x2="69" y2="11.0" stroke-dasharray="2 2" opacity="0.5"/><circle cx="36.0" cy="11.0" r="3" class="pub-spark-dot"/></svg></span>
             <span class="pub-stat pub-stat-year" title="Year of publication"><span class="pub-stat-icon" aria-hidden="true">&#128197;</span><span class="pub-stat-num">2025</span></span>
             <a class="pub-stat pub-stat-doi" href="https://doi.org/10.1016/j.xphs.2025.104147" target="_blank" rel="noopener noreferrer" title="Open at publisher via DOI"><span class="pub-stat-icon" aria-hidden="true">&#128279;</span><span class="pub-stat-label">DOI</span></a>
         </div>
         </article>
-        <article class="pub-item">
+        <article class="pub-item" data-year="2025" data-topic="cancer chem">
             <h3 class="pub-title"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=JO1OQj8AAAAJ&amp;citation_for_view=JO1OQj8AAAAJ:Tyk-4Ss8FVUC" target="_blank" rel="noopener noreferrer">The Discovery of Small ERK5 Inhibitors via Structure-Based Virtual Screening, Biological Evaluation and MD Simulations</a></h3>
             <p class="pub-authors">N Atatreh, RE Mahgoub, R Ghemrawi, M Sakkal, N Sammani, M Khair, ...</p>
+            <p class="pub-tldr">Discovery of small ERK5 inhibitors through structure-based virtual screening, biological evaluation, and MD simulations. Reports candidates that survived in-vitro validation.</p>
             <p class="pub-venue">Molecules 30 (21), 4181, 2025</p>
             <div class="pub-meta">
-            <span class="pub-dimensions __dimensions_badge_embed__" data-doi="10.3390/molecules30214181" data-style="small_circle" data-legend="hover-right" title="Dimensions citation impact — click for details"></span>
+            <span class="pub-dimensions __dimensions_badge_embed__" data-doi="10.3390/molecules30214181" data-style="small_circle" data-legend="hover-right" title="Dimensions citation impact (click for details)"></span>
             <span class="pub-stat pub-stat-cites" title="Google Scholar citations"><span class="pub-stat-icon" aria-hidden="true">&#9733;</span><span class="pub-stat-num">1</span><span class="pub-stat-label">citation</span></span>
+            <span class="pub-stat pub-stat-spark" title="Yearly citation trend (OpenAlex)"><svg class="pub-spark" viewBox="0 0 72 22" role="img" aria-label="2025: 1 cite"><title>2025: 1 cite</title><line class="pub-spark-line" x1="3" y1="11.0" x2="69" y2="11.0" stroke-dasharray="2 2" opacity="0.5"/><circle cx="36.0" cy="11.0" r="3" class="pub-spark-dot"/></svg></span>
             <span class="pub-stat pub-stat-year" title="Year of publication"><span class="pub-stat-icon" aria-hidden="true">&#128197;</span><span class="pub-stat-num">2025</span></span>
             <a class="pub-stat pub-stat-doi" href="https://doi.org/10.3390/molecules30214181" target="_blank" rel="noopener noreferrer" title="Open at publisher via DOI"><span class="pub-stat-icon" aria-hidden="true">&#128279;</span><span class="pub-stat-label">DOI</span></a>
         </div>
         </article>
-        <article class="pub-item">
+        <article class="pub-item" data-year="2025" data-topic="cancer delivery">
             <h3 class="pub-title"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=JO1OQj8AAAAJ&amp;citation_for_view=JO1OQj8AAAAJ:zYLM7Y9cAGgC" target="_blank" rel="noopener noreferrer">Synergistic Modulation of ER Stress and Insulin Potentiation Therapy for Enhanced Cancer Treatment</a></h3>
             <p class="pub-authors">N Al-Damook, M Sakkal, S Kremesh, WK Mousa, M Khair, G Khoder, ...</p>
+            <p class="pub-tldr">Synergistic modulation of ER stress combined with insulin potentiation therapy for enhanced cancer treatment. Reports a combination strategy validated across cancer cell lines.</p>
             <p class="pub-venue">Cell Therapy &amp; Engineering Connect 1 (1), 1-10, 2025</p>
             <div class="pub-meta">
-            <span class="pub-dimensions __dimensions_badge_embed__" data-doi="10.69709/cellengc.2025.115467" data-style="small_circle" data-legend="hover-right" title="Dimensions citation impact — click for details"></span>
+            <span class="pub-dimensions __dimensions_badge_embed__" data-doi="10.69709/cellengc.2025.115467" data-style="small_circle" data-legend="hover-right" title="Dimensions citation impact (click for details)"></span>
             <span class="pub-stat pub-stat-cites" title="Google Scholar citations"><span class="pub-stat-icon" aria-hidden="true">&#9733;</span><span class="pub-stat-num">1</span><span class="pub-stat-label">citation</span></span>
+            <span class="pub-stat pub-stat-spark" title="Yearly citation trend (OpenAlex)"><svg class="pub-spark" viewBox="0 0 72 22" role="img" aria-label="2025: 1 cite"><title>2025: 1 cite</title><line class="pub-spark-line" x1="3" y1="11.0" x2="69" y2="11.0" stroke-dasharray="2 2" opacity="0.5"/><circle cx="36.0" cy="11.0" r="3" class="pub-spark-dot"/></svg></span>
             <span class="pub-stat pub-stat-year" title="Year of publication"><span class="pub-stat-icon" aria-hidden="true">&#128197;</span><span class="pub-stat-num">2025</span></span>
             <a class="pub-stat pub-stat-doi" href="https://doi.org/10.69709/cellengc.2025.115467" target="_blank" rel="noopener noreferrer" title="Open at publisher via DOI"><span class="pub-stat-icon" aria-hidden="true">&#128279;</span><span class="pub-stat-label">DOI</span></a>
         </div>
         </article>
-        <article class="pub-item">
+        <article class="pub-item" data-year="2024" data-topic="nanomed delivery review">
             <h3 class="pub-title"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=JO1OQj8AAAAJ&amp;citation_for_view=JO1OQj8AAAAJ:UeHWp8X0CEIC" target="_blank" rel="noopener noreferrer">Nanomedicines: emerging platforms in smart chemotherapy treatment—a recent review</a></h3>
             <p class="pub-authors">M Arafat, M Sakkal, R Beiram, S AbuRuz</p>
+            <p class="pub-tldr">A landscape review of nanomedicine platforms used in smart chemotherapy. Maps how surface chemistry, stimulus-responsive carriers, and combination approaches are being used to lower off-target toxicity.</p>
             <p class="pub-venue">Pharmaceuticals 17 (3), 315, 2024</p>
             <div class="pub-meta">
-            <span class="pub-dimensions __dimensions_badge_embed__" data-doi="10.3390/ph17030315" data-style="small_circle" data-legend="hover-right" title="Dimensions citation impact — click for details"></span>
+            <span class="pub-dimensions __dimensions_badge_embed__" data-doi="10.3390/ph17030315" data-style="small_circle" data-legend="hover-right" title="Dimensions citation impact (click for details)"></span>
             <span class="pub-stat pub-stat-cites" title="Google Scholar citations"><span class="pub-stat-icon" aria-hidden="true">&#9733;</span><span class="pub-stat-num">42</span><span class="pub-stat-label">citations</span></span>
+            <span class="pub-stat pub-stat-spark" title="Yearly citation trend (OpenAlex)"><svg class="pub-spark" viewBox="0 0 72 22" role="img" aria-label="Citations by year (34 total) — 2024: 6 · 2025: 22 · 2026: 6"><title>Citations by year (34 total) — 2024: 6 · 2025: 22 · 2026: 6</title><polygon class="pub-spark-area" points="3.0,19.0 3.0,14.6 36.0,3.0 69.0,14.6 69.0,19.0"/><polyline class="pub-spark-line" points="3.0,14.6 36.0,3.0 69.0,14.6"/><circle cx="69.0" cy="14.6" r="2.2" class="pub-spark-dot"/></svg></span>
             <span class="pub-stat pub-stat-year" title="Year of publication"><span class="pub-stat-icon" aria-hidden="true">&#128197;</span><span class="pub-stat-num">2024</span></span>
             <a class="pub-stat pub-stat-doi" href="https://doi.org/10.3390/ph17030315" target="_blank" rel="noopener noreferrer" title="Open at publisher via DOI"><span class="pub-stat-icon" aria-hidden="true">&#128279;</span><span class="pub-stat-label">DOI</span></a>
         </div>
         </article>
-        <article class="pub-item">
+        <article class="pub-item" data-year="2024" data-topic="delivery chem">
             <h3 class="pub-title"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=JO1OQj8AAAAJ&amp;citation_for_view=JO1OQj8AAAAJ:qjMakFHDy7sC" target="_blank" rel="noopener noreferrer">Preparation and characterization of theophylline controlled release matrix system incorporating poloxamer 407, stearyl alcohol, and hydroxypropyl methylcellulose: A novel …</a></h3>
             <p class="pub-authors">M Sakkal, M Arafat, P Yuvaraju, R Beiram, S AbuRuz</p>
+            <p class="pub-tldr">First-author work on a theophylline controlled-release matrix system combining poloxamer 407, stearyl alcohol, and HPMC. Reports a formulation that survives multi-batch dissolution-profile testing.</p>
             <p class="pub-venue">Polymers 16 (5), 643, 2024</p>
             <div class="pub-meta">
-            <span class="pub-dimensions __dimensions_badge_embed__" data-doi="10.3390/polym16050643" data-style="small_circle" data-legend="hover-right" title="Dimensions citation impact — click for details"></span>
+            <span class="pub-dimensions __dimensions_badge_embed__" data-doi="10.3390/polym16050643" data-style="small_circle" data-legend="hover-right" title="Dimensions citation impact (click for details)"></span>
             <span class="pub-stat pub-stat-cites" title="Google Scholar citations"><span class="pub-stat-icon" aria-hidden="true">&#9733;</span><span class="pub-stat-num">14</span><span class="pub-stat-label">citations</span></span>
+            <span class="pub-stat pub-stat-spark" title="Yearly citation trend (OpenAlex)"><svg class="pub-spark" viewBox="0 0 72 22" role="img" aria-label="Citations by year (11 total) — 2024: 1 · 2025: 5 · 2026: 5"><title>Citations by year (11 total) — 2024: 1 · 2025: 5 · 2026: 5</title><polygon class="pub-spark-area" points="3.0,19.0 3.0,15.8 36.0,3.0 69.0,3.0 69.0,19.0"/><polyline class="pub-spark-line" points="3.0,15.8 36.0,3.0 69.0,3.0"/><circle cx="69.0" cy="3.0" r="2.2" class="pub-spark-dot"/></svg></span>
             <span class="pub-stat pub-stat-year" title="Year of publication"><span class="pub-stat-icon" aria-hidden="true">&#128197;</span><span class="pub-stat-num">2024</span></span>
             <a class="pub-stat pub-stat-doi" href="https://doi.org/10.3390/polym16050643" target="_blank" rel="noopener noreferrer" title="Open at publisher via DOI"><span class="pub-stat-icon" aria-hidden="true">&#128279;</span><span class="pub-stat-label">DOI</span></a>
         </div>
         </article>
-        <article class="pub-item">
+        <article class="pub-item" data-year="2024" data-topic="delivery chem">
             <h3 class="pub-title"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=JO1OQj8AAAAJ&amp;citation_for_view=JO1OQj8AAAAJ:2osOgNQ5qMEC" target="_blank" rel="noopener noreferrer">Effect of hydration forms and polymer grades on theophylline controlled-release tablet: An assessment and evaluation</a></h3>
             <p class="pub-authors">M Sakkal, M Arafat, P Yuvaraju, R Beiram, L Ali, M Altarawneh, ...</p>
+            <p class="pub-tldr">First-author follow-up on theophylline controlled-release tablets. Examines how hydration forms and polymer grades change release kinetics and how to control for them in formulation work.</p>
             <p class="pub-venue">Pharmaceuticals 17 (3), 271, 2024</p>
             <div class="pub-meta">
-            <span class="pub-dimensions __dimensions_badge_embed__" data-doi="10.3390/ph17030271" data-style="small_circle" data-legend="hover-right" title="Dimensions citation impact — click for details"></span>
+            <span class="pub-dimensions __dimensions_badge_embed__" data-doi="10.3390/ph17030271" data-style="small_circle" data-legend="hover-right" title="Dimensions citation impact (click for details)"></span>
             <span class="pub-stat pub-stat-cites" title="Google Scholar citations"><span class="pub-stat-icon" aria-hidden="true">&#9733;</span><span class="pub-stat-num">5</span><span class="pub-stat-label">citations</span></span>
+            <span class="pub-stat pub-stat-spark" title="Yearly citation trend (OpenAlex)"><svg class="pub-spark" viewBox="0 0 72 22" role="img" aria-label="Citations by year (4 total) — 2024: 1 · 2025: 2 · 2026: 1"><title>Citations by year (4 total) — 2024: 1 · 2025: 2 · 2026: 1</title><polygon class="pub-spark-area" points="3.0,19.0 3.0,11.0 36.0,3.0 69.0,11.0 69.0,19.0"/><polyline class="pub-spark-line" points="3.0,11.0 36.0,3.0 69.0,11.0"/><circle cx="69.0" cy="11.0" r="2.2" class="pub-spark-dot"/></svg></span>
             <span class="pub-stat pub-stat-year" title="Year of publication"><span class="pub-stat-icon" aria-hidden="true">&#128197;</span><span class="pub-stat-num">2024</span></span>
             <a class="pub-stat pub-stat-doi" href="https://doi.org/10.3390/ph17030271" target="_blank" rel="noopener noreferrer" title="Open at publisher via DOI"><span class="pub-stat-icon" aria-hidden="true">&#128279;</span><span class="pub-stat-label">DOI</span></a>
         </div>
         </article>
-        <article class="pub-item">
+        <article class="pub-item" data-year="2023" data-topic="delivery chem">
             <h3 class="pub-title"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=JO1OQj8AAAAJ&amp;citation_for_view=JO1OQj8AAAAJ:9yKSN-GCB0IC" target="_blank" rel="noopener noreferrer">Effect of excipients on the quality of drug formulation and immediate release of generic metformin HCl tablets</a></h3>
             <p class="pub-authors">M Arafat, M Sakkal, P Yuvaraju, A Esmaeil, V Poulose, S Aburuz</p>
+            <p class="pub-tldr">We show how excipient choice changes the immediate-release profile of generic metformin HCl tablets, with practical implications for formulation re-validation.</p>
             <p class="pub-venue">Pharmaceuticals 16 (4), 539, 2023</p>
             <div class="pub-meta">
-            <span class="pub-dimensions __dimensions_badge_embed__" data-doi="10.3390/ph16040539" data-style="small_circle" data-legend="hover-right" title="Dimensions citation impact — click for details"></span>
+            <span class="pub-dimensions __dimensions_badge_embed__" data-doi="10.3390/ph16040539" data-style="small_circle" data-legend="hover-right" title="Dimensions citation impact (click for details)"></span>
             <span class="pub-stat pub-stat-cites" title="Google Scholar citations"><span class="pub-stat-icon" aria-hidden="true">&#9733;</span><span class="pub-stat-num">15</span><span class="pub-stat-label">citations</span></span>
+            <span class="pub-stat pub-stat-spark" title="Yearly citation trend (OpenAlex)"><svg class="pub-spark" viewBox="0 0 72 22" role="img" aria-label="Citations by year (13 total) — 2023: 2 · 2024: 5 · 2025: 5 · 2026: 1"><title>Citations by year (13 total) — 2023: 2 · 2024: 5 · 2025: 5 · 2026: 1</title><polygon class="pub-spark-area" points="3.0,19.0 3.0,12.6 25.0,3.0 47.0,3.0 69.0,15.8 69.0,19.0"/><polyline class="pub-spark-line" points="3.0,12.6 25.0,3.0 47.0,3.0 69.0,15.8"/><circle cx="69.0" cy="15.8" r="2.2" class="pub-spark-dot"/></svg></span>
             <span class="pub-stat pub-stat-year" title="Year of publication"><span class="pub-stat-icon" aria-hidden="true">&#128197;</span><span class="pub-stat-num">2023</span></span>
             <a class="pub-stat pub-stat-doi" href="https://doi.org/10.3390/ph16040539" target="_blank" rel="noopener noreferrer" title="Open at publisher via DOI"><span class="pub-stat-icon" aria-hidden="true">&#128279;</span><span class="pub-stat-label">DOI</span></a>
         </div>
         </article>
-        <article class="pub-item">
+        <article class="pub-item" data-year="2023" data-topic="delivery chem">
             <h3 class="pub-title"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=JO1OQj8AAAAJ&amp;citation_for_view=JO1OQj8AAAAJ:u5HHmVD_uO8C" target="_blank" rel="noopener noreferrer">Enteric-coating film effect on the delayed drug release of pantoprazole gastro-resistant generic tablets</a></h3>
             <p class="pub-authors">M Arafat, M Sakkal, MF Bostanudin, OA Alhanbali, P Yuvaraju, R Beiram, ...</p>
+            <p class="pub-tldr">Effect of enteric-coating film on the delayed release of pantoprazole gastro-resistant generic tablets. Walks through the formulation choices that survived re-validation across batches.</p>
             <p class="pub-venue">F1000Research 12, 1325, 2023</p>
             <div class="pub-meta">
-            <span class="pub-dimensions __dimensions_badge_embed__" data-doi="10.12688/f1000research.140607.1" data-style="small_circle" data-legend="hover-right" title="Dimensions citation impact — click for details"></span>
+            <span class="pub-dimensions __dimensions_badge_embed__" data-doi="10.12688/f1000research.140607.1" data-style="small_circle" data-legend="hover-right" title="Dimensions citation impact (click for details)"></span>
             <span class="pub-stat pub-stat-cites" title="Google Scholar citations"><span class="pub-stat-icon" aria-hidden="true">&#9733;</span><span class="pub-stat-num">8</span><span class="pub-stat-label">citations</span></span>
+            <span class="pub-stat pub-stat-spark" title="Yearly citation trend (OpenAlex)"><svg class="pub-spark" viewBox="0 0 72 22" role="img" aria-label="Citations by year (6 total) — 2023: 1 · 2024: 2 · 2025: 1 · 2026: 2"><title>Citations by year (6 total) — 2023: 1 · 2024: 2 · 2025: 1 · 2026: 2</title><polygon class="pub-spark-area" points="3.0,19.0 3.0,11.0 25.0,3.0 47.0,11.0 69.0,3.0 69.0,19.0"/><polyline class="pub-spark-line" points="3.0,11.0 25.0,3.0 47.0,11.0 69.0,3.0"/><circle cx="69.0" cy="3.0" r="2.2" class="pub-spark-dot"/></svg></span>
             <span class="pub-stat pub-stat-year" title="Year of publication"><span class="pub-stat-icon" aria-hidden="true">&#128197;</span><span class="pub-stat-num">2023</span></span>
             <a class="pub-stat pub-stat-doi" href="https://doi.org/10.12688/f1000research.140607.1" target="_blank" rel="noopener noreferrer" title="Open at publisher via DOI"><span class="pub-stat-icon" aria-hidden="true">&#128279;</span><span class="pub-stat-label">DOI</span></a>
         </div>
         </article>
-        <article class="pub-item">
+        <article class="pub-item" data-year="2022" data-topic="chem">
             <h3 class="pub-title"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=JO1OQj8AAAAJ&amp;citation_for_view=JO1OQj8AAAAJ:d1gkVwhDpl0C" target="_blank" rel="noopener noreferrer">Chemical Composition of the Volatile Oil from Aerial Parts of Rosmarinus officinalis L. Growing in UAE</a></h3>
             <p class="pub-authors">MM Hudaib, AF Abu Hajal, MM Sakkal</p>
+            <p class="pub-tldr">GC-MS characterisation of UAE-grown rosemary essential oil. Reports the major-constituent profile and contrasts it with regional sources.</p>
             <p class="pub-venue">Journal of Essential Oil Bearing Plants 25 (2), 282-289, 2022</p>
             <div class="pub-meta">
-            <span class="pub-dimensions __dimensions_badge_embed__" data-doi="10.1080/0972060x.2022.2072177" data-style="small_circle" data-legend="hover-right" title="Dimensions citation impact — click for details"></span>
+            <span class="pub-dimensions __dimensions_badge_embed__" data-doi="10.1080/0972060x.2022.2072177" data-style="small_circle" data-legend="hover-right" title="Dimensions citation impact (click for details)"></span>
             <span class="pub-stat pub-stat-cites" title="Google Scholar citations"><span class="pub-stat-icon" aria-hidden="true">&#9733;</span><span class="pub-stat-num">7</span><span class="pub-stat-label">citations</span></span>
             <span class="pub-stat pub-stat-year" title="Year of publication"><span class="pub-stat-icon" aria-hidden="true">&#128197;</span><span class="pub-stat-num">2022</span></span>
             <a class="pub-stat pub-stat-doi" href="https://doi.org/10.1080/0972060x.2022.2072177" target="_blank" rel="noopener noreferrer" title="Open at publisher via DOI"><span class="pub-stat-icon" aria-hidden="true">&#128279;</span><span class="pub-stat-label">DOI</span></a>
