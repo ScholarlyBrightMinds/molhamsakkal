@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════════════════
-//  theme.config.js — Molham Sakkal
+//  theme.config.js, Molham Sakkal
 //  Single source of truth for this researcher's site.
 // ═══════════════════════════════════════════════════════════════════
 
@@ -24,45 +24,49 @@ window.SITE_CONFIG = {
     },
 
     // ── Palette ── indigo (hub-assigned for Molham) ──────────────
+    // Dark is the default: deep space violet, "nanomedicine at night".
+    // Light is soft warm paper with a deep indigo accent.
     palette: {
         name: "indigo",
         dark: {
-            bg:          "#0d0f1a",
-            bgSoft:      "#141729",
-            bgDeep:      "#080a14",
-            card:        "#1a1d36",
-            cardSoft:    "#15182d",
-            text:        "#ebe8f5",
-            textSoft:    "#b5b0cc",
-            muted:       "#6e6890",
-            border:      "#272a4c",
-            borderS:     "#1f2240",
-            accent:      "#8b88e8",    /* indigo — soft luminous */
-            accentD:     "#a5a3ee",
-            accentBg:    "rgba(139,136,232,0.10)",
-            accentGlow:  "rgba(139,136,232,0.22)",
-            amber:       "#e6b76c",
-            amberBg:     "rgba(230,183,108,0.10)",
-            amberGlow:   "rgba(230,183,108,0.18)"
+            bg:          "#0c0a1a",    /* deep space violet */
+            bgSoft:      "#141127",
+            bgDeep:      "#070610",
+            card:        "#151230",
+            cardSoft:    "#110e26",
+            text:        "#eae7f8",
+            textSoft:    "#aaa4cd",
+            muted:       "#7f79ae",
+            border:      "#262051",
+            borderS:     "#1b1740",
+            accent:      "#958eff",    /* luminous periwinkle */
+            accentD:     "#aea8ff",
+            accentBg:    "rgba(149,142,255,0.09)",
+            accentGlow:  "rgba(149,142,255,0.26)",
+            accentHi:    "#c9c5ff",    /* bright membrane core for gradients */
+            amber:       "#e9bc74",
+            amberBg:     "rgba(233,188,116,0.10)",
+            amberGlow:   "rgba(233,188,116,0.20)"
         },
         light: {
-            bg:          "#f6f4fb",
-            bgSoft:      "#eeebf7",
-            bgDeep:      "#e5e1f2",
-            card:        "#ffffff",
-            cardSoft:    "#faf8ff",
-            text:        "#1a1733",
-            textSoft:    "#3d3a5c",
-            muted:       "#7a7599",
-            border:      "#ddd7ec",
-            borderS:     "#ebe6f5",
-            accent:      "#4338ca",    /* indigo — deep */
-            accentD:     "#3827a8",
-            accentBg:    "#ebe7fa",
-            accentGlow:  "rgba(67,56,202,0.14)",
+            bg:          "#f6f3ec",    /* soft warm paper */
+            bgSoft:      "#eeeae0",
+            bgDeep:      "#e5e0d2",
+            card:        "#fdfcf8",
+            cardSoft:    "#f8f5ee",
+            text:        "#241f3f",
+            textSoft:    "#4b4569",
+            muted:       "#726c8f",
+            border:      "#ddd7c9",
+            borderS:     "#e8e3d6",
+            accent:      "#4d40d8",    /* deep indigo ink */
+            accentD:     "#3a2eb8",
+            accentBg:    "#e9e6fb",
+            accentGlow:  "rgba(77,64,216,0.16)",
+            accentHi:    "#6f61ec",
             amber:       "#8a5a1e",
-            amberBg:     "#f4ead6",
-            amberGlow:   "rgba(138,90,30,0.14)"
+            amberBg:     "#f3ead2",
+            amberGlow:   "rgba(138,90,30,0.15)"
         }
     },
 
@@ -90,11 +94,11 @@ window.SITE_CONFIG = {
 
     // ── Hero chips ────────────────────────────────────────────────
     chips: [
-        { label: "15 Publications · 112 Citations" },
-        { label: "h-index 6" },
+        { label: "17 Publications · 140 Citations" },
+        { label: "h-index 7" },
         { label: "Lab &amp; Research Supervisor" },
         { label: "MSc Pharm. Sci. · Al Ain University" },
-        { label: "🔬 Cancer Cell Biology", variant: "gold" }
+        { label: "Cancer Cell Biology", variant: "gold" }
     ],
 
     // ── Per-page sub-hero lede text ──────────────────────────────
@@ -214,10 +218,10 @@ window.SITE_CONFIG = {
     // ── "By the numbers" impact tiles (home page) ────────────────
     // First tile auto-updates via build_html.py from the weekly SerpApi pull.
     impactStats: [
-        { num: "15",  label: "Publications",     sub: "peer-reviewed",                       numLiveSource: "total_documents" },
-        { num: "112", label: "Citations",        sub: "across all work",                     numLiveSource: "total_citations" },
-        { num: "6",   label: "h-index",          sub: "sustained impact" },
-        { num: "🔬",  label: "Lab Supervisor",   sub: "HBRC · Al Ain University",            variant: "gold" },
+        { num: "17",  label: "Publications",     sub: "peer-reviewed",                       numLiveSource: "total_documents" },
+        { num: "140", label: "Citations",        sub: "across all work",                     numLiveSource: "total_citations" },
+        { num: "7",   label: "h-index",          sub: "sustained impact" },
+        { num: "HBRC", label: "Lab Supervisor",  sub: "Al Ain University",                   variant: "gold" },
         { num: "3+",  label: "Institutions",     sub: "UAEU · NYU AD · U. Sharjah" }
     ],
 
@@ -260,7 +264,7 @@ window.SITE_CONFIG = {
             title: "Synergistic Anticancer Drug Combinations",
             desc: "Enhancing treatment outcomes through drug-drug synergy. Evaluating combinations of cytotoxic agents across cancer cell lines to identify formulations that lower effective dose and reduce off-target toxicity.",
             tech: ["Cell Culture", "Cytotoxicity", "Combination Index", "IC50"],
-            status: "Active — wet-lab screening",
+            status: "Active · wet-lab screening",
             statusKind: "active",
             needs: "Looking for collaborators with access to additional cancer cell-line panels or combination-index analysis tooling."
         },
@@ -270,7 +274,7 @@ window.SITE_CONFIG = {
             title: "Gene Knockout Studies in Resistance Mechanisms",
             desc: "Unraveling molecular pathways and resistance mechanisms in cancer cells. Using gene knockout approaches to identify key drivers of chemoresistance and potential vulnerabilities.",
             tech: ["CRISPR", "Cell Biology", "Molecular Pathways", "Resistance"],
-            status: "Active — ongoing knockout experiments",
+            status: "Active · ongoing knockout experiments",
             statusKind: "active",
             needs: "Open to collaborators in molecular oncology, CRISPR methodology, or resistance-pathway bioinformatics."
         },
@@ -280,7 +284,7 @@ window.SITE_CONFIG = {
             title: "Novel Compound Cytotoxic Screening",
             desc: "Evaluating cytotoxic potential of novel compounds across a panel of cancer cell lines. Identifying lead structures for further development and mechanism-of-action studies.",
             tech: ["HTS", "Cell Viability", "Cancer Lines", "Lead Discovery"],
-            status: "Active — screening campaigns",
+            status: "Active · screening campaigns",
             statusKind: "active",
             needs: "Medicinal chemists with novel compound libraries welcome. Especially synthetic natural-product derivatives."
         },
@@ -290,7 +294,7 @@ window.SITE_CONFIG = {
             title: "Computational Identification of Gene Targets",
             desc: "Bioinformatics pipelines for identifying novel therapeutic targets in cancer genomics. Bridging computational predictions with wet-lab validation.",
             tech: ["Bioinformatics", "Cancer Genomics", "Target ID", "Computational Biology"],
-            status: "Active — pipeline development",
+            status: "Active · pipeline development",
             statusKind: "active",
             needs: "Computational biologists or ML researchers interested in cancer-genomics target prediction, especially for wet-lab validation partnerships."
         },
@@ -344,7 +348,7 @@ window.SITE_CONFIG = {
             date: "2023",
             year: 2023,
             kind: "thesis",
-            title: "MSc Thesis Defence — Pharmaceutical Sciences",
+            title: "MSc Thesis Defence · Pharmaceutical Sciences",
             venue: "Al Ain University, College of Pharmacy",
             desc:  "Public defence of the MSc thesis on drug delivery and formulation development. First-author papers in Polymers and Pharmaceuticals followed in the year after."
         },
@@ -452,7 +456,7 @@ window.SITE_CONFIG = {
 };
 
 // ═══════════════════════════════════════════════════════════════════
-//  APPLY PALETTE TO CSS VARIABLES — same logic as Abdallah's
+//  APPLY PALETTE TO CSS VARIABLES, same logic as Abdallah's
 // ═══════════════════════════════════════════════════════════════════
 (function applyPalette() {
     const P = window.SITE_CONFIG.palette;

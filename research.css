@@ -1,108 +1,131 @@
 /* ═══════════════════════════════════════════════════════════════════
-   research.css — Research statement / vision page
+   research.css · Research statement page
+   Darkfield concept map (machine-baked, rm-* hooks) + editorial
+   statement blocks with a membrane rail.
    ═══════════════════════════════════════════════════════════════════ */
 
-.sub-hero .sub-lede {
-    max-width: 640px;
-    margin-top: 1.2rem;
-    font-size: 1rem;
-    color: var(--text-soft);
-    line-height: 1.7;
-}
-
-/* ─── Intro paragraph block ────────────────────────────────────── */
+/* ─── Intro block: a spoken-voice pull quote ────────────────────── */
 .research-intro {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-left: 3px solid var(--accent);
-    border-radius: var(--radius);
-    padding: 1.6rem 1.9rem 1.7rem;
-    margin: 1rem 0 0;
+    border-left: 2px solid var(--accent);
+    padding: 0.4rem 0 0.4rem 1.8rem;
+    margin: 2.4rem 0 0;
     position: relative;
+}
+.research-intro::before {
+    content: '';
+    position: absolute;
+    left: -6px; top: -4px;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 14px var(--accent-glow);
 }
 .research-intro-body {
     font-family: var(--display);
-    font-style: italic;
-    font-weight: 300;
-    font-size: 1.1rem;
-    color: var(--text-soft);
-    line-height: 1.65;
+    font-weight: 440;
+    font-size: clamp(1.12rem, 1.9vw, 1.32rem);
+    letter-spacing: -0.015em;
+    color: var(--text);
+    line-height: 1.55;
     margin: 0;
-    max-width: 760px;
+    max-width: 780px;
 }
+.research-intro-body em { font-style: italic; color: var(--accent); }
 
-/* ─── Research statement section cards ─────────────────────────── */
+/* ─── Statement blocks: numbered editorial sections, no boxes ───── */
 .research-sections {
     display: flex;
     flex-direction: column;
-    gap: 1.6rem;
+    counter-reset: research-block;
 }
 
 .research-block {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 1.9rem 2.1rem 2rem;
+    counter-increment: research-block;
     position: relative;
-    overflow: hidden;
-    transition: border-color .25s var(--ease), box-shadow .25s var(--ease);
+    padding: 2.4rem 0 2.5rem 4.4rem;
+    border-top: 1px solid var(--border-s);
 }
+.research-block:first-child { border-top: none; padding-top: 0.6rem; }
+/* Ghost chapter numeral in the left gutter */
 .research-block::before {
+    content: counter(research-block, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 2.15rem;
+    font-family: var(--mono);
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: color-mix(in srgb, var(--accent) 55%, var(--muted));
+}
+.research-block:first-child::before { top: 0.35rem; }
+/* Thin membrane rail that lights up while hovering the block */
+.research-block::after {
     content: '';
     position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 2px;
-    background: var(--accent);
-    transform: scaleY(0);
-    transform-origin: top;
-    transition: transform .35s var(--ease);
+    left: 0.5rem;
+    top: 4.4rem;
+    bottom: 2.2rem;
+    width: 1px;
+    background: linear-gradient(180deg, var(--accent-glow), transparent);
+    opacity: 0;
+    transition: opacity var(--t-med) var(--ease);
 }
-.research-block:hover {
-    border-color: var(--accent);
-    box-shadow: var(--shadow-card);
-}
-.research-block:hover::before { transform: scaleY(1); }
+.research-block:first-child::after { top: 2.6rem; }
+.research-block:hover::after { opacity: 1; }
 
-.research-block .sec-kicker {
-    margin-bottom: 0.4rem;
-}
+.research-block .sec-kicker { margin-bottom: 0.5rem; }
 .research-block-title {
     font-family: var(--display);
-    font-size: clamp(1.4rem, 2.4vw, 1.7rem);
-    font-weight: 400;
-    line-height: 1.25;
-    letter-spacing: -0.01em;
+    font-size: clamp(1.4rem, 2.4vw, 1.72rem);
+    font-weight: 520;
+    line-height: 1.22;
+    letter-spacing: -0.02em;
     color: var(--text);
-    margin: 0 0 1rem;
+    margin: 0 0 1.1rem;
 }
 .research-block-body {
     color: var(--text-soft);
     font-size: 0.98rem;
     line-height: 1.78;
-    max-width: 760px;
+    max-width: 720px;
 }
 .research-block-body p { margin: 0 0 1rem; }
 .research-block-body p:last-child { margin-bottom: 0; }
 .research-block-body strong { color: var(--text); font-weight: 600; }
-.research-block-body em      { color: var(--text); font-style: italic; }
+.research-block-body em     { color: var(--text); font-style: italic; }
 .research-block-body a {
     color: var(--accent);
     text-decoration: none;
     border-bottom: 1px dotted var(--accent-glow);
-    transition: color .2s;
+    transition: color var(--t-fast) var(--ease);
 }
 .research-block-body a:hover { color: var(--accent-d); }
 
-/* ─── Final CTA ───────────────────────────────────────────────── */
+/* ─── Final CTA: luminous membrane panel ────────────────────────── */
 .research-final {
-    background: linear-gradient(180deg, var(--card) 0%, var(--card-soft) 100%);
-    border: 1px solid var(--accent-glow);
-    border-radius: var(--radius);
-    padding: 2rem 2.2rem 2.1rem;
+    background:
+        radial-gradient(90% 140% at 0% 0%,
+            color-mix(in srgb, var(--accent) 11%, transparent), transparent 55%),
+        var(--card);
+    border: 1px solid color-mix(in srgb, var(--accent) 25%, var(--border));
+    border-radius: var(--radius-l);
+    padding: 2.1rem 2.3rem 2.2rem;
+    position: relative;
+    overflow: hidden;
+}
+.research-final::after {
+    content: '';
+    position: absolute;
+    right: -60px; bottom: -90px;
+    width: 240px; height: 240px;
+    border-radius: 50%;
+    border: 2px dotted color-mix(in srgb, var(--accent) 32%, transparent);
+    pointer-events: none;
 }
 .research-final-body {
     color: var(--text-soft);
-    font-size: 0.96rem;
+    font-size: var(--fs-body);
     line-height: 1.7;
     max-width: 620px;
     margin-bottom: 1.4rem;
@@ -111,7 +134,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.55rem;
-    padding: 0.78rem 1.4rem;
+    padding: 0.78rem 1.45rem;
     border-radius: 999px;
     background: var(--accent);
     color: var(--bg);
@@ -120,21 +143,21 @@
     font-size: 0.9rem;
     font-weight: 600;
     text-decoration: none;
-    transition: all .25s var(--ease);
+    transition: transform var(--t-fast) var(--ease),
+                background-color var(--t-fast) var(--ease),
+                box-shadow var(--t-fast) var(--ease);
 }
-.research-final-cta svg {
-    width: 16px;
-    height: 16px;
-}
+.research-final-cta svg { width: 16px; height: 16px; }
 .research-final-cta:hover {
     background: var(--accent-d);
     border-color: var(--accent-d);
     transform: translateY(-2px);
-    box-shadow: 0 14px 28px -10px var(--accent-glow);
+    box-shadow: 0 14px 28px -12px var(--accent-glow);
 }
+.research-final-cta:active { transform: scale(0.97); }
 .research-final-sub {
     margin: 1.3rem 0 0;
-    font-size: 0.84rem;
+    font-size: var(--fs-small);
     color: var(--text-soft);
 }
 .research-final-sub a {
@@ -142,19 +165,20 @@
     text-decoration: none;
     border-bottom: 1px dotted var(--accent-glow);
 }
-.research-final-sub a:hover { color: var(--accent-d, var(--accent)); }
+.research-final-sub a:hover { color: var(--accent-d); }
 
-/* ─── Research-map (interactive concept graph) ──────────────────
-   Force-directed SVG of top-level concepts + topics from OpenAlex.
-   Server-baked static layout (works without JS for SEO + a11y);
-   research-map.js runs a spring simulation on top for the settling
-   motion + hover/drag. */
+/* ═══════════════════════════════════════════════════════════════════
+   RESEARCH MAP · machine-baked (RESEARCH-MAP:BEGIN/END)
+   The canvas is a darkfield micrograph: deep vignette, luminous
+   concept nodes, quieter topic satellites. research-map.js adds the
+   spring simulation and rm-node--focus / --dim states.
+   ═══════════════════════════════════════════════════════════════════ */
 .research-map {
     background: var(--card);
     border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 2rem 2.2rem 1.4rem;
-    margin: 1.5rem 0 0;
+    border-radius: var(--radius-l);
+    padding: 2rem 2.2rem 1.6rem;
+    margin: 1.6rem 0 0;
     position: relative;
     overflow: hidden;
 }
@@ -163,8 +187,10 @@
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(60% 70% at 20% 20%, rgba(255,184,77,0.07), transparent 60%),
-        radial-gradient(50% 60% at 80% 80%, rgba(120,200,180,0.05), transparent 60%);
+        radial-gradient(60% 70% at 18% 12%,
+            color-mix(in srgb, var(--accent) 7%, transparent), transparent 60%),
+        radial-gradient(46% 56% at 86% 88%,
+            color-mix(in srgb, var(--amber) 4%, transparent), transparent 60%);
     pointer-events: none;
 }
 .research-map .sec-kicker,
@@ -175,20 +201,21 @@
 }
 .research-map-lede {
     color: var(--text-soft);
-    font-size: 0.95rem;
+    font-size: var(--fs-small);
     line-height: 1.65;
     max-width: 720px;
-    margin: 0.7rem 0 1.2rem;
+    margin: 0.6rem 0 1.3rem;
 }
 .research-map-canvas {
     position: relative;
     z-index: 1;
     width: 100%;
     aspect-ratio: 1000 / 560;
-    border-radius: 14px;
-    background: linear-gradient(180deg,
-        rgba(0,0,0,0.18) 0%,
-        rgba(0,0,0,0.05) 100%);
+    border-radius: var(--radius);
+    background:
+        radial-gradient(70% 80% at 50% 45%,
+            color-mix(in srgb, var(--accent) 5%, transparent), transparent 78%),
+        color-mix(in srgb, var(--bg-deep) 70%, var(--card));
     overflow: hidden;
 }
 .research-map-svg {
@@ -203,33 +230,33 @@
 /* Edges */
 .rm-edges { pointer-events: none; }
 .rm-edge {
-    stroke: rgba(255,184,77,0.30);
+    stroke: color-mix(in srgb, var(--accent) 30%, transparent);
     stroke-linecap: round;
-    transition: stroke .2s, stroke-width .2s, opacity .2s;
+    transition: stroke var(--t-fast) var(--ease), opacity var(--t-fast) var(--ease);
 }
 .rm-edge--focus {
     stroke: var(--accent);
     stroke-width: 1.8 !important;
     opacity: 1;
 }
-.rm-edge--dim { opacity: 0.18; }
+.rm-edge--dim { opacity: 0.15; }
 
 /* Nodes */
 .rm-node {
     cursor: pointer;
-    transition: opacity .25s var(--ease);
+    transition: opacity var(--t-med) var(--ease);
 }
-.rm-node--dim { opacity: 0.35; }
+.rm-node--dim { opacity: 0.32; }
 .rm-node--focus .rm-node-disc {
-    filter: drop-shadow(0 0 14px var(--accent-glow));
+    filter: drop-shadow(0 0 16px var(--accent-glow));
 }
 .rm-node--dragging { cursor: grabbing; }
 
 .rm-node-disc {
-    fill: var(--card-soft, #1a2622);
-    stroke: var(--border, rgba(255,184,77,0.22));
+    fill: color-mix(in srgb, var(--card-soft) 88%, var(--accent));
+    stroke: var(--border);
     stroke-width: 1.4;
-    transition: fill .2s, stroke .2s;
+    transition: fill var(--t-fast) var(--ease), stroke var(--t-fast) var(--ease);
 }
 .rm-node-label {
     fill: var(--text);
@@ -240,27 +267,30 @@
     pointer-events: none;
 }
 
+/* Centre: the luminous nucleus */
 .rm-node--center .rm-node-disc {
     fill: var(--accent);
     stroke: var(--accent);
 }
 .rm-node--center .rm-node-label {
-    fill: var(--bg, #0d1411);
+    fill: var(--bg);
     font-size: 12.5px;
     font-weight: 700;
 }
+/* Concepts: bright membrane rings */
 .rm-node--concept .rm-node-disc {
-    fill: rgba(255,184,77,0.14);
-    stroke: rgba(255,184,77,0.55);
+    fill: color-mix(in srgb, var(--accent) 15%, transparent);
+    stroke: color-mix(in srgb, var(--accent) 60%, transparent);
 }
 .rm-node--concept .rm-node-label {
     font-size: 12px;
     font-weight: 600;
     fill: var(--accent);
 }
+/* Topics: quieter satellites, warmed with gold */
 .rm-node--topic .rm-node-disc {
-    fill: rgba(120,200,180,0.10);
-    stroke: rgba(120,200,180,0.50);
+    fill: color-mix(in srgb, var(--amber) 8%, transparent);
+    stroke: color-mix(in srgb, var(--amber) 45%, transparent);
 }
 .rm-node--topic .rm-node-label {
     font-size: 10.5px;
@@ -272,18 +302,19 @@
     stroke-width: 2.2;
 }
 .rm-node--focus.rm-node--concept .rm-node-disc {
-    fill: rgba(255,184,77,0.28);
+    fill: color-mix(in srgb, var(--accent) 30%, transparent);
 }
 .rm-node--focus.rm-node--topic .rm-node-disc {
-    fill: rgba(120,200,180,0.22);
+    fill: color-mix(in srgb, var(--amber) 22%, transparent);
 }
 
 /* ─── Responsive ───────────────────────────────────────────────── */
 @media (max-width: 640px) {
-    .research-block { padding: 1.5rem 1.6rem; }
-    .research-intro { padding: 1.3rem 1.5rem; }
-    .research-final { padding: 1.5rem 1.6rem; }
-    .research-map   { padding: 1.4rem 1.4rem 1rem; }
+    .research-block { padding-left: 2.6rem; }
+    .research-block::before { font-size: 0.8rem; }
+    .research-intro { padding-left: 1.2rem; }
+    .research-final { padding: 1.6rem 1.5rem; }
+    .research-map   { padding: 1.4rem 1.3rem 1rem; }
     .rm-node-label  { font-size: 9.5px; }
     .rm-node--center .rm-node-label { font-size: 10.5px; }
     .rm-node--concept .rm-node-label { font-size: 10px; }
