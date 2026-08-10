@@ -1,176 +1,128 @@
 /* ═══════════════════════════════════════════════════════════════════
-   projects.css — Ongoing Research page specifics
+   projects.css · Ongoing Research page
+   Specimen panels: soft membrane cards with oversized ghost numerals.
+   Status colors stay inside the indigo + gold family.
    ═══════════════════════════════════════════════════════════════════ */
-
-.sub-hero .sub-lede {
-    max-width: 620px;
-    margin-top: 1.2rem;
-    font-size: 1rem;
-    color: var(--text-soft);
-    line-height: 1.7;
-}
 
 .project-list {
     display: flex;
     flex-direction: column;
-    gap: 1.3rem;
+    gap: 1.4rem;
 }
 
 .proj-card {
-    background: var(--card);
+    background: color-mix(in srgb, var(--card) 82%, transparent);
     border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 2rem 2.2rem;
+    border-radius: var(--radius-l);
+    padding: 2rem 2.3rem 2.1rem;
     display: grid;
-    grid-template-columns: 68px 1fr;
-    gap: 1.5rem;
+    grid-template-columns: 76px 1fr;
+    gap: 1.6rem;
     align-items: start;
     position: relative;
     overflow: hidden;
-    transition: transform .25s var(--ease), border-color .25s var(--ease), box-shadow .25s var(--ease);
+    transition: transform var(--t-med) var(--ease),
+                border-color var(--t-med) var(--ease),
+                box-shadow var(--t-med) var(--ease);
 }
+/* A faint vesicle surfacing behind the numeral */
 .proj-card::before {
     content: '';
     position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 2px;
-    background: var(--accent);
-    transform: scaleY(0);
-    transform-origin: center;
-    transition: transform .3s var(--ease);
+    left: -46px; top: -46px;
+    width: 170px; height: 170px;
+    border-radius: 50%;
+    border: 2px dotted color-mix(in srgb, var(--accent) 18%, transparent);
+    pointer-events: none;
+    transition: transform var(--t-med) var(--ease);
 }
 .proj-card:hover {
     transform: translateY(-3px);
-    border-color: var(--accent);
+    border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
     box-shadow: var(--shadow-card);
 }
-.proj-card:hover::before { transform: scaleY(1); }
+.proj-card:hover::before { transform: rotate(10deg); }
+.proj-card--published::before {
+    border-color: color-mix(in srgb, var(--amber) 22%, transparent);
+}
 
 .proj-num {
     font-family: var(--display);
-    font-size: 2.8rem;
-    font-weight: 300;
-    font-style: italic;
-    color: var(--accent);
+    font-size: 3rem;
+    font-weight: 620;
+    color: color-mix(in srgb, var(--accent) 34%, transparent);
     line-height: 1;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.04em;
+    position: relative;
+    font-variant-numeric: tabular-nums;
+    transition: color var(--t-med) var(--ease);
 }
+.proj-card:hover .proj-num { color: color-mix(in srgb, var(--accent) 60%, transparent); }
+.proj-card--published .proj-num { color: color-mix(in srgb, var(--amber) 40%, transparent); }
 
-.proj-body { min-width: 0; }
+.proj-body { min-width: 0; position: relative; }
 
 .proj-meta {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 0.55rem;
-    margin-bottom: 0.7rem;
+    margin-bottom: 0.75rem;
 }
 .proj-label {
     font-family: var(--mono);
-    font-size: 0.62rem;
+    font-size: 0.6rem;
+    font-weight: 600;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--accent);
     background: var(--accent-bg);
-    border: 1px solid var(--accent-glow);
-    padding: 0.22rem 0.55rem;
-    border-radius: 0.3rem;
+    border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+    padding: 0.24rem 0.6rem;
+    border-radius: 999px;
 }
 .proj-status {
     font-family: var(--mono);
-    font-size: 0.64rem;
-    letter-spacing: 0.14em;
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    padding: 0.25rem 0.6rem;
-    border-radius: 0.35rem;
+    padding: 0.26rem 0.65rem;
+    border-radius: 999px;
     border: 1px solid var(--border);
-    background: var(--bg-soft);
+    background: transparent;
     color: var(--text-soft);
     line-height: 1.3;
 }
-/* Status variants — green-ish for published, amber for active, accent for in-review */
-.proj-status--published {
-    color: #7dbf8f;
-    border-color: rgba(125, 191, 143, 0.25);
-    background: rgba(125, 191, 143, 0.08);
-}
-:root[data-theme="light"] .proj-status--published {
-    color: #2e7a44;
-    border-color: rgba(46, 122, 68, 0.25);
-    background: rgba(46, 122, 68, 0.08);
-}
+/* Status variants: gold for active bench work, accent for the rest */
 .proj-status--active {
     color: var(--amber);
-    border-color: var(--amber-glow);
+    border-color: color-mix(in srgb, var(--amber) 40%, transparent);
     background: var(--amber-bg);
 }
 .proj-status--review {
     color: var(--accent);
-    border-color: var(--accent-glow);
+    border-color: color-mix(in srgb, var(--accent) 35%, transparent);
     background: var(--accent-bg);
 }
-
-/* Subtle left-border variant hint on the whole card */
-.proj-card--published::before { background: #7dbf8f; }
-:root[data-theme="light"] .proj-card--published::before { background: #2e7a44; }
-.proj-card--active::before    { background: var(--amber); }
-
-/* Needs line — what this project needs right now */
-.proj-needs {
-    margin: 0 0 1rem 0;
-    padding: 0.7rem 0.9rem;
-    background: var(--bg-soft);
-    border: 1px dashed var(--border);
-    border-radius: var(--radius-s);
-    font-size: 0.86rem;
-    color: var(--text-soft);
-    line-height: 1.55;
-    max-width: 620px;
-}
-.proj-needs-label {
-    font-family: var(--mono);
-    font-size: 0.7rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--amber);
-    margin-right: 0.4rem;
-}
-
-/* Collaborate button */
-.proj-collab {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: 1rem;
-    padding: 0.55rem 1rem;
-    font-family: var(--body);
-    font-size: 0.84rem;
-    font-weight: 500;
+.proj-status--published {
     color: var(--accent);
-    background: var(--accent-bg);
-    border: 1px solid var(--accent-glow);
-    border-radius: 999px;
-    text-decoration: none;
-    transition: all .25s var(--ease);
+    border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+    background: color-mix(in srgb, var(--accent) 13%, transparent);
 }
-.proj-collab:hover {
-    background: var(--accent);
-    color: var(--card);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 22px -10px var(--accent-glow);
-}
-.proj-collab-icon {
-    font-size: 0.95em;
-    display: inline-block;
-    transform: translateY(-1px);
+.proj-venue {
+    font-family: var(--body);
+    font-style: italic;
+    font-size: 0.8rem;
+    color: var(--muted);
 }
 
 .proj-title {
     font-family: var(--display);
-    font-size: 1.4rem;
-    font-weight: 400;
-    line-height: 1.3;
-    letter-spacing: -0.005em;
+    font-size: 1.38rem;
+    font-weight: 520;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
     margin-bottom: 0.55rem;
     color: var(--text);
 }
@@ -179,7 +131,29 @@
     font-size: 0.94rem;
     line-height: 1.7;
     margin-bottom: 1rem;
+    max-width: 640px;
+}
+
+/* Needs line: what this project is looking for */
+.proj-needs {
+    margin: 0 0 1rem 0;
+    padding: 0.72rem 0.95rem;
+    background: var(--amber-bg);
+    border-left: 2px solid var(--amber);
+    border-radius: 0 var(--radius-s) var(--radius-s) 0;
+    font-size: var(--fs-small);
+    color: var(--text-soft);
+    line-height: 1.55;
     max-width: 620px;
+}
+.proj-needs-label {
+    font-family: var(--mono);
+    font-size: 0.64rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-right: 0.4rem;
 }
 
 .proj-tags {
@@ -189,25 +163,98 @@
 }
 .proj-tag {
     font-family: var(--mono);
-    font-size: 0.68rem;
-    background: var(--bg-soft);
+    font-size: 0.66rem;
+    background: transparent;
     border: 1px solid var(--border);
     color: var(--text-soft);
-    padding: 0.25rem 0.6rem;
-    border-radius: 0.35rem;
-    transition: all .2s var(--ease);
+    padding: 0.26rem 0.62rem;
+    border-radius: 999px;
+    transition: border-color var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
 }
 .proj-card:hover .proj-tag {
-    border-color: var(--accent-glow);
+    border-color: color-mix(in srgb, var(--accent) 32%, var(--border));
+}
+
+/* Action row: read paper / collaborate */
+.proj-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-items: center;
+    margin-top: 1.1rem;
+}
+.proj-collab {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1.05rem;
+    font-family: var(--body);
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-bg);
+    border: 1px solid color-mix(in srgb, var(--accent) 34%, transparent);
+    border-radius: 999px;
+    text-decoration: none;
+    transition: transform var(--t-fast) var(--ease),
+                background-color var(--t-fast) var(--ease),
+                color var(--t-fast) var(--ease),
+                box-shadow var(--t-fast) var(--ease);
+}
+.proj-collab:hover {
+    background: var(--accent);
+    color: var(--bg);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px -12px var(--accent-glow);
+}
+.proj-collab:active { transform: scale(0.97); }
+.proj-collab-icon {
+    display: inline-flex;
+    align-items: center;
+}
+.proj-collab-icon svg { width: 14px; height: 14px; }
+
+.proj-paper {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1.05rem;
+    font-family: var(--body);
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: var(--bg);
+    background: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+    text-decoration: none;
+    transition: transform var(--t-fast) var(--ease),
+                background-color var(--t-fast) var(--ease),
+                box-shadow var(--t-fast) var(--ease);
+}
+.proj-paper:hover {
+    background: var(--accent-d);
+    border-color: var(--accent-d);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px -12px var(--accent-glow);
+}
+.proj-paper:active { transform: scale(0.97); }
+.proj-paper-icon { font-size: 0.9em; }
+.proj-paper-doi {
+    font-family: var(--mono);
+    font-size: 0.66rem;
+    opacity: 0.8;
+    padding-left: 0.5rem;
+    border-left: 1px solid color-mix(in srgb, var(--bg) 30%, transparent);
 }
 
 /* ── Responsive ─────────────────────────────────────────────────── */
 @media (max-width: 640px) {
     .proj-card {
-        grid-template-columns: auto 1fr;
-        gap: 1rem;
-        padding: 1.4rem 1.5rem;
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+        padding: 1.5rem 1.4rem 1.6rem;
     }
-    .proj-num { font-size: 2.2rem; }
-    .proj-title { font-size: 1.2rem; }
+    .proj-num { font-size: 2.1rem; }
+    .proj-title { font-size: 1.18rem; }
+    .proj-paper-doi { display: none; }
 }

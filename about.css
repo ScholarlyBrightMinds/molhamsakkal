@@ -1,5 +1,7 @@
 /* ═══════════════════════════════════════════════════════════════════
-   about.css — About page specifics
+   about.css · About page
+   Narrative + membrane timeline, pillar strip, awards, and the two
+   machine-baked panels (ORCID, OpenAlex).
    ═══════════════════════════════════════════════════════════════════ */
 
 /* ── Narrative + Timeline grid ──────────────────────────────────── */
@@ -24,14 +26,12 @@
 .about-text em {
     font-style: italic;
     color: var(--accent);
-    font-family: var(--display);
-    font-size: 1.02em;
 }
 
-/* ── Timeline ───────────────────────────────────────────────────── */
+/* ── Timeline: a membrane strand with vesicle nodes ─────────────── */
 .timeline {
     position: relative;
-    padding-left: 1.6rem;
+    padding-left: 1.7rem;
 }
 .timeline::before {
     content: '';
@@ -40,40 +40,45 @@
     top: 9px;
     bottom: 9px;
     width: 1px;
-    background: var(--border);
+    background: linear-gradient(180deg,
+        color-mix(in srgb, var(--accent) 45%, var(--border)),
+        var(--border) 60%,
+        transparent);
 }
 .tl-item {
     position: relative;
-    padding-bottom: 1.6rem;
+    padding-bottom: 1.7rem;
 }
 .tl-item:last-child { padding-bottom: 0; }
 .tl-item::before {
     content: '';
     position: absolute;
-    left: -1.6rem;
-    top: 7px;
+    left: -1.7rem;
+    top: 6px;
     width: 13px; height: 13px;
     border-radius: 50%;
-    background: var(--card);
+    background: var(--bg);
     border: 1.5px solid var(--accent);
-    transition: all .3s var(--ease);
+    transition: box-shadow var(--t-med) var(--ease);
 }
+.tl-item:hover::before { box-shadow: 0 0 0 5px var(--accent-bg); }
 .tl-item.current::before {
     background: var(--accent);
-    box-shadow: 0 0 0 4px var(--accent-glow);
+    box-shadow: 0 0 0 4px var(--accent-bg), 0 0 16px var(--accent-glow);
 }
 .tl-item.future::before {
     border-style: dashed;
     border-color: var(--amber);
-    background: var(--card);
+    background: var(--bg);
 }
 .tl-date {
     font-family: var(--mono);
-    font-size: 0.68rem;
-    letter-spacing: 0.12em;
+    font-size: 0.66rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--muted);
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.25rem;
 }
 .tl-item.current .tl-date { color: var(--accent); }
 .tl-item.future  .tl-date { color: var(--amber); }
@@ -81,161 +86,139 @@
 .tl-title {
     font-family: var(--display);
     font-size: 1.02rem;
-    font-weight: 500;
+    font-weight: 560;
     color: var(--text);
     line-height: 1.35;
     margin-bottom: 0.25rem;
-    letter-spacing: -0.005em;
+    letter-spacing: -0.01em;
 }
 .tl-desc {
-    font-size: 0.86rem;
+    font-size: var(--fs-small);
     color: var(--text-soft);
     line-height: 1.55;
 }
 
-/* ── Pillars ────────────────────────────────────────────────────── */
+/* ── Pillars: one surface, three hairline-divided cells ─────────── */
 .pillars-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.1rem;
-}
-.pillar-card {
-    background: var(--card);
+    background: color-mix(in srgb, var(--card) 78%, transparent);
     border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 1.8rem 1.7rem 1.7rem;
-    transition: all .3s var(--ease);
-    position: relative;
+    border-radius: var(--radius-l);
     overflow: hidden;
 }
-.pillar-card::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 2px;
-    background: var(--accent);
-    transform: scaleY(0);
-    transform-origin: center;
-    transition: transform .3s var(--ease);
+.pillar-card {
+    padding: 1.8rem 1.7rem 1.9rem;
+    border-left: 1px solid var(--border-s);
+    transition: background-color var(--t-med) var(--ease);
 }
-.pillar-card:hover {
-    transform: translateY(-3px);
-    border-color: var(--accent);
-    box-shadow: var(--shadow-card);
-}
-.pillar-card:hover::before { transform: scaleY(1); }
+.pillar-card:first-child { border-left: none; }
+.pillar-card:hover { background: color-mix(in srgb, var(--accent) 5%, transparent); }
 
 .pillar-card .p-icon {
-    width: 42px; height: 42px;
-    border-radius: 10px;
+    width: 44px; height: 44px;
+    border-radius: 50%;
     background: var(--accent-bg);
+    border: 1px dashed color-mix(in srgb, var(--accent) 38%, transparent);
     display: grid;
     place-items: center;
     color: var(--accent);
     margin-bottom: 1rem;
-    transition: all .3s var(--ease);
+    transition: transform var(--t-med) var(--ease),
+                background-color var(--t-med) var(--ease),
+                color var(--t-med) var(--ease);
 }
 .pillar-card:hover .p-icon {
+    transform: scale(1.08);
     background: var(--accent);
-    color: var(--card);
+    color: var(--bg);
 }
-.pillar-card .p-icon svg {
-    width: 22px; height: 22px;
-}
+.pillar-card .p-icon svg { width: 21px; height: 21px; }
 .pillar-card .p-title {
     font-family: var(--display);
-    font-size: 1.08rem;
-    font-weight: 500;
+    font-size: 1.06rem;
+    font-weight: 560;
     line-height: 1.3;
     margin-bottom: 0.5rem;
     color: var(--text);
-    letter-spacing: -0.005em;
+    letter-spacing: -0.01em;
 }
 .pillar-card .p-desc {
-    font-size: 0.88rem;
+    font-size: var(--fs-small);
     color: var(--text-soft);
     line-height: 1.6;
 }
 
-/* ── Awards ─────────────────────────────────────────────────────── */
+/* ── Awards: quiet rows, gold vesicle markers ───────────────────── */
 .awards-list {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 0.9rem;
 }
 .award-item {
     display: grid;
-    grid-template-columns: 56px 1fr;
+    grid-template-columns: 48px 1fr;
     gap: 1.2rem;
     align-items: center;
-    padding: 1.1rem 1.4rem;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    transition: all .3s var(--ease);
+    padding: 1.15rem 0.3rem;
+    border-top: 1px solid var(--border-s);
+    transition: background-color var(--t-med) var(--ease);
 }
+.award-item:first-child { border-top: none; }
 .award-item:hover {
-    transform: translateX(3px);
-    border-color: var(--amber);
-    box-shadow: var(--shadow-card);
+    background: linear-gradient(90deg,
+        color-mix(in srgb, var(--amber) 5%, transparent), transparent 70%);
 }
 .award-icon {
-    width: 50px; height: 50px;
+    width: 44px; height: 44px;
     border-radius: 50%;
     background: var(--amber-bg);
-    border: 1px solid var(--amber-glow);
+    border: 1px dashed color-mix(in srgb, var(--amber) 45%, transparent);
     display: grid;
     place-items: center;
-    font-size: 1.3rem;
+    color: var(--amber);
+    font-size: 1.05rem;
     flex-shrink: 0;
 }
+.award-icon svg { width: 20px; height: 20px; }
 .award-body .a-title {
     font-family: var(--display);
     font-size: 1.02rem;
-    font-weight: 500;
+    font-weight: 560;
     color: var(--text);
     line-height: 1.35;
     margin-bottom: 0.15rem;
-    letter-spacing: -0.005em;
+    letter-spacing: -0.01em;
 }
 .award-body .a-venue {
     font-size: 0.82rem;
-    color: var(--text-soft);
-    font-style: italic;
+    color: var(--muted);
     line-height: 1.4;
-}
-
-/* ── Sub-lede paragraph ─────────────────────────────────────────── */
-.sub-hero .sub-lede {
-    max-width: 620px;
-    margin-top: 1.2rem;
-    font-size: 1rem;
-    color: var(--text-soft);
-    line-height: 1.7;
 }
 
 /* ── Responsive ─────────────────────────────────────────────────── */
 @media (max-width: 900px) {
-    .about-grid { grid-template-columns: 1fr; gap: 2.4rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2.6rem; }
     .pillars-grid { grid-template-columns: 1fr; }
+    .pillar-card { border-left: none; border-top: 1px solid var(--border-s); }
+    .pillar-card:first-child { border-top: none; }
 }
 @media (max-width: 540px) {
-    .award-item { grid-template-columns: 42px 1fr; gap: 0.9rem; padding: 1rem 1.1rem; }
-    .award-icon { width: 38px; height: 38px; font-size: 1.05rem; }
+    .award-item { grid-template-columns: 40px 1fr; gap: 0.9rem; padding: 1rem 0.15rem; }
+    .award-icon { width: 38px; height: 38px; }
+    .award-icon svg { width: 17px; height: 17px; }
 }
 
-
-/* ── ORCID verified panel — baked from data/orcid/orcid.json each Monday ── */
-.orcid-panel {
-    margin-top: 1rem;
-}
+/* ═══════════════════════════════════════════════════════════════════
+   ORCID panel · baked weekly by build_orcid_html.py
+   ═══════════════════════════════════════════════════════════════════ */
+.orcid-panel { margin-top: 1rem; }
 .orcid-lede {
     color: var(--text-soft);
-    font-size: 0.96rem;
+    font-size: var(--fs-body);
     max-width: 640px;
-    margin-bottom: 1.4rem;
-    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    line-height: 1.65;
 }
 .orcid-grid {
     display: flex;
@@ -243,24 +226,24 @@
     gap: 1rem 1.4rem;
     align-items: center;
 }
-/* ORCID iD with their signature green chip */
+/* ORCID iD chip (registry brand green kept for recognisability) */
 .orcid-id {
     display: inline-flex;
     align-items: center;
     gap: 0.55rem;
-    padding: 0.55rem 0.95rem;
-    background: var(--card);
+    padding: 0.55rem 1rem;
+    background: color-mix(in srgb, var(--card) 72%, transparent);
     border: 1px solid var(--border);
     border-radius: 999px;
     color: var(--text);
-    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
-    font-size: 0.86rem;
-    transition: border-color .25s var(--ease), transform .25s var(--ease);
+    font-family: var(--mono);
+    font-size: 0.84rem;
+    text-decoration: none;
+    transition: border-color var(--t-fast) var(--ease), transform var(--t-fast) var(--ease);
 }
 .orcid-id:hover {
-    border-color: #a6ce39;       /* ORCID brand green */
+    border-color: #a6ce39;
     transform: translateY(-1px);
-    color: var(--text);
 }
 .orcid-logo {
     display: inline-flex;
@@ -272,19 +255,14 @@
     background: #a6ce39;
     color: #fff;
     font-family: var(--display);
-    font-size: 0.78rem;
+    font-size: 0.76rem;
     font-weight: 700;
     font-style: italic;
     letter-spacing: -0.03em;
 }
-.orcid-id-text {
-    color: var(--text-soft);
-    letter-spacing: 0.01em;
-}
-.orcid-id:hover .orcid-id-text {
-    color: var(--text);
-}
-/* Pills row */
+.orcid-id-text { color: var(--text-soft); letter-spacing: 0.01em; }
+.orcid-id:hover .orcid-id-text { color: var(--text); }
+
 .orcid-pills {
     display: flex;
     flex-wrap: wrap;
@@ -293,88 +271,98 @@
 .orcid-pill {
     display: inline-flex;
     align-items: baseline;
-    gap: 0.32rem;
-    padding: 0.4rem 0.85rem;
-    background: var(--bg-soft);
+    gap: 0.34rem;
+    padding: 0.42rem 0.9rem;
+    background: transparent;
     border: 1px solid var(--border);
     border-radius: 999px;
-    font-size: 0.83rem;
+    font-size: 0.82rem;
     color: var(--text-soft);
-    transition: border-color .25s var(--ease);
+    transition: border-color var(--t-fast) var(--ease);
 }
-.orcid-pill:hover { border-color: var(--accent); }
+.orcid-pill:hover { border-color: color-mix(in srgb, var(--accent) 45%, var(--border)); }
 .orcid-pill strong {
-    color: var(--text);
+    color: var(--accent);
     font-weight: 600;
-    font-family: var(--display);
-    font-size: 0.98rem;
+    font-family: var(--mono);
+    font-size: 0.92rem;
 }
 .orcid-synced {
     color: var(--muted);
-    font-size: 0.78rem;
-    margin-top: 1rem;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+    margin-top: 1.1rem;
 }
 
-/* ── OpenAlex research-focus panel ── */
-.openalex-panel {
-    margin-top: 1rem;
-}
+/* ═══════════════════════════════════════════════════════════════════
+   OpenAlex panel · baked weekly by build_openalex_html.py
+   Topic chips scale with concept score (inline font-size from builder).
+   ═══════════════════════════════════════════════════════════════════ */
+.openalex-panel { margin-top: 1rem; }
 .oa-lede {
     color: var(--text-soft);
-    font-size: 0.96rem;
+    font-size: var(--fs-body);
     max-width: 640px;
-    margin-bottom: 1.4rem;
-    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    line-height: 1.65;
 }
 .oa-chips {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 1.2rem;
+    align-items: center;
+    gap: 0.55rem;
+    margin-bottom: 1.3rem;
 }
 .oa-chip {
     display: inline-flex;
     align-items: center;
-    padding: 0.45rem 1rem;
+    padding: 0.45rem 1.05rem;
     background: var(--accent-bg);
-    border: 1px solid var(--accent);
-    border-color: rgba(111,171,152,0.32);
+    border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
     border-radius: 999px;
-    color: var(--accent-d);
+    color: var(--accent);
     font-family: var(--display);
-    font-weight: 400;
-    letter-spacing: 0.01em;
-    transition: transform .25s var(--ease), background-color .25s var(--ease);
+    font-weight: 520;
+    letter-spacing: -0.005em;
+    transition: transform var(--t-fast) var(--ease),
+                border-color var(--t-fast) var(--ease);
 }
-.oa-chip:hover { transform: translateY(-1px); background-color: rgba(111,171,152,0.18); }
+.oa-chip:hover {
+    transform: translateY(-1px);
+    border-color: var(--accent);
+}
 
 .oa-badges {
     display: flex;
     flex-wrap: wrap;
     gap: 0.4rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.1rem;
 }
 .oa-badge {
     display: inline-flex;
     align-items: baseline;
-    gap: 0.3rem;
-    padding: 0.38rem 0.85rem;
-    background: var(--bg-soft);
+    gap: 0.32rem;
+    padding: 0.4rem 0.9rem;
+    background: transparent;
     border: 1px solid var(--border);
     border-radius: 999px;
-    font-size: 0.83rem;
+    font-size: 0.82rem;
     color: var(--text-soft);
 }
 .oa-badge strong {
     color: var(--text);
-    font-family: var(--display);
+    font-family: var(--mono);
     font-weight: 600;
+    font-size: 0.88rem;
 }
 .oa-profile-link {
     display: inline-block;
-    margin-top: 0.5rem;
+    margin-top: 0.4rem;
     color: var(--accent);
-    font-size: 0.86rem;
+    font-size: var(--fs-small);
     font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-glow);
 }
 .oa-profile-link:hover { color: var(--accent-d); }

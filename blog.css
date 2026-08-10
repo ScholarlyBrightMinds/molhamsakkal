@@ -1,14 +1,7 @@
 /* ═══════════════════════════════════════════════════════════════════
-   blog.css — Blog index AND blog post pages share this file
+   blog.css · Blog index AND blog post pages
+   Duotone violet covers, editorial post typography.
    ═══════════════════════════════════════════════════════════════════ */
-
-.sub-hero .sub-lede {
-    max-width: 620px;
-    margin-top: 1.2rem;
-    font-size: 1rem;
-    color: var(--text-soft);
-    line-height: 1.7;
-}
 
 /* ══ BLOG INDEX ═══════════════════════════════════════════════════ */
 
@@ -21,35 +14,25 @@
 .blog-item {
     display: flex;
     flex-direction: column;
-    background: var(--card);
+    background: color-mix(in srgb, var(--card) 82%, transparent);
     border: 1px solid var(--border);
-    border-radius: var(--radius);
+    border-radius: var(--radius-l);
     text-decoration: none;
     color: inherit;
-    transition: transform .25s var(--ease), border-color .25s var(--ease), box-shadow .25s var(--ease);
     position: relative;
     overflow: hidden;
     min-height: 300px;
-}
-.blog-item::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 2px;
-    background: var(--accent);
-    transform: scaleY(0);
-    transform-origin: center;
-    transition: transform .3s var(--ease);
-    z-index: 3;
+    transition: transform var(--t-med) var(--ease),
+                border-color var(--t-med) var(--ease),
+                box-shadow var(--t-med) var(--ease);
 }
 .blog-item:hover {
     transform: translateY(-3px);
-    border-color: var(--accent);
+    border-color: color-mix(in srgb, var(--accent) 42%, var(--border));
     box-shadow: var(--shadow-card);
 }
-.blog-item:hover::before { transform: scaleY(1); }
 
-/* Cover: CSS-only duotone tile keyed off post.cover (no PNGs to ship). */
+/* Cover: CSS-only duotone tile with a faint vesicle field */
 .blog-cover {
     position: relative;
     aspect-ratio: 16 / 9;
@@ -57,51 +40,51 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    padding: 1rem 1.1rem;
+    padding: 1rem 1.15rem;
     border-bottom: 1px solid var(--border);
 }
 .blog-cover::after {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 52' fill='none' stroke='%23ffffff' stroke-width='0.4'><polygon points='30,2 56,17 56,37 30,52 4,37 4,17'/></svg>");
-    background-size: 60px 52px;
-    opacity: 0.16;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80' fill='none' stroke='%23ffffff' stroke-width='1'><circle cx='40' cy='40' r='26'/><circle cx='40' cy='40' r='19' stroke-dasharray='0.5 6' stroke-width='2' stroke-linecap='round'/><circle cx='34' cy='36' r='4' fill='%23ffffff' stroke='none'/></svg>");
+    background-size: 120px 120px;
+    opacity: 0.12;
     mix-blend-mode: overlay;
     pointer-events: none;
 }
 .blog-cover-num {
     font-family: var(--display);
     font-size: 2.5rem;
-    font-weight: 300;
-    font-style: italic;
+    font-weight: 620;
     line-height: 1;
     color: rgba(255,255,255,0.94);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
     position: relative;
     z-index: 2;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+    text-shadow: 0 2px 10px rgba(6,4,20,0.4);
 }
 .blog-cover-tag {
     font-family: var(--mono);
-    font-size: 0.62rem;
+    font-size: 0.6rem;
+    font-weight: 500;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: rgba(255,255,255,0.95);
-    background: rgba(0,0,0,0.28);
+    background: rgba(6,4,20,0.32);
     border: 1px solid rgba(255,255,255,0.28);
-    padding: 0.28rem 0.6rem;
-    border-radius: 0.3rem;
-    backdrop-filter: blur(6px);
+    padding: 0.28rem 0.65rem;
+    border-radius: 999px;
     position: relative;
     z-index: 2;
 }
-.blog-cover--phd      { background: linear-gradient(135deg, #2d5547 0%, #6fab98 100%); }
-.blog-cover--git      { background: linear-gradient(135deg, #38324a 0%, #6f5fa1 100%); }
-.blog-cover--hack     { background: linear-gradient(135deg, #4a3115 0%, #d4a668 100%); }
-.blog-cover--ai       { background: linear-gradient(135deg, #1f4134 0%, #93c8b4 100%); }
-.blog-cover--distance { background: linear-gradient(135deg, #322316 0%, #c19154 100%); }
-.blog-cover--default  { background: linear-gradient(135deg, #1f4134 0%, #6fab98 100%); }
+/* Duotone families stay inside the violet night + gold palette */
+.blog-cover--phd      { background: linear-gradient(135deg, #241d55 0%, #958eff 100%); }
+.blog-cover--git      { background: linear-gradient(135deg, #1b1540 0%, #6f63d9 100%); }
+.blog-cover--hack     { background: linear-gradient(135deg, #4a3115 0%, #e9bc74 100%); }
+.blog-cover--ai       { background: linear-gradient(135deg, #2b2368 0%, #aea8ff 100%); }
+.blog-cover--distance { background: linear-gradient(135deg, #3a2a14 0%, #c19154 100%); }
+.blog-cover--default  { background: linear-gradient(135deg, #221a4f 0%, #8b83f2 100%); }
 
 .blog-body {
     padding: 1.3rem 1.5rem 1.4rem;
@@ -112,10 +95,10 @@
 }
 .blog-title {
     font-family: var(--display);
-    font-size: 1.3rem;
-    font-weight: 400;
-    line-height: 1.3;
-    letter-spacing: -0.005em;
+    font-size: 1.28rem;
+    font-weight: 540;
+    line-height: 1.28;
+    letter-spacing: -0.015em;
     color: var(--text);
     margin: 0;
 }
@@ -132,24 +115,17 @@
     align-items: center;
     gap: 0.8rem;
     padding-top: 0.7rem;
-    border-top: 1px dashed var(--border-s);
+    border-top: 1px solid var(--border-s);
     font-family: var(--mono);
-    font-size: 0.7rem;
+    font-size: 0.68rem;
     margin-top: auto;
 }
-.blog-date {
-    color: var(--muted);
-    letter-spacing: 0.04em;
-}
+.blog-date { color: var(--muted); letter-spacing: 0.04em; }
 .blog-readtime {
     color: var(--muted);
     letter-spacing: 0.02em;
     padding-left: 0.8rem;
     border-left: 1px solid var(--border);
-}
-.blog-readtime::before {
-    content: '⏱ ';
-    opacity: 0.7;
 }
 .blog-read {
     color: var(--accent);
@@ -161,12 +137,10 @@
     margin-left: auto;
 }
 .blog-read .arrow {
-    transition: transform .25s var(--ease);
+    transition: transform var(--t-fast) var(--ease);
     display: inline-block;
 }
-.blog-item:hover .blog-read .arrow {
-    transform: translateX(4px);
-}
+.blog-item:hover .blog-read .arrow { transform: translateX(4px); }
 
 /* ══ BLOG POST (article pages) ═════════════════════════════════════ */
 
@@ -189,14 +163,15 @@
 }
 .post-meta .post-tag {
     font-family: var(--mono);
-    font-size: 0.64rem;
+    font-size: 0.62rem;
+    font-weight: 600;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--accent);
     background: var(--accent-bg);
-    border: 1px solid var(--accent-glow);
-    padding: 0.25rem 0.6rem;
-    border-radius: 0.3rem;
+    border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
 }
 .post-meta .post-date {
     font-family: var(--mono);
@@ -207,23 +182,23 @@
 .post-title {
     font-family: var(--display);
     font-size: clamp(2rem, 4vw, 2.8rem);
-    font-weight: 300;
-    line-height: 1.15;
-    letter-spacing: -0.02em;
+    font-weight: 420;
+    line-height: 1.12;
+    letter-spacing: -0.028em;
     color: var(--text);
     margin-bottom: 1rem;
 }
 .post-title em {
-    font-style: italic;
+    font-style: normal;
+    font-weight: 640;
     color: var(--accent);
 }
 .post-lede {
-    font-family: var(--display);
+    font-family: var(--body);
     font-style: italic;
-    font-weight: 300;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     color: var(--text-soft);
-    line-height: 1.5;
+    line-height: 1.55;
 }
 
 .post-body {
@@ -231,9 +206,7 @@
     line-height: 1.85;
     color: var(--text-soft);
 }
-.post-body p {
-    margin-bottom: 1.2rem;
-}
+.post-body p { margin-bottom: 1.2rem; }
 .post-body p:first-of-type::first-letter {
     font-family: var(--display);
     font-size: 3rem;
@@ -242,21 +215,21 @@
     margin-right: 0.6rem;
     margin-top: 0.2rem;
     color: var(--accent);
-    font-weight: 400;
+    font-weight: 560;
 }
 .post-body h2 {
     font-family: var(--display);
     font-size: 1.6rem;
-    font-weight: 500;
+    font-weight: 560;
     color: var(--text);
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
     margin: 2.4rem 0 1rem;
-    line-height: 1.25;
+    line-height: 1.22;
 }
 .post-body h3 {
     font-family: var(--display);
     font-size: 1.2rem;
-    font-weight: 500;
+    font-weight: 560;
     color: var(--text);
     margin: 2rem 0 0.7rem;
 }
@@ -264,7 +237,7 @@
     color: var(--accent);
     text-decoration: none;
     border-bottom: 1px dotted var(--accent-glow);
-    transition: color .2s;
+    transition: color var(--t-fast) var(--ease);
 }
 .post-body a:hover { color: var(--accent-d); }
 .post-body strong { color: var(--text); font-weight: 600; }
@@ -272,27 +245,25 @@
 .post-body blockquote {
     margin: 1.6rem 0;
     padding: 1rem 1.4rem;
-    background: var(--bg-soft);
-    border-left: 3px solid var(--accent);
+    background: var(--accent-bg);
+    border-left: 2px solid var(--accent);
     border-radius: 0 var(--radius-s) var(--radius-s) 0;
-    font-family: var(--display);
+    font-family: var(--body);
     font-style: italic;
-    font-size: 1.05rem;
+    font-size: 1.02rem;
     color: var(--text-soft);
 }
 .post-body ul, .post-body ol {
     margin: 1rem 0 1.4rem 1.4rem;
     padding: 0;
 }
-.post-body li {
-    margin-bottom: 0.5rem;
-}
+.post-body li { margin-bottom: 0.5rem; }
 .post-body code {
     font-family: var(--mono);
-    font-size: 0.88em;
+    font-size: 0.86em;
     background: var(--bg-soft);
     border: 1px solid var(--border);
-    border-radius: 4px;
+    border-radius: 5px;
     padding: 0.12em 0.4em;
     color: var(--accent-d);
 }
@@ -303,12 +274,7 @@
     margin: 2.4rem 0;
 }
 
-/* Mid-article figure (PNG diagram + caption). The HTML uses
-   .mid-figure on a <figure> with an optional .mid-figure--narrow
-   modifier to cap width on wider diagrams. Without these rules the
-   image renders at natural pixel size and gets clipped by the post
-   container (blog-post-4 had a 1920x1080 PNG overflowing the
-   reading column). */
+/* Mid-article figure (PNG diagram + caption) */
 .post-body figure.mid-figure {
     margin: 2.2rem 0;
     text-align: center;
@@ -319,13 +285,11 @@
     height: auto;
     max-width: 760px;
     margin: 0 auto;
-    border-radius: 10px;
+    border-radius: var(--radius-s);
     border: 1px solid var(--border);
-    background: var(--bg-soft, #fff);
+    background: var(--bg-soft);
 }
-.post-body figure.mid-figure--narrow img {
-    max-width: 560px;
-}
+.post-body figure.mid-figure--narrow img { max-width: 560px; }
 .post-body figure.mid-figure figcaption {
     margin-top: 0.9rem;
     font-family: var(--body);
@@ -356,7 +320,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    transition: transform .25s var(--ease);
+    transition: transform var(--t-fast) var(--ease);
 }
 .post-back:hover { transform: translateX(-4px); }
 
@@ -364,24 +328,32 @@
 .blog-empty {
     grid-column: 1 / -1;
     text-align: center;
-    padding: 4rem 2rem;
-    background: var(--card);
+    padding: 4.5rem 2rem;
+    background:
+        radial-gradient(60% 90% at 50% 0%,
+            color-mix(in srgb, var(--accent) 7%, transparent), transparent 65%),
+        color-mix(in srgb, var(--card) 70%, transparent);
     border: 1px dashed var(--border);
-    border-radius: var(--radius);
+    border-radius: var(--radius-l);
 }
 .blog-empty-icon {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    opacity: 0.7;
+    display: inline-grid;
+    place-items: center;
+    width: 56px; height: 56px;
+    margin-bottom: 1.1rem;
+    border-radius: 50%;
+    background: var(--accent-bg);
+    border: 1px dashed color-mix(in srgb, var(--accent) 38%, transparent);
+    color: var(--accent);
 }
+.blog-empty-icon svg { width: 24px; height: 24px; }
 .blog-empty-title {
     font-family: var(--display);
     font-size: 1.4rem;
-    font-weight: 400;
-    font-style: italic;
+    font-weight: 520;
     color: var(--text);
     margin-bottom: 0.6rem;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.015em;
 }
 .blog-empty-desc {
     color: var(--text-soft);

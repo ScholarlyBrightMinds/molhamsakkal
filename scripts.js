@@ -17,7 +17,7 @@
 
     const C = window.SITE_CONFIG;
     if (!C) {
-        console.error('SITE_CONFIG missing — theme.config.js must load before scripts.js');
+        console.error('SITE_CONFIG missing: theme.config.js must load before scripts.js');
         return;
     }
 
@@ -41,7 +41,23 @@
         network:  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><circle cx="12" cy="12" r="2.5"/><line x1="6.8" y1="7.2" x2="10.2" y2="10.6"/><line x1="17.2" y1="7.2" x2="13.8" y2="10.6"/><line x1="6.8" y1="16.8" x2="10.2" y2="13.4"/><line x1="17.2" y1="16.8" x2="13.8" y2="13.4"/></svg>`,
         document: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="14" rx="2"/><line x1="4" y1="9" x2="20" y2="9"/><circle cx="7.5" cy="13" r="0.5" fill="currentColor"/><line x1="10" y1="13" x2="17" y2="13"/><circle cx="7.5" cy="16" r="0.5" fill="currentColor"/><line x1="10" y1="16" x2="14" y2="16"/></svg>`,
         flask:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/><line x1="7" y1="15" x2="17" y2="15"/></svg>`,
-        chart:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="20" x2="20" y2="20"/><path d="M6 16l4-6 3 4 5-8"/></svg>`
+        chart:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="20" x2="20" y2="20"/><path d="M6 16l4-6 3 4 5-8"/></svg>`,
+
+        // Extra glyphs used by the emoji-to-SVG map below
+        grad:  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4L2 9l10 5 10-5-10-5z"/><path d="M6 11.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5"/><path d="M22 9v5"/></svg>`,
+        users: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19c.6-3 2.8-4.6 5.5-4.6s4.9 1.6 5.5 4.6"/><circle cx="17" cy="9" r="2.6"/><path d="M15.8 14.7c2.3.2 4 1.6 4.6 4"/></svg>`,
+        note:  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M9 13h6M9 17h4"/></svg>`
+    };
+
+    // Emoji values in SITE_CONFIG icon fields render as themed SVGs.
+    // Unknown values fall through untouched, so config data flow is intact.
+    const GLYPHS = {
+        '🎓': ICONS.grad,
+        '🔬': ICONS.flask,
+        '🤝': ICONS.users,
+        '✉️': ICONS.email,
+        '✉':  ICONS.email,
+        '📝': ICONS.note
     };
 
     // ═══════════════════════════════════════════════════════════════
@@ -96,7 +112,7 @@
             <div class="footer-left">
                 <div>${C.identity.fullName} · ${C.identity.location} · © ${C.footer.copyrightYear}</div>
                 <div class="colophon">
-                    ${C.footer.tagline} Fraunces · Manrope · JetBrains Mono. ${C.footer.credits}
+                    ${C.footer.tagline} Bricolage Grotesque · Instrument Sans · Spline Sans Mono. ${C.footer.credits}
                 </div>
             </div>
             <div class="footer-links">${links}</div>
@@ -251,7 +267,7 @@
         if (awEl && C.about.awards) {
             awEl.innerHTML = C.about.awards.map(a => `
                 <li class="award-item">
-                    <div class="award-icon">${a.icon}</div>
+                    <div class="award-icon">${GLYPHS[a.icon] || a.icon}</div>
                     <div class="award-body">
                         <p class="a-title">${a.title}</p>
                         <p class="a-venue">${a.venue}</p>
@@ -288,7 +304,7 @@
             const body    = encodeURIComponent(`Hi ${C.identity.firstName || ''},\n\nI saw your "${p.title}" project on your website and would like to discuss a potential collaboration.\n\n`);
             const collabBtn = (showCollab && email)
                 ? `<a class="proj-collab" href="mailto:${email}?subject=${subject}&body=${body}">
-                     <span class="proj-collab-icon">✉</span>
+                     <span class="proj-collab-icon" aria-hidden="true">${ICONS.email}</span>
                      Want to collaborate?
                    </a>`
                 : '';
@@ -341,9 +357,9 @@
         if (!C.blog || C.blog.length === 0) {
             el.innerHTML = `
                 <div class="blog-empty">
-                    <p class="blog-empty-icon">📝</p>
+                    <p class="blog-empty-icon" aria-hidden="true">${ICONS.note}</p>
                     <h3 class="blog-empty-title">Nothing here yet.</h3>
-                    <p class="blog-empty-desc">Writing takes time. Check back soon — or follow my research on <a href="${C.social.find(s=>s.key==='scholar')?.url || '#'}" target="_blank" rel="noopener">Google Scholar</a>.</p>
+                    <p class="blog-empty-desc">Writing takes time. Check back soon, or follow my research on <a href="${C.social.find(s=>s.key==='scholar')?.url || '#'}" target="_blank" rel="noopener">Google Scholar</a>.</p>
                 </div>
             `;
             return;
@@ -483,7 +499,7 @@
         if (bEl && Array.isArray(C.contact.blocks)) {
             bEl.innerHTML = C.contact.blocks.map((b, i) => `
                 <article class="contact-block reveal reveal-d${(i % 3) + 1}">
-                    <div class="contact-block-icon" aria-hidden="true">${b.icon || '·'}</div>
+                    <div class="contact-block-icon" aria-hidden="true">${GLYPHS[b.icon] || b.icon || ''}</div>
                     <h3 class="contact-block-title">${b.title}</h3>
                     <p class="contact-block-body">${b.body}</p>
                 </article>
