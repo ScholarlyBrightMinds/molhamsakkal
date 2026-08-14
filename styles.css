@@ -455,12 +455,25 @@ main {
 }
 .hero-bio a:hover { color: var(--accent-d); }
 
-/* Profile side: organic membrane blob + slow-orbiting beaded ring */
+/* Profile side: organic membrane blob + slow-orbiting beaded ring,
+   mounted on a specimen slide. border-image cannot follow the blob's
+   radius, so the one rectangle here is deliberate: organic matter on
+   instrument glass. The faint mat below is the static base; the
+   scanner arc and the slow eluting swell animate only under
+   prefers-reduced-motion: no-preference further down. */
 .hero-image {
     position: relative;
     aspect-ratio: 1 / 1;
     max-width: 330px;
     margin: 0 auto;
+    --mat: color-mix(in srgb, var(--accent) 24%, transparent);
+    --arc: color-mix(in srgb, var(--accent) 74%, transparent);
+    border: 1px solid transparent;
+    border-image-source: linear-gradient(var(--mat), var(--mat));
+    border-image-slice: 1;
+    border-image-width: 1.5px;
+    border-image-outset: 18px;
+    transition: --arc 0.6s var(--ease);
 }
 .hero-image::before {
     content: '';
@@ -487,6 +500,39 @@ main {
     border-radius: 46% 54% 52% 48% / 55% 44% 56% 45%;
     border: 2px solid color-mix(in srgb, var(--accent) 30%, var(--border));
     filter: saturate(0.96);
+}
+
+/* Night-shift patrol: a lit arc circulates the specimen slide, phase
+   companion to the beaded orbit above (five laps per orbit). Hover
+   powers the searchlight up and quickens it. The eluting swell breathes
+   the frame outward like a nanocarrier releasing payload. Keyframes are
+   joined to the bloomIn entrance list near the end of this file. */
+@property --scan {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+@property --arc {
+    syntax: "<color>";
+    initial-value: rgba(0, 0, 0, 0);
+    inherits: false;
+}
+@media (prefers-reduced-motion: no-preference) {
+    .hero-image {
+        border-image-source: conic-gradient(from var(--scan, 0deg),
+            var(--mat) 0 290deg,
+            var(--arc) 340deg 352deg,
+            var(--mat) 356deg);
+    }
+    .hero-image:hover {
+        --arc: color-mix(in srgb, var(--accent) 96%, white);
+        --scan-period: 8s;
+    }
+    @keyframes scanPatrol { to { --scan: 360deg; } }
+    @keyframes elute {
+        from { border-image-outset: 18px; }
+        to   { border-image-outset: 23px; }
+    }
 }
 
 /* Hero chips */
@@ -741,7 +787,13 @@ footer {
 .hero-image {
     opacity: 0;
     transform: scale(0.95) translateY(10px);
-    animation: bloomIn 640ms 180ms var(--ease) forwards;
+    /* one list: entrance + patrol + elution (a later lone animation
+       declaration would cancel the others) */
+    animation:
+        bloomIn 640ms 180ms var(--ease) forwards,
+        scanPatrol var(--scan-period, 22s) linear infinite,
+        elute 15s ease-in-out infinite alternate;
+    animation-play-state: var(--sbm-anim, running);
 }
 @keyframes bloomIn {
     from { opacity: 0; transform: scale(0.95) translateY(10px); }
