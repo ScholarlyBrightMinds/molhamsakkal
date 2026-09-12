@@ -1,4 +1,4 @@
-name: Weekly Scholar + ORCID + OpenAlex Sync + SEO Build
+name: Weekly OpenAlex + Crossref + ORCID Sync + SEO Build
 
 on:
   schedule:
@@ -25,13 +25,6 @@ jobs:
       - name: Install dependencies
         run: pip install requests Pillow
 
-      - name: Fetch latest Scholar data via SerpApi
-        env:
-          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
-          SCHOLAR_AUTHOR_ID: 'JO1OQj8AAAAJ'
-        run: |
-          set -euo pipefail
-          python serpapi_fetcher.py
 
       - name: Fetch ORCID public record
         env:
@@ -41,6 +34,23 @@ jobs:
         run: |
           set -euo pipefail
           python orcid_fetcher.py
+
+      - name: Fetch publications and citations from open indexes
+        # OpenAlex, Crossref and (when S2_API_KEY is set) Semantic Scholar.
+        # No SerpApi, no Google Scholar. Each paper's count is the highest any
+        # index reports. Refuses to write if it resolves under 80% of last
+        # week's papers, so an outage cannot publish a collapsed count.
+        # Several OpenAlex ids because OpenAlex splits one person across
+        # records when their name is spelled differently on different papers.
+        env:
+          OPENALEX_AUTHOR_IDS: 'A5072660555'
+          ORCID_ID:            '0000-0001-6081-1284'
+          SCHOLAR_AUTHOR_ID:   'JO1OQj8AAAAJ'
+          CROSSREF_MAILTO:     'editorial@scifiniti.com'
+          S2_API_KEY:          ${{ secrets.S2_API_KEY }}
+        run: |
+          set -euo pipefail
+          python citations_fetcher.py
 
       - name: Fetch OpenAlex author + works
         env:
