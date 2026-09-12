@@ -2,7 +2,7 @@
 """
 enrich_dois.py - Resolve a DOI for each SerpAPI-fetched publication via Crossref.
 
-Reads data/serpapi/serpapi.json (the weekly Google Scholar dump) and, for each
+Reads data/serpapi/serpapi.json (the weekly publication list) and, for each
 publication, queries Crossref's REST API (free, unauthenticated, polite-pool)
 to find the matching DOI. Writes data/serpapi/dois.json as a cache so the
 weekly cron only pays the Crossref cost for newly-added publications.

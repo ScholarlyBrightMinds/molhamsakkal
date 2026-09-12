@@ -94,7 +94,7 @@ window.SITE_CONFIG = {
 
     // ── Hero chips ────────────────────────────────────────────────
     chips: [
-        { label: "17 Publications · 140 Citations" },
+        { label: "17 Publications · 124 Citations" },
         { label: "h-index 7" },
         { label: "Lab &amp; Research Supervisor" },
         { label: "MSc Pharm. Sci. · Al Ain University" },
@@ -219,8 +219,8 @@ window.SITE_CONFIG = {
     // First tile auto-updates via build_html.py from the weekly SerpApi pull.
     impactStats: [
         { num: "17",  label: "Publications",     sub: "peer-reviewed",                       numLiveSource: "total_documents" },
-        { num: "140", label: "Citations",        sub: "across all work",                     numLiveSource: "total_citations" },
-        { num: "7",   label: "h-index",          sub: "sustained impact" },
+        { num: "124", label: "Citations",        sub: "across all work",                     numLiveSource: "total_citations" },
+        { num: "7",   label: "h-index",          sub: "sustained impact", numLiveSource: "h_index" },
         { num: "HBRC", label: "Lab Supervisor",  sub: "Al Ain University",                   variant: "gold" },
         { num: "3+",  label: "Institutions",     sub: "UAEU · NYU AD · U. Sharjah" }
     ],

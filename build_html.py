@@ -317,7 +317,7 @@ def render_article(
         f' data-topic="{escape(topics)}"' if topics else ""
     )
 
-    # Stats row: Dimensions donut, Scholar citation chip, year chip,
+    # Stats row: Dimensions donut, citation chip, year chip,
     # DOI link. Each chip is omitted gracefully when the value is missing.
     stats_parts: list[str] = []
 
@@ -337,7 +337,7 @@ def render_article(
 
     if cites:
         stats_parts.append(
-            f'<span class="pub-stat pub-stat-cites" title="Google Scholar citations">'
+            f'<span class="pub-stat pub-stat-cites" title="Citations: the highest count any open index reports for this paper">'
             f'<span class="pub-stat-icon" aria-hidden="true">&#9733;</span>'
             f'<span class="pub-stat-num">{cites}</span>'
             f'<span class="pub-stat-label">citation{"s" if cites != 1 else ""}</span>'
@@ -590,6 +590,19 @@ def patch_index_chips(pubs: list[dict], metrics: dict) -> None:
         if new_text != text:
             changed.append(f'h-index="{new_label}"')
             text = new_text
+
+    # Impact tiles that declare numLiveSource get their number rewritten from
+    # the same metrics, so a tile and a chip can never disagree again. Nothing
+    # at runtime reads numLiveSource; this bake is what makes it true.
+    live = {"total_documents": total, "total_citations": cites, "h_index": hidx}
+    tile_pat = re.compile(r'(num:\s*")([^"]*)("[^\n]*?numLiveSource:\s*")(\w+)(")')
+    def _tile(m):
+        val = live.get(m.group(4))
+        if not val or str(val) == m.group(2):
+            return m.group(0)
+        changed.append(f'tile {m.group(4)}="{val}"')
+        return f"{m.group(1)}{val}{m.group(3)}{m.group(4)}{m.group(5)}"
+    text = tile_pat.sub(_tile, text)
 
     if text != orig:
         cfg.write_text(text, encoding="utf-8")
