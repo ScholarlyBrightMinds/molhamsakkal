@@ -134,7 +134,7 @@
         // Split name for italic emphasis on last word
         const parts = C.identity.fullName.split(' ');
         const last = parts.pop();
-        setBind('heading', `${parts.join(' ')}<br><em>${last}</em>`);
+        setBind('heading', `${parts.join(' ')} <br><em>${last}</em>`);
 
         setBind('tagline', C.identity.tagline);
         setBind('bio', C.bio.short);

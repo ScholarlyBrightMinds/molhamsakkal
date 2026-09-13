@@ -612,6 +612,36 @@ def patch_index_chips(pubs: list[dict], metrics: dict) -> None:
 
 
 # ─────────────────────────────────────────────────────────────────────────
+# Patch: the numbers written into index.html itself
+# ─────────────────────────────────────────────────────────────────────────
+def patch_index_static_numbers(pubs: list[dict], metrics: dict) -> None:
+    """index.html carries the chip text in static HTML so crawlers that do not
+    run JavaScript still read it. scripts.js overwrites it at runtime from
+    theme.config.js, so this only keeps the no-JS copy from going stale."""
+    if not INDEX_HTML.exists():
+        return
+    text = INDEX_HTML.read_text(encoding="utf-8")
+    orig = text
+    total = metrics.get("total_documents") or len(pubs)
+    cites = (metrics.get("total_citations")
+             or sum(int(p.get("cited_by") or 0) for p in pubs))
+    hidx = metrics.get("h_index")
+    if total:
+        text = re.sub(r"\d+ Publications · \d+ Citations",
+                      f"{total} Publications · {cites} Citations", text)
+        text = re.sub(r"(<strong>)\d+(</strong> papers)", rf"\g<1>{total}\g<2>", text)
+        text = re.sub(r"(<strong>)\d+(</strong> citations)", rf"\g<1>{cites}\g<2>", text)
+    if hidx:
+        text = re.sub(r"(>)h-index \d+(<)", rf"\g<1>h-index {hidx}\g<2>", text)
+        text = re.sub(r"(h-index <strong>)\d+(</strong>)", rf"\g<1>{hidx}\g<2>", text)
+    if text != orig:
+        INDEX_HTML.write_text(text, encoding="utf-8")
+        print("[OK] index.html: static numbers refreshed")
+    else:
+        print("[OK] index.html: static numbers already current")
+
+
+# ─────────────────────────────────────────────────────────────────────────
 # Main
 # ─────────────────────────────────────────────────────────────────────────
 def main() -> int:
@@ -630,6 +660,7 @@ def main() -> int:
           f"metrics keys: {list(metrics.keys())}")
     patch_publications_html(pubs, metrics, dois, tldrs, oa_cites, ident)
     patch_index_chips(pubs, metrics)
+    patch_index_static_numbers(pubs, metrics)
     print("[build_html] done")
     return 0
 
