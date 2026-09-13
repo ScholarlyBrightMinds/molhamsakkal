@@ -91,22 +91,68 @@
     <svg class="mol-4" viewBox="0 0 160 160"><circle cx="80" cy="80" r="54" class="v-b"/><circle cx="80" cy="80" r="20" class="v-c"/><circle cx="118" cy="46" r="5" class="v-c"/><circle cx="44" cy="116" r="4" class="v-c"/></svg>
 </div>
 
-<nav class="nav" data-page="about"></nav>
+<nav class="nav" data-page="about"><a href="index.html" class="brand">
+                <span class="brand-dot"></span>
+                Molham Sakkal
+                <span class="brand-meta">Cancer Biology × Drug Delivery</span>
+            </a>
+            <div class="nav-right">
+                <div class="hamburger" aria-label="Menu"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+                <div class="nav-menu"><a href="index.html" class="nav-item ">Home</a><a href="about.html" class="nav-item active">About</a><a href="research.html" class="nav-item ">Research</a><a href="projects.html" class="nav-item ">Projects</a><a href="publications.html" class="nav-item ">Publications</a><a href="talks.html" class="nav-item ">Talks</a><a href="blog.html" class="nav-item ">Blog</a><a href="contact.html" class="nav-item ">Contact</a></div>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle day/night">
+                    <span class="icon-sun"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg></span>
+                    <span class="icon-moon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
+                </button>
+            </div></nav>
 
 <main>
 
     <section class="sub-hero">
         <p class="sub-meta">About</p>
         <h1>The <em>short</em> version.</h1>
-        <p class="sub-lede" data-bind="aboutLede"></p>
+        <p class="sub-lede" data-bind="aboutLede">Cancer cell biology &amp; drug delivery researcher, leading molecular oncology projects and collaborating across UAEU, NYU Abu Dhabi, and the University of Sharjah.</p>
     </section>
 
     <hr class="rule">
 
     <!-- ═══ NARRATIVE + TIMELINE ═══ -->
     <section class="about-grid reveal">
-        <div class="about-text" data-bind="aboutParagraphs"></div>
-        <div class="timeline" data-bind="timeline" aria-label="Career timeline"></div>
+        <div class="about-text" data-bind="aboutParagraphs"><p>I hold a <strong>Bachelor's in Pharmacy</strong> and a <strong>Master's in Pharmaceutical Sciences</strong> from Al Ain University, where I specialized in drug delivery and formulation development. During my master's, I worked as a Research and Laboratory Assistant. That's when I really caught the research bug. Spending long hours with analytical instruments and cancer cell lines turned out to be more exciting than I expected.</p><p>I'm now a <strong>Laboratory and Research Supervisor</strong> at the <strong>Health and Biomedical Research Center (HBRC)</strong>, where I lead research projects in molecular oncology, cancer cell biology, and drug delivery systems. I also train and guide postgraduate students in advanced cell culture techniques and experimental design.</p><p>My collaborations span institutions like <strong>UAEU</strong>, <strong>NYU Abu Dhabi</strong>, and the <strong>University of Sharjah</strong>. I'm passionate about <em>bridging laboratory innovation with real-world therapeutic impact</em> as I plan my PhD studies.</p></div>
+        <div class="timeline" data-bind="timeline" aria-label="Career timeline"><div class="tl-item">
+                        <p class="tl-date">BSc · Al Ain University</p>
+                        <p class="tl-title">Bachelor of Pharmacy (B.Pharm.)</p>
+                        <p class="tl-desc">Foundational training in pharmaceutical sciences.</p>
+                    </div>
+                
+                    <div class="tl-item">
+                        <p class="tl-date">MSc · Al Ain University</p>
+                        <p class="tl-title">Pharmaceutical Sciences</p>
+                        <p class="tl-desc">Specialization in drug delivery &amp; formulation.</p>
+                    </div>
+                
+                    <div class="tl-item">
+                        <p class="tl-date">Research Assistant</p>
+                        <p class="tl-title">Caught the research bug</p>
+                        <p class="tl-desc">Long hours with analytical instruments &amp; cancer cell lines.</p>
+                    </div>
+                
+                    <div class="tl-item current">
+                        <p class="tl-date">Current · HBRC</p>
+                        <p class="tl-title">Lab &amp; Research Supervisor</p>
+                        <p class="tl-desc">Leading molecular oncology &amp; drug delivery projects; training postgrads.</p>
+                    </div>
+                
+                    <div class="tl-item current">
+                        <p class="tl-date">Current · Collaborations</p>
+                        <p class="tl-title">UAEU · NYU Abu Dhabi · U. Sharjah</p>
+                        <p class="tl-desc">Multi-institution collaborations in cancer biology &amp; nanomedicine.</p>
+                    </div>
+                
+                    <div class="tl-item future">
+                        <p class="tl-date">Next · PhD</p>
+                        <p class="tl-title">Translational cancer research</p>
+                        <p class="tl-desc">PhD in precision nanomedicine &amp; targeted drug delivery.</p>
+                    </div></div>
     </section>
 
     <hr class="rule">
@@ -115,7 +161,23 @@
     <section class="reveal">
         <p class="sec-kicker">Research</p>
         <h2 class="sec-title">Three <em>pillars</em>.</h2>
-        <div class="pillars-grid" data-bind="aboutPillars"></div>
+        <div class="pillars-grid" data-bind="aboutPillars"><div class="pillar-card">
+                    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"></path><line x1="7" y1="15" x2="17" y2="15"></line></svg></div>
+                    <h3 class="p-title">Cancer Cell Biology</h3>
+                    <p class="p-desc">Cell culture, cytotoxic screening, gene knockout studies, molecular oncology pathway analysis.</p>
+                </div>
+            
+                <div class="pillar-card">
+                    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12,3 21,8 21,16 12,21 3,16 3,8"></polygon><line x1="12" y1="3" x2="12" y2="21"></line><line x1="3" y1="8" x2="21" y2="16"></line><line x1="21" y1="8" x2="3" y2="16"></line></svg></div>
+                    <h3 class="p-title">Drug Delivery &amp; Nanomedicine</h3>
+                    <p class="p-desc">Nanoformulations, targeted delivery systems, inhalable nanoparticle design for cancer therapy.</p>
+                </div>
+            
+                <div class="pillar-card">
+                    <div class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="20" x2="20" y2="20"></line><path d="M6 16l4-6 3 4 5-8"></path></svg></div>
+                    <h3 class="p-title">Bioinformatics</h3>
+                    <p class="p-desc">Computational identification of therapeutic targets; cancer genomics; statistical analysis.</p>
+                </div></div>
     </section>
 
     <hr class="rule">
@@ -124,7 +186,29 @@
     <section class="reveal">
         <p class="sec-kicker">Recognition</p>
         <h2 class="sec-title">Awards &amp; <em>honours</em>.</h2>
-        <ul class="awards-list" data-bind="awards"></ul>
+        <ul class="awards-list" data-bind="awards"><li class="award-item">
+                    <div class="award-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4L2 9l10 5 10-5-10-5z"></path><path d="M6 11.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5"></path><path d="M22 9v5"></path></svg></div>
+                    <div class="award-body">
+                        <p class="a-title">MSc in Pharmaceutical Sciences</p>
+                        <p class="a-venue">Al Ain University, UAE</p>
+                    </div>
+                </li>
+            
+                <li class="award-item">
+                    <div class="award-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"></path><line x1="7" y1="15" x2="17" y2="15"></line></svg></div>
+                    <div class="award-body">
+                        <p class="a-title">Laboratory &amp; Research Supervisor</p>
+                        <p class="a-venue">Health &amp; Biomedical Research Center</p>
+                    </div>
+                </li>
+            
+                <li class="award-item">
+                    <div class="award-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"></circle><path d="M3.5 19c.6-3 2.8-4.6 5.5-4.6s4.9 1.6 5.5 4.6"></path><circle cx="17" cy="9" r="2.6"></circle><path d="M15.8 14.7c2.3.2 4 1.6 4.6 4"></path></svg></div>
+                    <div class="award-body">
+                        <p class="a-title">Multi-institution collaborations</p>
+                        <p class="a-venue">UAEU · NYU Abu Dhabi · University of Sharjah</p>
+                    </div>
+                </li></ul>
     </section>
 
     <!-- OPENALEX-PANEL-START --><section class="reveal openalex-panel" aria-label="OpenAlex research topics"><p class="sec-kicker">Research focus</p><h2 class="sec-title">Topics by <em>OpenAlex</em>.</h2><p class="oa-lede">Auto-derived from publication metadata indexed in OpenAlex — the larger the chip, the stronger the topic association.</p><div class="oa-chips"><span class="oa-chip" style="font-size:1.11rem">Medicine</span><span class="oa-chip" style="font-size:1.10rem">Cancer</span><span class="oa-chip" style="font-size:1.04rem">Chemistry</span><span class="oa-chip" style="font-size:0.92rem">Engineering</span><span class="oa-chip" style="font-size:0.85rem">Physics</span></div><div class="oa-badges"><span class="oa-badge"><strong>64%</strong> open access</span><span class="oa-badge"><strong>i10-index</strong> 3</span><span class="oa-badge"><strong>89</strong> verified citations</span></div><a class="oa-profile-link" href="https://openalex.org/A5072660555" target="_blank" rel="noopener">View full OpenAlex profile →</a></section><!-- OPENALEX-PANEL-END -->
@@ -132,7 +216,13 @@
 
 </main>
 
-<footer data-bind="footer"></footer>
+<footer data-bind="footer"><div class="footer-left">
+                <div>Molham Sakkal · Abu Dhabi, UAE · © 2026</div>
+                <div class="colophon">
+                    Part of the <a href="https://scholarlybrightminds.github.io/">Scholarly Bright Minds</a> hub. Bricolage Grotesque · Instrument Sans · Spline Sans Mono. A fork of <a href="https://github.com/muhammedrashidx/ScholarSite_2.0" target="_blank" rel="noopener">ScholarSite_2.0</a>.
+                </div>
+            </div>
+            <div class="footer-links"><a href="https://scholar.google.com/citations?user=JO1OQj8AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a><a href="https://orcid.org/0000-0001-6081-1284" target="_blank" rel="noopener">ORCID</a><a href="https://github.com/ScholarlyBrightMinds" target="_blank" rel="noopener">GitHub</a><a href="mailto:Molham.sakkal@gmail.com" target="_blank" rel="noopener">Email</a></div></footer>
 
 <script src="scripts.js"></script>
 </body>
