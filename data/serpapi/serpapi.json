@@ -13,7 +13,7 @@
     "authors": "M Arafat, M Sakkal, P Yuvaraju, et al",
     "venue": "Pharmaceuticals, 2023",
     "year": "2023",
-    "cited_by": 14,
+    "cited_by": 15,
     "link": "https://doi.org/10.3390/ph16040539",
     "author_id": "JO1OQj8AAAAJ"
   },
@@ -22,7 +22,7 @@
     "authors": "N Al-Damook, M Sakkal, M Khair, et al",
     "venue": "International Journal of Molecular Sciences, 2025",
     "year": "2025",
-    "cited_by": 14,
+    "cited_by": 15,
     "link": "https://doi.org/10.3390/ijms262211029",
     "author_id": "JO1OQj8AAAAJ"
   },
@@ -108,15 +108,6 @@
     "author_id": "JO1OQj8AAAAJ"
   },
   {
-    "title": "Public perceptions of AI-assisted cancer care in Abu Dhabi, UAE: A cross-sectional survey",
-    "authors": "R Ghemrawi, M Sakkal, K Kayed, et al",
-    "venue": "Supportive Care in Cancer, 2026",
-    "year": "2026",
-    "cited_by": 1,
-    "link": "https://doi.org/10.1007/s00520-026-10389-4",
-    "author_id": "JO1OQj8AAAAJ"
-  },
-  {
     "title": "Spatially resolved airway niches: mapping epithelial–immune microenvironments in asthma",
     "authors": "M Sakkal, A S. Jarab, A Z. Al Meslamani",
     "venue": "Expert Review of Respiratory Medicine, 2025",
@@ -150,6 +141,15 @@
     "year": "2026",
     "cited_by": 0,
     "link": "https://doi.org/10.1080/15376516.2026.2628929",
+    "author_id": "JO1OQj8AAAAJ"
+  },
+  {
+    "title": "Public perceptions of AI-assisted cancer care in Abu Dhabi, UAE: A cross-sectional survey",
+    "authors": "R Ghemrawi, M Sakkal, K Kayed, et al",
+    "venue": "Supportive Care in Cancer, 2026",
+    "year": "2026",
+    "cited_by": 0,
+    "link": "https://doi.org/10.1007/s00520-026-10389-4",
     "author_id": "JO1OQj8AAAAJ"
   }
 ]

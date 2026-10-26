@@ -1,22 +1,22 @@
 {
   "total_documents": 17,
-  "total_citations": 133,
+  "total_citations": 134,
   "h_index": 7,
   "author_id": "JO1OQj8AAAAJ",
   "source": "open_indexes",
-  "last_updated": "2026-10-19T10:33:49Z",
+  "last_updated": "2026-10-26T10:48:40Z",
   "sources": {
     "openalex": {
       "papers": 19,
-      "citations": 129
+      "citations": 131
     },
     "crossref": {
       "papers": 19,
-      "citations": 130
+      "citations": 132
     },
     "semantic_scholar": {
-      "papers": 16,
-      "citations": 102
+      "papers": 0,
+      "citations": 0
     },
     "carried_forward": 0,
     "excluded_non_papers": 2
