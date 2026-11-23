@@ -4,7 +4,7 @@
     "authors": "M Arafat, M Sakkal, R Beiram, et al",
     "venue": "Pharmaceuticals, 2024",
     "year": "2024",
-    "cited_by": 51,
+    "cited_by": 56,
     "link": "https://doi.org/10.3390/ph17030315",
     "author_id": "JO1OQj8AAAAJ"
   },
@@ -13,17 +13,8 @@
     "authors": "M Arafat, M Sakkal, P Yuvaraju, et al",
     "venue": "Pharmaceuticals, 2023",
     "year": "2023",
-    "cited_by": 16,
+    "cited_by": 18,
     "link": "https://doi.org/10.3390/ph16040539",
-    "author_id": "JO1OQj8AAAAJ"
-  },
-  {
-    "title": "Targeting Cancer Through Thymoquinone: From Molecular Mechanisms to Clinical Prospects",
-    "authors": "N Al-Damook, M Sakkal, M Khair, et al",
-    "venue": "International Journal of Molecular Sciences, 2025",
-    "year": "2025",
-    "cited_by": 16,
-    "link": "https://doi.org/10.3390/ijms262211029",
     "author_id": "JO1OQj8AAAAJ"
   },
   {
@@ -31,8 +22,17 @@
     "authors": "M Sakkal, M Arafat, P Yuvaraju, et al",
     "venue": "Polymers, 2024",
     "year": "2024",
-    "cited_by": 15,
+    "cited_by": 18,
     "link": "https://doi.org/10.3390/polym16050643",
+    "author_id": "JO1OQj8AAAAJ"
+  },
+  {
+    "title": "Targeting Cancer Through Thymoquinone: From Molecular Mechanisms to Clinical Prospects",
+    "authors": "N Al-Damook, M Sakkal, M Khair, et al",
+    "venue": "International Journal of Molecular Sciences, 2025",
+    "year": "2025",
+    "cited_by": 18,
+    "link": "https://doi.org/10.3390/ijms262211029",
     "author_id": "JO1OQj8AAAAJ"
   },
   {
@@ -40,17 +40,8 @@
     "authors": "M Sakkal, R W. A. Abdelmoteleb, A Ali, et al",
     "venue": "Saudi Pharmaceutical Journal, 2025",
     "year": "2025",
-    "cited_by": 14,
+    "cited_by": 15,
     "link": "https://doi.org/10.1007/s44446-025-00046-y",
-    "author_id": "JO1OQj8AAAAJ"
-  },
-  {
-    "title": "Enteric-coating film effect on the delayed drug release of pantoprazole gastro-resistant generic tablets",
-    "authors": "M Arafat, M Sakkal, M F. Bostanudin, et al",
-    "venue": "F1000Research, 2023",
-    "year": "2023",
-    "cited_by": 8,
-    "link": "https://doi.org/10.12688/f1000research.140607.1",
     "author_id": "JO1OQj8AAAAJ"
   },
   {
@@ -58,8 +49,17 @@
     "authors": "M Sakkal, A Abou Hajal",
     "venue": "Computers in Biology and Medicine, 2025",
     "year": "2025",
-    "cited_by": 8,
+    "cited_by": 10,
     "link": "https://doi.org/10.1016/j.compbiomed.2025.110156",
+    "author_id": "JO1OQj8AAAAJ"
+  },
+  {
+    "title": "Enteric-coating film effect on the delayed drug release of pantoprazole gastro-resistant generic tablets",
+    "authors": "M Arafat, M Sakkal, M F. Bostanudin, et al",
+    "venue": "F1000Research, 2023",
+    "year": "2023",
+    "cited_by": 9,
+    "link": "https://doi.org/10.12688/f1000research.140607.1",
     "author_id": "JO1OQj8AAAAJ"
   },
   {
@@ -67,7 +67,7 @@
     "authors": "M Hudaib, A Abou Hajal, M Sakkal",
     "venue": "Journal of Essential Oil Bearing Plants, 2022",
     "year": "2022",
-    "cited_by": 6,
+    "cited_by": 7,
     "link": "https://doi.org/10.1080/0972060x.2022.2072177",
     "author_id": "JO1OQj8AAAAJ"
   },
@@ -76,7 +76,7 @@
     "authors": "M Sakkal, M Arafat, P Yuvaraju, et al",
     "venue": "Pharmaceuticals, 2024",
     "year": "2024",
-    "cited_by": 6,
+    "cited_by": 7,
     "link": "https://doi.org/10.3390/ph17030271",
     "author_id": "JO1OQj8AAAAJ"
   },
